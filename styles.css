@@ -6,13 +6,19 @@ body {
 }
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 2rem 5vw 1rem 5vw;
   background: #fff;
 }
 .logo {
   height: 48px;
+  max-width: 320px;
+}
+.lang-switcher {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .lang-switcher button {
   background: none;
@@ -32,7 +38,8 @@ header {
   background: #fff;
 }
 .hero-logo {
-  width: 120px;
+  width: 240px;
+  max-width: 90vw;
   margin-bottom: 1.5rem;
 }
 .hero h1 {
@@ -152,6 +159,17 @@ footer {
   text-decoration: none;
   font-size: 1rem;
 }
+.coming-soon {
+  display: inline-block;
+  background: #FFC000;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  padding: 0.4em 1.2em;
+  margin: 1rem 0 0.5rem 0;
+  letter-spacing: 0.05em;
+}
 @media (max-width: 700px) {
   .features, .benefit-cards {
     flex-direction: column;
@@ -163,5 +181,14 @@ footer {
   }
   .hero {
     padding: 2rem 1rem 1rem 1rem;
+  }
+  .logo {
+    height: 48px;
+    max-width: 320px;
+  }
+  .hero-logo {
+    width: 140px;
+    max-width: 90vw;
+    margin-bottom: 1.5rem;
   }
 } 

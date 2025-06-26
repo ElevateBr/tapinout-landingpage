@@ -19,7 +19,8 @@ const translations = {
     contact: 'Contato',
     email_placeholder: 'Seu e-mail',
     mail_subject: 'Interesse no TapInOut',
-    mail_body: 'Olá,\n\nTenho interesse em ser avisado sobre o lançamento do TapInOut. Meu e-mail é: '
+    mail_body: 'Olá,\n\nTenho interesse em ser avisado sobre o lançamento do TapInOut. Meu e-mail é: ',
+    coming_soon: 'Em breve'
   },
   en: {
     headline: 'The modern way to clock in and out',
@@ -41,7 +42,8 @@ const translations = {
     contact: 'Contact',
     email_placeholder: 'Your email',
     mail_subject: 'Interest in TapInOut',
-    mail_body: 'Hello,\n\nI am interested in being notified about the launch of TapInOut. My email is: '
+    mail_body: 'Hello,\n\nI am interested in being notified about the launch of TapInOut. My email is: ',
+    coming_soon: 'Coming soon'
   },
   es: {
     headline: 'La forma moderna de fichar',
@@ -63,7 +65,8 @@ const translations = {
     contact: 'Contacto',
     email_placeholder: 'Tu correo electrónico',
     mail_subject: 'Interés en TapInOut',
-    mail_body: 'Hola,\n\nTengo interés en ser avisado sobre el lanzamiento de TapInOut. Mi correo es: '
+    mail_body: 'Hola,\n\nTengo interés en ser avisado sobre el lanzamiento de TapInOut. Mi correo es: ',
+    coming_soon: 'Próximamente'
   }
 };
 
