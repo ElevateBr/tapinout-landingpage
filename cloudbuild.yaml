@@ -1,53 +1,7 @@
 steps:
-# Build the Docker image with a unique tag using the environment and build ID
-- name: 'gcr.io/cloud-builders/docker'
-  args: 
-    - 'build'
-    - '-t'
-    - 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:$BUILD_ID'
-    - '--build-arg'
-    - 'NODE_OPTIONS=--max-old-space-size=4096'
-    - '--build-arg'
-    - 'ENVIRONMENT=$_ENVIRONMENT'
-    - '--memory'
-    - '8g'
-    - '--memory-swap'
-    - '8g'
-    - '.'
-  env:
-    - 'NODE_OPTIONS=--max-old-space-size=8192'
-    - 'NODE_ENV=production'
-    - 'ENVIRONMENT=$_ENVIRONMENT'
-  
-# Tag the image with 'latest'
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:$BUILD_ID', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:latest']
-
-# Push both the uniquely tagged image and the latest tag
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:$BUILD_ID']
-  
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:latest']
-
-# Deploy to Cloud Run using the uniquely tagged image
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: [
-    'run', 'deploy', 'elevate-tapinout-prevendas-$_ENVIRONMENT',
-    '--image', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:$BUILD_ID',
-    '--region', 'us-central1',
-    '--allow-unauthenticated',
-    '--platform', 'managed'
-  ]
-
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas:$BUILD_ID', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/elevatecowdev/elevate-tapinout-prevendas:$BUILD_ID']
 images:
-- 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:$BUILD_ID'
-- 'gcr.io/elevatecowdev/elevate-tapinout-prevendas-$_ENVIRONMENT:latest'
-
-options:
-  env:
-    - 'NODE_OPTIONS=--max-old-space-size=4096'
-    - 'NODE_ENV=production'
-    - 'ENVIRONMENT=$_ENVIRONMENT'
-  logging: 'CLOUD_LOGGING_ONLY'
+  - 'gcr.io/elevatecowdev/elevate-tapinout-prevendas:$BUILD_ID'
