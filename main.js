@@ -17,7 +17,9 @@ const translations = {
     privacy_policy: 'Política de Privacidade',
     terms: 'Termos',
     contact: 'Contato',
-    email_placeholder: 'Seu e-mail'
+    email_placeholder: 'Seu e-mail',
+    mail_subject: 'Interesse no TapInOut',
+    mail_body: 'Olá,\n\nTenho interesse em ser avisado sobre o lançamento do TapInOut. Meu e-mail é: '
   },
   en: {
     headline: 'The modern way to clock in and out',
@@ -37,7 +39,9 @@ const translations = {
     privacy_policy: 'Privacy Policy',
     terms: 'Terms',
     contact: 'Contact',
-    email_placeholder: 'Your email'
+    email_placeholder: 'Your email',
+    mail_subject: 'Interest in TapInOut',
+    mail_body: 'Hello,\n\nI am interested in being notified about the launch of TapInOut. My email is: '
   },
   es: {
     headline: 'La forma moderna de fichar',
@@ -57,13 +61,16 @@ const translations = {
     privacy_policy: 'Política de Privacidad',
     terms: 'Términos',
     contact: 'Contacto',
-    email_placeholder: 'Tu correo electrónico'
+    email_placeholder: 'Tu correo electrónico',
+    mail_subject: 'Interés en TapInOut',
+    mail_body: 'Hola,\n\nTengo interés en ser avisado sobre el lanzamiento de TapInOut. Mi correo es: '
   }
 };
 
 const langButtons = document.querySelectorAll('.lang-switcher button');
 const i18nElements = document.querySelectorAll('[data-i18n]');
 const emailInput = document.querySelector('input[type="email"]');
+let currentLang = 'pt';
 
 function setLang(lang) {
   langButtons.forEach(btn => btn.classList.remove('active'));
@@ -82,6 +89,7 @@ function setLang(lang) {
     emailInput.placeholder = translations[lang]['email_placeholder'];
   }
   document.documentElement.lang = lang;
+  currentLang = lang;
 }
 
 langButtons.forEach(btn => {
@@ -91,10 +99,13 @@ langButtons.forEach(btn => {
 // Default language
 setLang('pt');
 
-// Simulate form submission
+// Abrir cliente de e-mail padrão ao enviar o formulário
 const form = document.getElementById('preRegisterForm');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  form.reset();
-  alert('Pré-cadastro realizado!');
+  const email = emailInput.value.trim();
+  if (!email) return;
+  const subject = encodeURIComponent(translations[currentLang].mail_subject);
+  const body = encodeURIComponent(translations[currentLang].mail_body + email);
+  window.location.href = `mailto:contato@elevatebr.org?subject=${subject}&body=${body}`;
 }); 
