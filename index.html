@@ -14,48 +14,73 @@
       <button data-lang="en">EN</button>
       <button data-lang="es">ES</button>
     </nav>
+    <a href="https://app.tapinout.com" class="login-btn" data-i18n="login_btn" style="position:absolute;top:2rem;right:2rem;">Entrar | Login</a>
   </header>
   <main>
-    <section class="hero">
-      <img src="logo.png" alt="TapInOut Logo" class="hero-logo">
-      <h1 data-i18n="headline">O jeito moderno de bater ponto</h1>
-      <div class="coming-soon" data-i18n="coming_soon">Em breve</div>
-      <p data-i18n="subheadline">Controle de ponto digital, fácil e seguro para empresas e funcionários.</p>
-      <form class="pre-register" id="preRegisterForm">
-        <input type="email" placeholder="Seu e-mail" required data-i18n-placeholder="email_placeholder">
-        <button type="submit" data-i18n="cta">Quero ser avisado</button>
-      </form>
-      <small data-i18n="privacy">Não enviaremos spam.</small>
-    </section>
-    <section class="about">
-      <h2 data-i18n="about_title">Sobre o TapInOut</h2>
-      <ul class="features">
-        <li><span class="icon">📱</span> <span data-i18n="feature_mobile">Check-in/out pelo celular</span></li>
-        <li><span class="icon">📍</span> <span data-i18n="feature_gps">Monitoramento via GPS</span></li>
-        <li><span class="icon">🧑‍💼</span> <span data-i18n="feature_management">Gestão de ponto para empresas</span></li>
-        <li><span class="icon">🧑‍🦱</span> <span data-i18n="feature_biometrics">Validação por biometria facial</span></li>
-      </ul>
-    </section>
-    <section class="benefits">
-      <h2 data-i18n="benefits_title">Benefícios</h2>
-      <div class="benefit-cards">
-        <div class="card">
-          <span class="icon">⏱️</span>
-          <p data-i18n="benefit_fast">Rápido e prático</p>
+    <div class="main-container">
+      <section class="hero animate-fade-in">
+        <span class="hero-decor blob1"></span>
+        <span class="hero-decor blob2"></span>
+        <img src="logo.png" alt="TapInOut Logo" class="hero-logo animate-scale-in">
+        <h1 data-i18n="headline">Controle de ponto digital, fácil e seguro para sua empresa</h1>
+        <p data-i18n="subheadline">Modernize a gestão de jornada com tecnologia, praticidade e segurança.</p>
+        <a href="https://app.tapinout.com/register" class="pre-register button-contact" data-i18n="cta"></a>
+        <small data-i18n="privacy"></small>
+      </section>
+      <section class="about animate-fade-in">
+        <h2 data-i18n="about_title">Por que escolher o TapInOut?</h2>
+        <ul class="features">
+          <li><span class="icon">📍</span> <span data-i18n="feature_gps">Rastreamento por GPS dos colaboradores em tempo real, aumentando a segurança e o controle da jornada.<br><em>Real-time GPS tracking of employees, enhancing safety and work monitoring.</em></span></li>
+          <li><span class="icon">📱</span> <span data-i18n="feature_mobile">Bata ponto direto pelo celular, sem filas ou burocracia.<br><em>Clock in/out directly from your phone, no lines or hassle.</em></span></li>
+          <li><span class="icon">🧑‍🦱</span> <span data-i18n="feature_biometrics">Validação de liveness e biometria facial para máxima segurança e prevenção de fraudes.<br><em>Liveness and face biometrics validation for maximum security and fraud prevention.</em></span></li>
+          <li><span class="icon">⚡</span> <span data-i18n="feature_alerts">Alertas automáticos e gestão em tempo real para o time de RH e gestores.<br><em>Automatic alerts and real-time management for HR and company managers.</em></span></li>
+        </ul>
+      </section>
+      <section class="benefits animate-fade-in">
+        <h2 data-i18n="benefits_title">Benefícios | Benefits</h2>
+        <div class="benefit-cards">
+          <div class="card">
+            <span class="icon">⏱️</span>
+            <p data-i18n="benefit_fast">Rápido e prático | Fast and easy</p>
+          </div>
+          <div class="card">
+            <span class="icon">🔒</span>
+            <p data-i18n="benefit_secure">Seguro e confiável | Secure and reliable</p>
+          </div>
+          <div class="card">
+            <span class="icon">📊</span>
+            <p data-i18n="benefit_reports">Relatórios inteligentes | Smart reports</p>
+          </div>
         </div>
-        <div class="card">
-          <span class="icon">🔒</span>
-          <p data-i18n="benefit_secure">Seguro e confiável</p>
+      </section>
+      <section class="plans animate-fade-in">
+        <h2 data-i18n="plan_title"></h2>
+        <div class="benefit-cards">
+          <div class="card">
+            <h3 data-i18n="plan_basic"></h3>
+            <p data-i18n="plan_basic_desc"></p>
+            <a href="https://app.tapinout.com/register" class="pre-register-btn" data-i18n="plan_basic_cta"></a>
+          </div>
+          <div class="card">
+            <h3 data-i18n="plan_pro"></h3>
+            <p data-i18n="plan_pro_desc"></p>
+            <a href="https://app.tapinout.com/register" class="pre-register-btn" data-i18n="plan_pro_cta"></a>
+          </div>
         </div>
-        <div class="card">
-          <span class="icon">📊</span>
-          <p data-i18n="benefit_reports">Relatórios inteligentes</p>
+      </section>
+      <!-- Remover a seção social-proof -->
+      <section class="elevate animate-fade-in">
+        <!-- Removido conforme solicitado -->
+      </section>
+      <section id="contato" class="contact-section animate-fade-in">
+        <h2 data-i18n="contact_title">Contato</h2>
+        <div class="contact-info">
+          <div><span style="font-size:1.3em;vertical-align:middle;">📍</span> <strong data-i18n="address_label">Endereço:</strong><br><span data-i18n="address">Rua Vinte Nove de Setembro, 53, 2º andar<br>Campos Elíseos, Resende - RJ, Brasil</span></div>
+          <div><span style="font-size:1.3em;vertical-align:middle;">💬</span> <strong data-i18n="whatsapp_label">WhatsApp:</strong> <a href="https://wa.me/5524999402412" target="_blank">+55 (24) 99940-2412</a></div>
+          <div><span style="font-size:1.3em;vertical-align:middle;">✉️</span> <strong data-i18n="email_label">Email:</strong> <a href="mailto:contato@elevatebr.org">contato@elevatebr.org</a></div>
         </div>
-      </div>
-    </section>
-    <section class="elevate">
-      <p data-i18n="developed_by">Desenvolvido por <a href="https://www.elevatebr.org" target="_blank">Elevate</a></p>
-    </section>
+      </section>
+    </div>
   </main>
   <footer>
     <ul class="footer-links">
@@ -64,7 +89,14 @@
       <li><a href="#" data-i18n="contact">Contato</a></li>
     </ul>
     <p>&copy; 2024 TapInOut</p>
+    <div style="text-align:center;margin-top:0.5rem;">
+      <span style="display:inline-block;vertical-align:middle;margin-right:8px;"><img src="elevate-logo.png" alt="Logo Elevate" style="max-height:32px;width:auto;vertical-align:middle;display:inline-block;"></span>
+      <a href='https://www.elevatebr.org' target='_blank' style='color:#888;font-size:1rem;vertical-align:middle;text-decoration:underline;'>Elevate</a>
+    </div>
   </footer>
   <script src="main.js"></script>
+  <script>
+    // Remover scroll suave para contato, pois o botão agora redireciona para registro
+  </script>
 </body>
 </html> 
