@@ -1,102 +1,461 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TapInOut - Pré-lançamento</title>
+  <title>TapInOut - Sistema de Ponto Digital Inteligente</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Sistema de ponto digital inteligente com biometria facial, GPS em tempo real e gestão completa via web. Modernize sua empresa com tecnologia de ponta.">
+  <meta name="keywords" content="ponto digital, biometria facial, controle de ponto, gestão de funcionários, sistema de ponto">
+  <meta name="author" content="TapInOut">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TapInOut - Sistema de Ponto Digital Inteligente">
+  <meta property="og:description" content="Revolutionize o controle de ponto da sua empresa com tecnologia de ponta.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tapinout.com">
+  <meta property="og:image" content="https://tapinout.com/og-image.jpg">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TapInOut - Sistema de Ponto Digital Inteligente">
+  <meta name="twitter:description" content="Revolutionize o controle de ponto da sua empresa com tecnologia de ponta.">
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#305CDE">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TapInOut">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
-  <header>
-    <nav class="lang-switcher">
-      <button data-lang="pt">PT</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="es">ES</button>
-    </nav>
-    <a href="https://app.tapinout.com" class="login-btn" data-i18n="login_btn" style="position:absolute;top:2rem;right:2rem;">Entrar | Login</a>
-  </header>
-  <main>
-    <div class="main-container">
-      <section class="hero animate-fade-in">
-        <span class="hero-decor blob1"></span>
-        <span class="hero-decor blob2"></span>
-        <img src="logo.png" alt="TapInOut Logo" class="hero-logo animate-scale-in">
-        <h1 data-i18n="headline">Controle de ponto digital, fácil e seguro para sua empresa</h1>
-        <p data-i18n="subheadline">Modernize a gestão de jornada com tecnologia, praticidade e segurança.</p>
-        <a href="https://app.tapinout.com/register" class="pre-register button-contact" data-i18n="cta"></a>
-        <small data-i18n="privacy"></small>
-      </section>
-      <section class="about animate-fade-in">
-        <h2 data-i18n="about_title">Por que escolher o TapInOut?</h2>
-        <ul class="features">
-          <li><span class="icon">📍</span> <span data-i18n="feature_gps">Rastreamento por GPS dos colaboradores em tempo real, aumentando a segurança e o controle da jornada.<br><em>Real-time GPS tracking of employees, enhancing safety and work monitoring.</em></span></li>
-          <li><span class="icon">📱</span> <span data-i18n="feature_mobile">Bata ponto direto pelo celular, sem filas ou burocracia.<br><em>Clock in/out directly from your phone, no lines or hassle.</em></span></li>
-          <li><span class="icon">🧑‍🦱</span> <span data-i18n="feature_biometrics">Validação de liveness e biometria facial para máxima segurança e prevenção de fraudes.<br><em>Liveness and face biometrics validation for maximum security and fraud prevention.</em></span></li>
-          <li><span class="icon">⚡</span> <span data-i18n="feature_alerts">Alertas automáticos e gestão em tempo real para o time de RH e gestores.<br><em>Automatic alerts and real-time management for HR and company managers.</em></span></li>
-        </ul>
-      </section>
-      <section class="benefits animate-fade-in">
-        <h2 data-i18n="benefits_title">Benefícios | Benefits</h2>
-        <div class="benefit-cards">
-          <div class="card">
-            <span class="icon">⏱️</span>
-            <p data-i18n="benefit_fast">Rápido e prático | Fast and easy</p>
-          </div>
-          <div class="card">
-            <span class="icon">🔒</span>
-            <p data-i18n="benefit_secure">Seguro e confiável | Secure and reliable</p>
-          </div>
-          <div class="card">
-            <span class="icon">📊</span>
-            <p data-i18n="benefit_reports">Relatórios inteligentes | Smart reports</p>
-          </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+              <div class="nav-logo">
+          <img src="logo.png" alt="TapInOut" class="logo-img">
         </div>
-      </section>
-      <section class="plans animate-fade-in">
-        <h2 data-i18n="plan_title"></h2>
-        <div class="benefit-cards">
-          <div class="card">
-            <h3 data-i18n="plan_basic"></h3>
-            <p data-i18n="plan_basic_desc"></p>
-            <a href="https://app.tapinout.com/register" class="pre-register-btn" data-i18n="plan_basic_cta"></a>
-          </div>
-          <div class="card">
-            <h3 data-i18n="plan_pro"></h3>
-            <p data-i18n="plan_pro_desc"></p>
-            <a href="https://app.tapinout.com/register" class="pre-register-btn" data-i18n="plan_pro_cta"></a>
-          </div>
+      
+      <div class="nav-menu">
+        <a href="#features" class="nav-link">Recursos</a>
+        <a href="#demo" class="nav-link">Demo</a>
+        <a href="#contact" class="nav-link">Contato</a>
+      </div>
+      
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
         </div>
-      </section>
-      <!-- Remover a seção social-proof -->
-      <section class="elevate animate-fade-in">
-        <!-- Removido conforme solicitado -->
-      </section>
-      <section id="contato" class="contact-section animate-fade-in">
-        <h2 data-i18n="contact_title">Contato</h2>
-        <div class="contact-info">
-          <div><span style="font-size:1.3em;vertical-align:middle;">📍</span> <strong data-i18n="address_label">Endereço:</strong><br><span data-i18n="address">Rua Vinte Nove de Setembro, 53, 2º andar<br>Campos Elíseos, Resende - RJ, Brasil</span></div>
-          <div><span style="font-size:1.3em;vertical-align:middle;">💬</span> <strong data-i18n="whatsapp_label">WhatsApp:</strong> <a href="https://wa.me/5524999402412" target="_blank">+55 (24) 99940-2412</a></div>
-          <div><span style="font-size:1.3em;vertical-align:middle;">✉️</span> <strong data-i18n="email_label">Email:</strong> <a href="mailto:contato@elevatebr.org">contato@elevatebr.org</a></div>
-        </div>
-      </section>
+        
+        <button class="nav-cta">
+          <i class="fas fa-sign-in-alt"></i>
+          <span data-i18n="login_btn">Entrar</span>
+        </button>
+        
+        <button class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
-  </main>
-  <footer>
-    <ul class="footer-links">
-      <li><a href="#" data-i18n="privacy_policy">Política de Privacidade</a></li>
-      <li><a href="#" data-i18n="terms">Termos</a></li>
-      <li><a href="#" data-i18n="contact">Contato</a></li>
-    </ul>
-    <p>&copy; 2024 TapInOut</p>
-    <div style="text-align:center;margin-top:0.5rem;">
-      <span style="display:inline-block;vertical-align:middle;margin-right:8px;"><img src="elevate-logo.png" alt="Logo Elevate" style="max-height:32px;width:auto;vertical-align:middle;display:inline-block;"></span>
-      <a href='https://www.elevatebr.org' target='_blank' style='color:#888;font-size:1rem;vertical-align:middle;text-decoration:underline;'>Elevate</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fas fa-star"></i>
+            <span data-i18n="hero_badge">Sistema Inteligente</span>
+          </div>
+          
+          <h1 class="hero-title" data-i18n="hero_title">
+            Revolucione o controle de ponto da sua empresa
+          </h1>
+          
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Ponto eletrônico via celular com biometria facial, GPS em tempo real e gestão completa pelo site. Modernize sua empresa com tecnologia de ponta.
+          </p>
+          
+          <div class="hero-cta">
+            <a href="#contact" class="btn-primary">
+              <i class="fas fa-rocket"></i>
+              <span data-i18n="cta_primary">Começar Agora</span>
+            </a>
+            <a href="#demo" class="btn-secondary">
+              <i class="fas fa-play"></i>
+              <span data-i18n="cta_secondary">Ver Demonstração</span>
+            </a>
+          </div>
+        </div>
+        
+                  <div class="hero-visual">
+            <div class="devices-container">
+              <!-- Phone Mockup -->
+              <div class="phone-mockup">
+                <div class="phone-frame">
+                  <div class="phone-screen">
+                    <img src="mobile-screenshot.png" alt="TapInOut Mobile App" class="app-screenshot">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Mockup -->
+              <div class="desktop-mockup">
+                <div class="desktop-frame">
+                  <div class="desktop-screen">
+                    <img src="desktop-screenshot.png" alt="TapInOut Web Dashboard" class="web-screenshot">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="floating-elements">
+              <div class="float-card card-1">
+                <i class="fas fa-shield-alt"></i>
+                <span>Segurança</span>
+              </div>
+              <div class="float-card card-2">
+                <i class="fas fa-chart-line"></i>
+                <span>Relatórios</span>
+              </div>
+              <div class="float-card card-3">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="features_title">
+          Recursos que transformam sua empresa
+        </h2>
+        <p class="section-subtitle" data-i18n="features_subtitle">
+          Tecnologia avançada para gestão moderna de ponto
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 data-i18n="feature_mobile_title">App Mobile Intuitivo</h3>
+          <p data-i18n="feature_mobile_desc">
+            Ponto eletrônico com um toque no celular. Interface simples e rápida para todos os funcionários.
+          </p>
+          <ul class="feature-list">
+            <li data-i18n="feature_mobile_1">Biometria facial</li>
+            <li data-i18n="feature_mobile_2">GPS em tempo real</li>
+            <li data-i18n="feature_mobile_3">Funciona offline</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 data-i18n="feature_security_title">Segurança Avançada</h3>
+          <p data-i18n="feature_security_desc">
+            Proteção contra fraudes com validação de vivacidade e criptografia end-to-end.
+          </p>
+          <ul class="feature-list">
+            <li data-i18n="feature_security_1">Detecção de fraudes</li>
+            <li data-i18n="feature_security_2">Criptografia AES-256</li>
+            <li data-i18n="feature_security_3">Auditoria completa</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 data-i18n="feature_analytics_title">Relatórios Inteligentes</h3>
+          <p data-i18n="feature_analytics_desc">
+            Dashboards em tempo real com insights valiosos para tomada de decisões estratégicas.
+          </p>
+          <ul class="feature-list">
+            <li data-i18n="feature_analytics_1">Tempo real</li>
+            <li data-i18n="feature_analytics_2">Exportação automática</li>
+            <li data-i18n="feature_analytics_3">Alertas inteligentes</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 data-i18n="feature_management_title">Gestão Completa</h3>
+          <p data-i18n="feature_management_desc">
+            Controle total pelo painel web com permissões customizadas e integração com RH.
+          </p>
+          <ul class="feature-list">
+            <li data-i18n="feature_management_1">Painel administrativo</li>
+            <li data-i18n="feature_management_2">Permissões granulares</li>
+            <li data-i18n="feature_management_3">API integrada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <div class="demo-content">
+        <div class="demo-text">
+          <h2 data-i18n="demo_title">Veja como funciona</h2>
+          <p data-i18n="demo_subtitle">
+            Assista ao vídeo e descubra como o TapInOut pode transformar a gestão de ponto da sua empresa
+          </p>
+          
+          <div class="demo-features">
+            <div class="demo-feature">
+              <i class="fas fa-play-circle"></i>
+              <span data-i18n="demo_feature_1">Demonstração completa</span>
+            </div>
+            <div class="demo-feature">
+              <i class="fas fa-clock"></i>
+              <span data-i18n="demo_feature_2">2 minutos</span>
+            </div>
+            <div class="demo-feature">
+              <i class="fas fa-closed-captioning"></i>
+              <span data-i18n="demo_feature_3">Legendas disponíveis</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-container">
+          <div class="video-placeholder">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-overlay">
+              <span data-i18n="demo_play">Assistir Demo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-i18n="cta_title">Pronto para modernizar sua empresa?</h2>
+        <p data-i18n="cta_subtitle">
+          Junte-se a empresas que já confiam no TapInOut
+        </p>
+        
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary large">
+            <i class="fas fa-comments"></i>
+            <span data-i18n="cta_contact">Falar com Especialista</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2 data-i18n="contact_title">Entre em contato</h2>
+          <p data-i18n="contact_subtitle">
+            Nossa equipe está pronta para ajudar você a implementar o TapInOut na sua empresa
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4 data-i18n="contact_phone_title">Telefone</h4>
+                <p>+55 (24) 99940-2412</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="contact-details">
+                <h4 data-i18n="contact_whatsapp_title">WhatsApp</h4>
+                <p>+55 (24) 99940-2412</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4 data-i18n="contact_email_title">Email</h4>
+                <p>contato@elevatebr.org</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4 data-i18n="contact_address_title">Endereço</h4>
+                <p data-i18n="contact_address">
+                  Rua Vinte Nove de Setembro, 53, 2º andar<br>
+                  Campos Elíseos, Resende - RJ, Brasil
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3 data-i18n="contact_form_title">Solicite um orçamento</h3>
+          <form class="demo-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required>
+              <label for="name" data-i18n="contact_form_name">Nome completo</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required>
+              <label for="email" data-i18n="contact_form_email">Email corporativo</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="company" name="company" required>
+              <label for="company" data-i18n="contact_form_company">Empresa</label>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" name="phone" required>
+              <label for="phone" data-i18n="contact_form_phone">Telefone</label>
+            </div>
+            <div class="form-group">
+              <select id="employees" name="employees" required>
+                <option value="" data-i18n="contact_form_employees_placeholder">Número de funcionários</option>
+                <option value="1-10">1-10 funcionários</option>
+                <option value="11-50">11-50 funcionários</option>
+                <option value="51-100">51-100 funcionários</option>
+                <option value="100+">100+ funcionários</option>
+              </select>
+            </div>
+            <button type="button" class="btn-primary full-width" data-i18n="contact_form_quote">
+              <i class="fas fa-calculator"></i>
+              Solicitar Orçamento
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="logo.png" alt="TapInOut" class="logo-img">
+          </div>
+          <p data-i18n="footer_description">
+            Sistema de ponto digital inteligente que revoluciona a gestão de jornada de trabalho.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer_product">Produto</h4>
+          <ul class="footer-links">
+            <li><a href="#features" data-i18n="footer_features">Recursos</a></li>
+            <li><a href="#demo" data-i18n="footer_demo">Demonstração</a></li>
+            <li><a href="#" data-i18n="footer_api">API</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer_company">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="https://elevatebr.org" target="_blank" rel="noopener" data-i18n="footer_about">Sobre nós</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer_support">Suporte</h4>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_help">Central de Ajuda</a></li>
+            <li><a href="#" data-i18n="footer_docs">Documentação</a></li>
+            <li><a href="#contact" data-i18n="footer_contact">Contato</a></li>
+            <li><a href="#" data-i18n="footer_status">Status</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer_legal">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_privacy">Privacidade</a></li>
+            <li><a href="#" data-i18n="footer_terms">Termos</a></li>
+            <li><a href="#" data-i18n="footer_cookies">Cookies</a></li>
+            <li><a href="#" data-i18n="footer_security">Segurança</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-elevate">
+          <span>Desenvolvido por</span>
+          <a href="https://elevatebr.org" target="_blank" rel="noopener">
+            <img src="elevate-logo.png" alt="Elevate" class="elevate-logo">
+          </a>
+        </div>
+        <p>&copy; 2024 TapInOut. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script src="main.js"></script>
-  <script>
-    // Remover scroll suave para contato, pois o botão agora redireciona para registro
-  </script>
 </body>
 </html> 
