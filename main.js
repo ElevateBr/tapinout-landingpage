@@ -272,6 +272,7 @@ const i18nElements = document.querySelectorAll('[data-i18n]');
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navbar = document.querySelector('.navbar');
+const navCtaButton = document.querySelector('.nav-cta');
 
 // ===== SISTEMA DE TRADUÇÃO =====
 function setLang(lang) {
@@ -299,6 +300,13 @@ langButtons.forEach(btn => {
     setLang(lang);
   });
 });
+
+// ===== EVENT LISTENER PARA BOTÃO ENTRAR =====
+if (navCtaButton) {
+  navCtaButton.addEventListener('click', () => {
+    window.open('https://app.tapinout.com/login', '_blank');
+  });
+}
 
 // ===== NAVEGAÇÃO MOBILE =====
 function toggleMobileMenu() {
