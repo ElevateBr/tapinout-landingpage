@@ -1,0 +1,22 @@
+# TapInOut Landing Page - Redirects para SEO
+# Resolve problemas de "Duplicate without user-selected canonical"
+
+# Força HTTPS
+http://tapinout.com/* https://tapinout.com/:splat 301!
+
+# Remove www
+http://www.tapinout.com/* https://tapinout.com/:splat 301!
+https://www.tapinout.com/* https://tapinout.com/:splat 301!
+
+# Remove trailing slash
+https://tapinout.com/*/ https://tapinout.com/:splat 301!
+
+# Redirect index.html to root
+https://tapinout.com/index.html https://tapinout.com/ 301!
+
+# Remove .html extensions
+https://tapinout.com/roadmap.html https://tapinout.com/roadmap 301!
+
+# Canonical URLs
+https://tapinout.com/ https://tapinout.com/ 200
+https://tapinout.com/roadmap https://tapinout.com/roadmap 200
