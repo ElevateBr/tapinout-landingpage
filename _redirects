@@ -14,9 +14,9 @@ https://tapinout.com/*/ https://tapinout.com/:splat 301!
 # Redirect index.html to root
 https://tapinout.com/index.html https://tapinout.com/ 301!
 
-# Remove .html extensions
-https://tapinout.com/roadmap.html https://tapinout.com/roadmap 301!
+# Redirect legacy Roadmap to home
+https://tapinout.com/roadmap.html https://tapinout.com/ 301!
+https://tapinout.com/roadmap https://tapinout.com/ 301!
 
 # Canonical URLs
 https://tapinout.com/ https://tapinout.com/ 200
-https://tapinout.com/roadmap https://tapinout.com/roadmap 200

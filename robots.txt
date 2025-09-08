@@ -6,14 +6,14 @@ Sitemap: https://tapinout.com/sitemap.xml
 
 # Disallow duplicate content and unnecessary files
 Disallow: /index.html
-Disallow: /*.html$
+Disallow: /roadmap.html
+Disallow: /analytics.html
+Disallow: /performance.html
 Disallow: /temp_redirect.txt
 Disallow: /_redirects
 
 # Allow important pages
 Allow: /
-Allow: /roadmap
-Allow: /roadmap.html
 
 # Block access to sensitive files
 Disallow: /.env
@@ -31,4 +31,3 @@ Allow: /favicon.ico
 Allow: /manifest.json
 Allow: /styles.css
 Allow: /main.js
-Allow: /roadmap.css
