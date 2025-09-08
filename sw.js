@@ -3,6 +3,10 @@ const CACHE_NAME = 'tapinout-v1.0.0';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/en/',
+  '/en/index.html',
+  '/es/',
+  '/es/index.html',
   '/styles.css',
   '/main.js',
   '/logo.png',

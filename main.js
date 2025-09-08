@@ -297,7 +297,14 @@ function setLang(lang) {
 langButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const lang = btn.getAttribute('data-lang');
-    setLang(lang);
+    const path = window.location.pathname;
+    let target = '/';
+    if (lang === 'en') target = '/en/';
+    if (lang === 'es') target = '/es/';
+    if (lang === 'pt') target = '/';
+
+    const hash = window.location.hash;
+    window.location.href = target + (hash ? hash : '');
   });
 });
 
