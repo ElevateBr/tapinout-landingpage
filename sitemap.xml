@@ -1,21 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Página Principal -->
   <url>
     <loc>https://tapinout.com/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/es/" />
   </url>
+  
+  <!-- Página em Inglês -->
   <url>
-    <loc>https://tapinout.com/en</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://tapinout.com/en/</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/es/" />
   </url>
+  
+  <!-- Página em Espanhol -->
   <url>
-    <loc>https://tapinout.com/es</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://tapinout.com/es/</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/es/" />
   </url>
+  
+  <!-- Blog Posts - Portuguese -->
+  <url>
+    <loc>https://tapinout.com/blog/post-1.html</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-1.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/post-2.html</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-2.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/post-3.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-3.html"/>
+  </url>
+  
+  <!-- Blog Posts - English -->
+  <url>
+    <loc>https://tapinout.com/blog/en/post-1.html</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-1.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/en/post-2.html</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-2.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/en/post-3.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-3.html"/>
+  </url>
+  
+  <!-- Blog Posts - Spanish -->
+  <url>
+    <loc>https://tapinout.com/blog/es/post-1.html</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-1.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/es/post-2.html</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-2.html"/>
+  </url>
+  
+  <url>
+    <loc>https://tapinout.com/blog/es/post-3.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tapinout.com/blog/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tapinout.com/blog/en/post-3.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tapinout.com/blog/es/post-3.html"/>
+  </url>
+  
 </urlset>

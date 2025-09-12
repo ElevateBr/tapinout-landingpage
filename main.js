@@ -12,7 +12,7 @@ const translations = {
     // Hero Section
     hero_badge: 'Sistema Inteligente',
     hero_title: 'Revolucione o controle de ponto da sua empresa',
-    hero_subtitle: 'Ponto eletrônico via celular com biometria facial, GPS em tempo real e gestão completa pelo site. Modernize sua empresa com tecnologia de ponta.',
+    hero_subtitle: 'Aplicação de gestão web para líderes e RH com dashboards inteligentes, IA para detecção de riscos trabalhistas e gestão centralizada de múltiplos locais de trabalho.',
     cta_primary: 'Começar Agora',
     cta_secondary: 'Ver Demonstração',
 
@@ -29,16 +29,16 @@ const translations = {
     feature_security_1: 'Detecção de fraudes',
     feature_security_2: 'Criptografia AES-256',
     feature_security_3: 'Auditoria completa',
-    feature_analytics_title: 'Relatórios Inteligentes',
-    feature_analytics_desc: 'Dashboards em tempo real com insights valiosos para tomada de decisões estratégicas.',
-    feature_analytics_1: 'Tempo real',
-    feature_analytics_2: 'Exportação automática',
-    feature_analytics_3: 'Alertas inteligentes',
-    feature_management_title: 'Gestão Completa',
-    feature_management_desc: 'Controle total pelo painel web com permissões customizadas e integração com RH.',
-    feature_management_1: 'Painel administrativo',
-    feature_management_2: 'Permissões granulares',
-    feature_management_3: 'API integrada',
+    feature_analytics_title: 'Dashboards e IA Inteligente',
+    feature_analytics_desc: 'Dashboards em tempo real com IA para identificação e notificação de riscos trabalhistas, banco de horas e férias DSR.',
+    feature_analytics_1: 'IA para detecção de riscos',
+    feature_analytics_2: 'Alertas de banco de horas',
+    feature_analytics_3: 'Controle de férias e DSR',
+    feature_management_title: 'Gestão Multi-Local',
+    feature_management_desc: 'Aplicação de gestão web para líderes e RH com controle centralizado de múltiplos locais de trabalho.',
+    feature_management_1: 'Gestão centralizada',
+    feature_management_2: 'Múltiplos locais',
+    feature_management_3: 'Painel para RH',
 
     // Demo Section
     demo_title: 'Veja como funciona',
@@ -89,6 +89,45 @@ const translations = {
     footer_cookies: 'Cookies',
     footer_security: 'Segurança',
 
+    // Management Section
+    management_title: 'Aplicação de Gestão Web para Líderes e RH',
+    management_subtitle: 'Plataforma completa para gestão de pessoas com dashboards inteligentes e controle centralizado',
+    management_ai_title: 'Inteligência Artificial',
+    management_ai_desc: 'IA avançada para identificação automática de riscos trabalhistas, irregularidades de ponto e conformidade legal.',
+    management_dashboard_title: 'Dashboards Inteligentes',
+    management_dashboard_desc: 'Visualização em tempo real de métricas de produtividade, banco de horas, férias e indicadores de DSR.',
+    management_multi_title: 'Gestão Multi-Local',
+    management_multi_desc: 'Controle centralizado de múltiplos locais de trabalho, filiais e equipes remotas em uma única plataforma.',
+    management_law_title: 'Conformidade Legal Trabalhista',
+    management_law_desc: 'Conformidade total com a legislação trabalhista brasileira 671/2021, garantindo segurança jurídica e aderência regulatória.',
+    dashboard_title: 'Painel de Gestão TapInOut',
+    dashboard_status: 'Tempo Real',
+    metric_employees: 'Funcionários',
+    metric_punctuality: 'Pontualidade',
+    metric_alerts: 'Alertas',
+    metric_locations: 'Locais',
+
+    // Blog Section
+    blog_title: 'Artigos e Insights',
+    blog_subtitle: 'Conteúdo especializado para ajudar sua empresa a evoluir',
+    blog_category_1: 'Gestão Empresarial',
+    blog_date_1: '15 Ago 2025',
+    blog_title_1: 'Como um Aplicativo de Ponto Digital Pode Ajudar sua Empresa a Progredir',
+    blog_excerpt_1: 'Descubra como a digitalização do controle de ponto pode transformar a gestão da sua empresa, aumentar a produtividade e reduzir custos operacionais.',
+    blog_read_time_1: '5 min de leitura',
+    blog_category_2: 'Conformidade Legal',
+    blog_date_2: '12 Ago 2025',
+    blog_title_2: 'Como o TapInOut Atende as Exigências da Regulamentação 671/2021',
+    blog_excerpt_2: 'Entenda como nossa solução garante total conformidade com a legislação trabalhista brasileira, protegendo sua empresa de multas e processos.',
+    blog_read_time_2: '7 min de leitura',
+    blog_category_3: 'Inteligência Artificial',
+    blog_date_3: '10 Ago 2025',
+    blog_title_3: 'Como a IA Pode Ajudar sua Empresa a Melhorar e Avançar com Menos Riscos',
+    blog_excerpt_3: 'Explore as possibilidades da inteligência artificial na gestão empresarial e como ela pode reduzir riscos trabalhistas e operacionais.',
+    blog_read_time_3: '6 min de leitura',
+    blog_read_more: 'Ler mais',
+    blog_view_all: 'Ver Todos os Artigos',
+
     // Navigation
     login_btn: 'Entrar'
   },
@@ -96,7 +135,7 @@ const translations = {
     // Hero Section
     hero_badge: 'Intelligent System',
     hero_title: 'Revolutionize your company\'s time tracking',
-    hero_subtitle: 'Clock in/out via mobile with facial biometrics, real-time GPS and complete management through the website. Modernize your company with cutting-edge technology.',
+    hero_subtitle: 'Web management application for leaders and HR with intelligent dashboards, AI for labor risk detection and centralized management of multiple work locations.',
     cta_primary: 'Get Started',
     cta_secondary: 'Watch Demo',
 
@@ -113,16 +152,16 @@ const translations = {
     feature_security_1: 'Fraud detection',
     feature_security_2: 'AES-256 encryption',
     feature_security_3: 'Complete audit',
-    feature_analytics_title: 'Smart Reports',
-    feature_analytics_desc: 'Real-time dashboards with valuable insights for strategic decision making.',
-    feature_analytics_1: 'Real-time',
-    feature_analytics_2: 'Automatic export',
-    feature_analytics_3: 'Smart alerts',
-    feature_management_title: 'Complete Management',
-    feature_management_desc: 'Total control through web panel with custom permissions and HR integration.',
-    feature_management_1: 'Admin panel',
-    feature_management_2: 'Granular permissions',
-    feature_management_3: 'Integrated API',
+    feature_analytics_title: 'Intelligent Dashboards and AI',
+    feature_analytics_desc: 'Real-time dashboards with AI for identification and notification of labor risks, overtime bank and vacation DSR.',
+    feature_analytics_1: 'AI for risk detection',
+    feature_analytics_2: 'Overtime bank alerts',
+    feature_analytics_3: 'Vacation and DSR control',
+    feature_management_title: 'Multi-Location Management',
+    feature_management_desc: 'Web management application for leaders and HR with centralized control of multiple work locations.',
+    feature_management_1: 'Centralized management',
+    feature_management_2: 'Multiple locations',
+    feature_management_3: 'HR panel',
 
     // Demo Section
     demo_title: 'See how it works',
@@ -173,6 +212,45 @@ const translations = {
     footer_cookies: 'Cookies',
     footer_security: 'Security',
 
+    // Management Section
+    management_title: 'Web Management Application for Leaders and HR',
+    management_subtitle: 'Complete platform for people management with intelligent dashboards and centralized control',
+    management_ai_title: 'Artificial Intelligence',
+    management_ai_desc: 'Advanced AI for automatic identification of labor risks, time tracking irregularities and legal compliance.',
+    management_dashboard_title: 'Intelligent Dashboards',
+    management_dashboard_desc: 'Real-time visualization of productivity metrics, overtime bank, vacations and DSR indicators.',
+    management_multi_title: 'Multi-Location Management',
+    management_multi_desc: 'Centralized control of multiple work locations, branches and remote teams in a single platform.',
+    management_law_title: 'Labor Law Compliance',
+    management_law_desc: 'Full compliance with Brazilian labor legislation 671/2021, ensuring legal security and regulatory adherence.',
+    dashboard_title: 'TapInOut Management Panel',
+    dashboard_status: 'Real Time',
+    metric_employees: 'Employees',
+    metric_punctuality: 'Punctuality',
+    metric_alerts: 'Alerts',
+    metric_locations: 'Locations',
+
+    // Blog Section
+    blog_title: 'Articles and Insights',
+    blog_subtitle: 'Specialized content to help your company evolve',
+    blog_category_1: 'Business Management',
+    blog_date_1: 'Aug 15, 2025',
+    blog_title_1: 'How a Digital Time Tracking App Can Help Your Company Progress',
+    blog_excerpt_1: 'Discover how digitizing time tracking can transform your company\'s management, increase productivity and reduce operational costs.',
+    blog_read_time_1: '5 min read',
+    blog_category_2: 'Legal Compliance',
+    blog_date_2: 'Aug 12, 2025',
+    blog_title_2: 'How TapInOut Meets the Requirements of Regulation 671/2021',
+    blog_excerpt_2: 'Understand how our solution ensures full compliance with Brazilian labor legislation, protecting your company from fines and lawsuits.',
+    blog_read_time_2: '7 min read',
+    blog_category_3: 'Artificial Intelligence',
+    blog_date_3: 'Aug 10, 2025',
+    blog_title_3: 'How AI Can Help Your Company Improve and Advance with Less Risk',
+    blog_excerpt_3: 'Explore the possibilities of artificial intelligence in business management and how it can reduce labor and operational risks.',
+    blog_read_time_3: '6 min read',
+    blog_read_more: 'Read more',
+    blog_view_all: 'View All Articles',
+
     // Navigation
     login_btn: 'Login'
   },
@@ -180,7 +258,7 @@ const translations = {
     // Hero Section
     hero_badge: 'Sistema Inteligente',
     hero_title: 'Revoluciona el control de tiempo de tu empresa',
-    hero_subtitle: 'Registro de entrada/salida vía móvil con biometría facial, GPS en tiempo real y gestión completa a través del sitio web. Moderniza tu empresa con tecnología de vanguardia.',
+    hero_subtitle: 'Aplicación de gestión web para líderes y RRHH con dashboards inteligentes, IA para detección de riesgos laborales y gestión centralizada de múltiples ubicaciones de trabajo.',
     cta_primary: 'Comenzar Ahora',
     cta_secondary: 'Ver Demostración',
 
@@ -197,16 +275,16 @@ const translations = {
     feature_security_1: 'Detección de fraudes',
     feature_security_2: 'Encriptación AES-256',
     feature_security_3: 'Auditoría completa',
-    feature_analytics_title: 'Reportes Inteligentes',
-    feature_analytics_desc: 'Dashboards en tiempo real con insights valiosos para toma de decisiones estratégicas.',
-    feature_analytics_1: 'Tiempo real',
-    feature_analytics_2: 'Exportación automática',
-    feature_analytics_3: 'Alertas inteligentes',
-    feature_management_title: 'Gestión Completa',
-    feature_management_desc: 'Control total a través del panel web con permisos personalizados e integración con RRHH.',
-    feature_management_1: 'Panel administrativo',
-    feature_management_2: 'Permisos granulares',
-    feature_management_3: 'API integrada',
+    feature_analytics_title: 'Dashboards e IA Inteligente',
+    feature_analytics_desc: 'Dashboards en tiempo real con IA para identificación y notificación de riesgos laborales, banco de horas y vacaciones DSR.',
+    feature_analytics_1: 'IA para detección de riesgos',
+    feature_analytics_2: 'Alertas de banco de horas',
+    feature_analytics_3: 'Control de vacaciones y DSR',
+    feature_management_title: 'Gestión Multi-Ubicación',
+    feature_management_desc: 'Aplicación de gestión web para líderes y RRHH con control centralizado de múltiples ubicaciones de trabajo.',
+    feature_management_1: 'Gestión centralizada',
+    feature_management_2: 'Múltiples ubicaciones',
+    feature_management_3: 'Panel para RRHH',
 
     // Demo Section
     demo_title: 'Ve cómo funciona',
@@ -257,6 +335,45 @@ const translations = {
     footer_cookies: 'Cookies',
     footer_security: 'Seguridad',
 
+    // Management Section
+    management_title: 'Aplicación de Gestión Web para Líderes y RRHH',
+    management_subtitle: 'Plataforma completa para gestión de personas con dashboards inteligentes y control centralizado',
+    management_ai_title: 'Inteligencia Artificial',
+    management_ai_desc: 'IA avanzada para identificación automática de riesgos laborales, irregularidades de registro de tiempo y cumplimiento legal.',
+    management_dashboard_title: 'Dashboards Inteligentes',
+    management_dashboard_desc: 'Visualización en tiempo real de métricas de productividad, banco de horas, vacaciones e indicadores de DSR.',
+    management_multi_title: 'Gestión Multi-Ubicación',
+    management_multi_desc: 'Control centralizado de múltiples ubicaciones de trabajo, sucursales y equipos remotos en una sola plataforma.',
+    management_law_title: 'Cumplimiento Legal Laboral',
+    management_law_desc: 'Cumplimiento total con la legislación laboral brasileña 671/2021, garantizando seguridad legal y adherencia regulatoria.',
+    dashboard_title: 'Panel de Gestión TapInOut',
+    dashboard_status: 'Tiempo Real',
+    metric_employees: 'Empleados',
+    metric_punctuality: 'Puntualidad',
+    metric_alerts: 'Alertas',
+    metric_locations: 'Ubicaciones',
+
+    // Blog Section
+    blog_title: 'Artículos e Insights',
+    blog_subtitle: 'Contenido especializado para ayudar a tu empresa a evolucionar',
+    blog_category_1: 'Gestión Empresarial',
+    blog_date_1: '15 Ago 2025',
+    blog_title_1: 'Cómo una App de Control de Asistencia Digital Puede Ayudar a tu Empresa a Progresar',
+    blog_excerpt_1: 'Descubre cómo la digitalización del control de asistencia puede transformar la gestión de tu empresa, aumentar la productividad y reducir costos operacionales.',
+    blog_read_time_1: '5 min de lectura',
+    blog_category_2: 'Cumplimiento Legal',
+    blog_date_2: '12 Ago 2025',
+    blog_title_2: 'Cómo TapInOut Cumple con los Requisitos de la Regulación 671/2021',
+    blog_excerpt_2: 'Entiende cómo nuestra solución garantiza total cumplimiento con la legislación laboral brasileña, protegiendo tu empresa de multas y procesos.',
+    blog_read_time_2: '7 min de lectura',
+    blog_category_3: 'Inteligencia Artificial',
+    blog_date_3: '10 Ago 2025',
+    blog_title_3: 'Cómo la IA Puede Ayudar a tu Empresa a Mejorar y Avanzar con Menos Riesgos',
+    blog_excerpt_3: 'Explora las posibilidades de la inteligencia artificial en la gestión empresarial y cómo puede reducir riesgos laborales y operacionales.',
+    blog_read_time_3: '6 min de lectura',
+    blog_read_more: 'Leer más',
+    blog_view_all: 'Ver Todos los Artículos',
+
     // Navigation
     login_btn: 'Entrar'
   }
@@ -267,26 +384,45 @@ let currentLang = 'pt';
 let isMobileMenuOpen = false;
 
 // ===== ELEMENTOS DOM =====
-const langButtons = document.querySelectorAll('.lang-btn');
-const i18nElements = document.querySelectorAll('[data-i18n]');
+// Estes elementos serão definidos dentro do DOMContentLoaded
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navbar = document.querySelector('.navbar');
 const navCtaButton = document.querySelector('.nav-cta');
 
 // ===== SISTEMA DE TRADUÇÃO =====
-function setLang(lang) {
+function setLang(lang, langButtons, i18nElements) {
+  // Se não especificar idioma, detectar automaticamente pela URL
+  if (!lang) {
+    const path = window.location.pathname;
+    if (path.includes('/en/')) lang = 'en';
+    else if (path.includes('/es/')) lang = 'es';
+    else lang = 'pt';
+  }
+  
   // Atualizar botões de idioma
-  langButtons.forEach(btn => btn.classList.remove('active'));
-  document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+  if (langButtons) {
+    langButtons.forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
+    });
+    
+    const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+      activeBtn.setAttribute('aria-pressed', 'true');
+    }
+  }
   
   // Atualizar elementos com tradução
-  i18nElements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (key && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
+  if (i18nElements) {
+    i18nElements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
   
   // Atualizar atributo lang do HTML
   document.documentElement.lang = lang;
@@ -294,19 +430,23 @@ function setLang(lang) {
 }
 
 // ===== EVENT LISTENERS PARA BOTÕES DE IDIOMA =====
-langButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const lang = btn.getAttribute('data-lang');
-    const path = window.location.pathname;
-    let target = '/';
-    if (lang === 'en') target = '/en/';
-    if (lang === 'es') target = '/es/';
-    if (lang === 'pt') target = '/';
+function setupLanguageButtons(langButtons) {
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      const path = window.location.pathname;
+      let target = '/';
+      if (lang === 'en') target = '/en/';
+      if (lang === 'es') target = '/es/';
+      if (lang === 'pt') target = '/';
 
-    const hash = window.location.hash;
-    window.location.href = target + (hash ? hash : '');
+      const hash = window.location.hash;
+      window.location.href = target + (hash ? hash : '');
+    });
   });
-});
+}
+
+// A função setLang() agora detecta automaticamente o idioma baseado na URL
 
 // ===== EVENT LISTENER PARA BOTÃO ENTRAR =====
 if (navCtaButton) {
@@ -555,8 +695,15 @@ function debounce(func, wait) {
 
 // ===== INICIALIZAÇÃO QUANDO DOM ESTIVER PRONTO =====
 document.addEventListener('DOMContentLoaded', function() {
-  // Configurar idioma padrão
-  setLang('pt');
+  // Definir elementos DOM
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const i18nElements = document.querySelectorAll('[data-i18n]');
+  
+  // Configurar botões de idioma
+  setupLanguageButtons(langButtons);
+  
+  // Detectar e configurar idioma automaticamente baseado na URL
+  setLang(null, langButtons, i18nElements);
   
   // Inicializar animações
   initAOS();
