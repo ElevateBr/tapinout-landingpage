@@ -127,6 +127,237 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow-sm);
     }
+    
+    /* Footer fixes for blog posts */
+    .footer-section p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+    
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    
+    .footer-elevate {
+      flex-shrink: 0;
+      min-width: 0;
+    }
+    
+    .footer-bottom p {
+      margin: 0;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+      }
+      
+      .footer-bottom p {
+        white-space: normal;
+      }
+    }
+    
+    /* Blog visual elements */
+    .blog-highlight {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: var(--white);
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      margin: var(--space-6) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .blog-highlight::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .blog-highlight h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .blog-highlight p {
+      font-size: var(--font-size-lg);
+      margin-bottom: 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .blog-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    
+    .stat-card {
+      background: var(--white);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    
+    .stat-number {
+      font-size: var(--font-size-3xl);
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+    
+    .stat-label {
+      font-size: var(--font-size-sm);
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    
+    .tapinout-ad {
+      background: linear-gradient(135deg, var(--gray-50), var(--white));
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-6) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tapinout-ad::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    
+    .tapinout-ad-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var(--space-4);
+    }
+    
+    .tapinout-ad-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-lg);
+      object-fit: contain;
+    }
+    
+    .tapinout-ad-title {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0;
+    }
+    
+    .tapinout-ad-content {
+      margin-bottom: var(--space-4);
+    }
+    
+    .tapinout-ad-content p {
+      margin: 0;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    
+    .tapinout-ad-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--primary);
+      color: var(--white);
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .tapinout-ad-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .blog-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-xl);
+      margin-right: var(--space-3);
+      flex-shrink: 0;
+    }
+    
+    .blog-feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    
+    .blog-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .blog-feature-item h4 {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 var(--space-2) 0;
+    }
+    
+    .blog-feature-item p {
+      color: var(--gray-600);
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
   </style>
 </head>
 <body>
@@ -188,6 +419,11 @@
     <article class="blog-post-content">
       <p>En el escenario empresarial actual, la digitalización de procesos ya no es una opción, sino una necesidad. Entre los procesos que más se benefician de la transformación digital está el control de asistencia de los empleados. En este artículo, exploramos cómo una app de control de asistencia digital puede ser el catalizador para el progreso de tu empresa.</p>
       
+      <div class="blog-highlight">
+        <h3>🚀 Transformación Digital</h3>
+        <p>Transforma tu empresa con control de asistencia digital. TapInOut utiliza biometría facial e IA para eliminar fraudes, automatizar cálculos y garantizar cumplimiento legal total.</p>
+      </div>
+      
       <h2>El Problema de los Sistemas Tradicionales de Control de Asistencia</h2>
       
       <p>Los sistemas tradicionales de control de asistencia, como relojes mecánicos o planillas manuales, presentan diversas limitaciones:</p>
@@ -199,6 +435,20 @@
         <li><strong>Dificultad de acceso:</strong> Información centralizada en un lugar físico</li>
         <li><strong>Cumplimiento legal:</strong> Mayor dificultad para atender exigencias de la legislación laboral</li>
       </ul>
+      
+      <div class="tapinout-ad">
+        <div class="tapinout-ad-header">
+          <img src="../../logo.png" alt="TapInOut" class="tapinout-ad-logo" width="120" height="120">
+          <h3 class="tapinout-ad-title">Solución TapInOut</h3>
+        </div>
+        <div class="tapinout-ad-content">
+          <p><strong>¡Resuelve todos estos problemas con TapInOut!</strong> Nuestro sistema de control de asistencia digital con biometría facial e IA elimina fraudes, automatiza cálculos y garantiza cumplimiento legal total.</p>
+        </div>
+        <a href="../../index.html#contact" class="tapinout-ad-cta">
+          <i class="fas fa-rocket"></i>
+          Prueba Gratuita
+        </a>
+      </div>
       
       <h2>Cómo TapInOut Transforma la Gestión de Asistencia</h2>
       
@@ -278,6 +528,20 @@
         <li><strong>100% de cumplimiento</strong> con la legislación laboral</li>
         <li><strong>40% de ahorro</strong> en costos administrativos</li>
       </ul>
+      
+      <div class="tapinout-ad">
+        <div class="tapinout-ad-header">
+          <img src="../../logo.png" alt="TapInOut" class="tapinout-ad-logo" width="120" height="120">
+          <h3 class="tapinout-ad-title">Transforma tu Empresa Hoy</h3>
+        </div>
+        <div class="tapinout-ad-content">
+          <p><strong>¡Únete a nuestro programa BETA!</strong> Regístrate y obtén crédito equivalente a 3 meses de tu plan. ¡Sé uno de los primeros en experimentar el futuro del control de asistencia!</p>
+        </div>
+        <a href="../../index.html#contact" class="tapinout-ad-cta">
+          <i class="fas fa-calendar-check"></i>
+          Pre-Registro BETA
+        </a>
+      </div>
       
       <h2>Conclusión: El Futuro del Control de Asistencia</h2>
       
@@ -370,7 +634,6 @@
           <p class="footer-registration">CNPJ: 12.345.678/0001-90 | Registrado en 2025</p>
         </div>
         <div class="footer-badges">
-          <span class="badge">ISO 27001</span>
           <span class="badge">LOPD</span>
           <span class="badge">SSL</span>
         </div>

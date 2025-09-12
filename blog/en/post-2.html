@@ -171,6 +171,321 @@
       background: var(--primary);
       border-color: var(--primary);
     }
+    
+    /* Footer fixes for blog posts */
+    .footer-section p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+    
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    
+    .footer-elevate {
+      flex-shrink: 0;
+      min-width: 0;
+    }
+    
+    .footer-bottom p {
+      margin: 0;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+      }
+      
+      .footer-bottom p {
+        white-space: normal;
+      }
+    }
+    
+    /* Blog visual elements */
+    .blog-highlight {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: var(--white);
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      margin: var(--space-6) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .blog-highlight::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .blog-highlight h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .blog-highlight p {
+      font-size: var(--font-size-lg);
+      margin-bottom: 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .blog-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    
+    .stat-card {
+      background: var(--white);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    
+    .stat-number {
+      font-size: var(--font-size-3xl);
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+    
+    .stat-label {
+      font-size: var(--font-size-sm);
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    
+    .tapinout-ad {
+      background: linear-gradient(135deg, var(--gray-50), var(--white));
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-6) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tapinout-ad::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    
+    .tapinout-ad-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var(--space-4);
+    }
+    
+    .tapinout-ad-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-lg);
+      object-fit: contain;
+    }
+    
+    .tapinout-ad-title {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0;
+    }
+    
+    .tapinout-ad-content {
+      margin-bottom: var(--space-4);
+    }
+    
+    .tapinout-ad-content p {
+      margin: 0;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    
+    .tapinout-ad-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--primary);
+      color: var(--white);
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .tapinout-ad-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .blog-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-xl);
+      margin-right: var(--space-3);
+      flex-shrink: 0;
+    }
+    
+    .blog-feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    
+    .blog-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .blog-feature-item h4 {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 var(--space-2) 0;
+    }
+    
+    .blog-feature-item p {
+      color: var(--gray-600);
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    /* Compliance checklist styles */
+    .compliance-checklist {
+      background: var(--white);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-6) 0;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .compliance-checklist h3 {
+      color: var(--primary);
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-5);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+    
+    .compliance-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .compliance-item:hover {
+      background: var(--primary-light);
+      transform: translateX(4px);
+    }
+    
+    .compliance-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--success);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .compliance-content {
+      flex: 1;
+    }
+    
+    .compliance-title {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: var(--space-2);
+    }
+    
+    .compliance-description {
+      color: var(--gray-600);
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .compliance-status {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--success-light);
+      color: var(--success-dark);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      margin-top: var(--space-2);
+    }
   </style>
 </head>
 <body>
@@ -252,6 +567,20 @@
       <div class="warning-box">
         <h3><i class="fas fa-exclamation-triangle"></i> Important</h3>
         <p>Companies that don't meet the requirements of regulation 671/2021 can face fines ranging from $200 to $2,000 per employee, plus labor lawsuits that can result in million-dollar judgments.</p>
+      </div>
+      
+      <div class="tapinout-ad">
+        <div class="tapinout-ad-header">
+          <img src="../../logo.png" alt="TapInOut" class="tapinout-ad-logo" width="120" height="120">
+          <h3 class="tapinout-ad-title">Complete Legal Protection</h3>
+        </div>
+        <div class="tapinout-ad-content">
+          <p><strong>Eliminate legal risks with TapInOut!</strong> Our system guarantees 100% compliance with regulation 671/2021, protecting your company from fines and labor lawsuits.</p>
+        </div>
+        <a href="../../index.html#contact" class="tapinout-ad-cta">
+          <i class="fas fa-shield-alt"></i>
+          Free Trial
+        </a>
       </div>
       
       <h2>How TapInOut Ensures Total Compliance</h2>
@@ -398,6 +727,147 @@
         <li><strong>Legal peace:</strong> Tranquility to focus on business</li>
       </ul>
       
+      <div class="compliance-checklist">
+        <h3>
+          <i class="fas fa-shield-check"></i>
+          Complete Compliance Checklist - Regulation 671/2021
+        </h3>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Mandatory Time Tracking</div>
+            <p class="compliance-description">System must record entry, exit and breaks for all employees, including remote and hybrid work.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: 100% Compliant
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Immutable and Encrypted Data</div>
+            <p class="compliance-description">Time tracking information must be protected against alterations and stored with high-security encryption.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: AES-256 Encryption
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Identity Validation</div>
+            <p class="compliance-description">System must ensure the employee is who they claim to be, preferably with facial biometrics.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Facial Biometrics + GPS
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Complete Traceability</div>
+            <p class="compliance-description">Log of all system actions, including access, alteration attempts and audits.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Complete 24/7 Log
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Automatic and Secure Backup</div>
+            <p class="compliance-description">Data must be stored on secure servers with automatic backup and redundancy.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Automatic Backup + Redundancy
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Business Systems Integration</div>
+            <p class="compliance-description">Compatibility with ERPs, HR systems and other business tools.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Open APIs + Integrations
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">GDPR Compliance</div>
+            <p class="compliance-description">Personal data protection according to General Data Protection Law.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: 100% GDPR Compliant
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Audit Reports</div>
+            <p class="compliance-description">Automatic generation of reports for labor inspections and audits.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Automatic Reports
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">Granular Access Control</div>
+            <p class="compliance-description">Differentiated permissions for different users (HR, managers, employees).</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: Advanced Access Control
+            </div>
+          </div>
+        </div>
+        
+        <div class="compliance-item">
+          <div class="compliance-check">✓</div>
+          <div class="compliance-content">
+            <div class="compliance-title">24/7 Availability</div>
+            <p class="compliance-description">System must be continuously available for time tracking at any time.</p>
+            <div class="compliance-status">
+              <i class="fas fa-check-circle"></i>
+              TapInOut: 99.9% Uptime Guaranteed
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tapinout-ad">
+        <div class="tapinout-ad-header">
+          <img src="../../logo.png" alt="TapInOut" class="tapinout-ad-logo" width="120" height="120">
+          <h3 class="tapinout-ad-title">Transform Compliance into Advantage</h3>
+        </div>
+        <div class="tapinout-ad-content">
+          <p><strong>Join our BETA program!</strong> Pre-register and get credit equivalent to 3 months of your plan. Be among the first to ensure total compliance!</p>
+        </div>
+        <a href="../../index.html#contact" class="tapinout-ad-cta">
+          <i class="fas fa-rocket"></i>
+          BETA Pre-Registration
+        </a>
+      </div>
+      
       <h2>Conclusion: Compliance as Strategy</h2>
       
       <p>Compliance with regulation 671/2021 is not just a legal obligation, but a business strategy. TapInOut transforms this obligation into competitive advantage, offering:</p>
@@ -497,7 +967,6 @@
           <p class="footer-registration">CNPJ: 12.345.678/0001-90 | Registered in 2025</p>
         </div>
         <div class="footer-badges">
-          <span class="badge">ISO 27001</span>
           <span class="badge">GDPR</span>
           <span class="badge">SSL</span>
         </div>
