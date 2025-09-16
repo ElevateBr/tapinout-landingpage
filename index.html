@@ -508,60 +508,108 @@
     <section class="pre-sales-section" aria-labelledby="pre-sales-title">
       <div class="container">
         <div class="pre-sales-content">
-          <div class="pre-sales-badge">
-            <i class="fas fa-fire" aria-hidden="true"></i>
-            <span>Oferta Limitada</span>
+          <!-- Animated Background Elements -->
+          <div class="pre-sales-bg-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="pulse-ring"></div>
           </div>
           
-          <h2 id="pre-sales-title" class="pre-sales-title">
-            🚀 Programa de Pré-Vendas BETA
+          <!-- Limited Offer Badge with Animation -->
+          <div class="pre-sales-badge animated-badge">
+            <div class="badge-content">
+              <i class="fas fa-fire" aria-hidden="true"></i>
+              <span>Oferta Limitada</span>
+              <div class="badge-pulse"></div>
+            </div>
+          </div>
+          
+          <!-- Main Title with Gradient and Animation -->
+          <h2 id="pre-sales-title" class="pre-sales-title gradient-text">
+            <div class="title-icon">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
+            </div>
+            <span>Programa de Pré-Vendas BETA</span>
+            <div class="title-underline"></div>
           </h2>
           
+          <!-- Description with Highlighted Numbers -->
           <p class="pre-sales-subtitle">
-            Seja um dos <strong>50 primeiros</strong> a se cadastrar e ganhe <strong>3 meses grátis</strong> do seu plano escolhido!
+            Seja um dos <span class="highlight-number">50 primeiros</span> a se cadastrar e ganhe 
+            <span class="highlight-number">3 meses grátis</span> do seu plano escolhido!
           </p>
           
+          <!-- Benefits Grid with Icons and Animations -->
           <div class="pre-sales-features">
-            <div class="pre-sales-feature">
-              <i class="fas fa-gift" aria-hidden="true"></i>
+            <div class="pre-sales-feature" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-icon">
+                <i class="fas fa-gift" aria-hidden="true"></i>
+                <div class="icon-bg"></div>
+              </div>
               <span>3 meses de crédito grátis</span>
             </div>
-            <div class="pre-sales-feature">
-              <i class="fas fa-users" aria-hidden="true"></i>
+            <div class="pre-sales-feature" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-icon">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <div class="icon-bg"></div>
+              </div>
               <span>Apenas 50 vagas disponíveis</span>
             </div>
-            <div class="pre-sales-feature">
-              <i class="fas fa-rocket" aria-hidden="true"></i>
+            <div class="pre-sales-feature" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-icon">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <div class="icon-bg"></div>
+              </div>
               <span>Acesso antecipado ao sistema</span>
             </div>
-            <div class="pre-sales-feature">
-              <i class="fas fa-headset" aria-hidden="true"></i>
+            <div class="pre-sales-feature" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-icon">
+                <i class="fas fa-headset" aria-hidden="true"></i>
+                <div class="icon-bg"></div>
+              </div>
               <span>Suporte prioritário</span>
             </div>
           </div>
           
+          <!-- CTA Button with Enhanced Design -->
           <div class="pre-sales-cta">
-            <a href="#contact" class="btn-primary large pre-sales-btn" title="Fazer pré-cadastro e ganhar 3 meses grátis">
-              <i class="fas fa-calendar-check" aria-hidden="true"></i>
-              <span>Fazer Pré-Cadastro Agora</span>
+            <a href="#contact" class="btn-primary large pre-sales-btn pulse-button">
+              <div class="btn-content">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Fazer Pré-Cadastro Agora</span>
+              </div>
+              <div class="btn-shine"></div>
             </a>
             <p class="pre-sales-note">
-              ⏰ Oferta válida apenas para as primeiras 50 empresas que se cadastrarem
+              <i class="fas fa-clock"></i>
+              Oferta válida apenas para as primeiras 50 empresas que se cadastrarem
             </p>
           </div>
           
+          <!-- Stats with Progress Bars -->
           <div class="pre-sales-stats">
-            <div class="stat-item">
-              <div class="stat-number">47</div>
-              <div class="stat-label">Vagas Restantes</div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="stat-circle">
+                <span class="stat-number">47</span>
+                <div class="stat-progress" style="--progress: 94%"></div>
+              </div>
+              <span class="stat-label">Vagas Preenchidas</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">3</div>
-              <div class="stat-label">Meses Grátis</div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="stat-circle urgent">
+                <span class="stat-number">3</span>
+                <div class="stat-progress urgent" style="--progress: 6%"></div>
+              </div>
+              <span class="stat-label">Vagas Restantes</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Funcionalidades</div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="stat-circle">
+                <span class="stat-number">100%</span>
+                <div class="stat-progress" style="--progress: 100%"></div>
+              </div>
+              <span class="stat-label">Funcionalidades</span>
             </div>
           </div>
         </div>
@@ -764,6 +812,69 @@
   </footer>
 
   <!-- Scripts -->
+  <!-- Floating Pre-Sales Bar -->
+  <div class="floating-pre-sales-bar" id="floatingPreSalesBar">
+    <div class="floating-content">
+      <div class="floating-text">
+        <div class="floating-badge">
+          <i class="fas fa-fire"></i>
+          <span>Oferta Limitada</span>
+        </div>
+        <div class="floating-title">
+          <strong>3 meses grátis</strong> para as primeiras 50 empresas!
+        </div>
+        <div class="floating-stats">
+          <span class="floating-stat">Apenas <strong>3 vagas</strong> restantes</span>
+        </div>
+      </div>
+      <div class="floating-cta">
+        <a href="#contact" class="floating-btn">
+          <i class="fas fa-rocket"></i>
+          <span>Cadastrar Agora</span>
+        </a>
+      </div>
+    </div>
+    <div class="floating-close" onclick="closeFloatingBar()">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+
   <script src="main.js"></script>
+  <script>
+    // Floating bar functionality
+    function closeFloatingBar() {
+      const bar = document.getElementById('floatingPreSalesBar');
+      if (bar) {
+        bar.style.display = 'none';
+        localStorage.setItem('floatingBarClosed', 'true');
+      }
+    }
+    
+    // Show floating bar after 3 seconds (always show on page load)
+    function showFloatingBar() {
+      const bar = document.getElementById('floatingPreSalesBar');
+      if (bar) {
+        // Always show the bar on page load (reset on refresh)
+        bar.classList.add('show');
+        console.log('Floating bar shown');
+      } else {
+        console.error('Floating bar element not found');
+      }
+    }
+    
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(showFloatingBar, 3000);
+    });
+    
+    // Fallback if DOMContentLoaded already fired
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(showFloatingBar, 3000);
+      });
+    } else {
+      setTimeout(showFloatingBar, 3000);
+    }
+  </script>
 </body>
 </html> 
