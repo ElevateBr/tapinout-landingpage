@@ -236,11 +236,16 @@ body {
   align-items: center;
   gap: var(--space-2);
   box-shadow: var(--primary-glow);
+  text-decoration: none;
 }
 
-.nav-cta:hover {
+.nav-cta:hover,
+.nav-cta:visited,
+.nav-cta:focus {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(48, 92, 222, 0.4);
+  text-decoration: none;
+  color: var(--white);
 }
 
 .nav-toggle {
@@ -1256,9 +1261,15 @@ body {
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.contact-info {
+  text-align: center;
+  max-width: 800px;
 }
 
 .contact-info h2 {
@@ -1275,18 +1286,23 @@ body {
 }
 
 .contact-methods {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 800px;
 }
 
 .contact-method {
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  padding: var(--space-4);
-  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
   transition: var(--transition-fast);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-method:hover {
@@ -1314,6 +1330,92 @@ body {
 .contact-details p {
   color: var(--gray-600);
   margin: 0;
+}
+
+/* Contact actions and visual improvements */
+.contact-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-quick-actions .btn-primary,
+.contact-quick-actions .btn-secondary {
+  min-width: 260px;
+  justify-content: center;
+}
+
+.contact-quick-actions .btn-secondary {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+}
+
+.contact-quick-actions .btn-secondary:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-cta-banner {
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  background: var(--gray-50);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-cta-banner i {
+  color: var(--primary);
+  font-size: var(--font-size-2xl);
+}
+
+.contact-cta-banner .banner-text strong {
+  display: block;
+  color: var(--gray-900);
+  margin-bottom: var(--space-1);
+}
+
+.contact-cta-banner .banner-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-cta-banner .banner-text a:hover {
+  text-decoration: underline;
+}
+
+.contact-assurances {
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  color: var(--gray-600);
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-assurances i {
+  color: var(--primary);
+  margin-right: var(--space-2);
+}
+
+.contact-details a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
 }
 
 .contact-form {
@@ -1610,6 +1712,10 @@ body {
     gap: var(--space-8);
   }
   
+  .contact-quick-actions {
+    justify-content: flex-start;
+  }
+  
   .footer-content {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -1751,8 +1857,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .floating-shape {
@@ -2007,6 +2114,8 @@ body {
 /* CTA Button */
 .pre-sales-cta {
   margin-bottom: var(--space-8);
+  position: relative;
+  z-index: 10;
 }
 
 .pulse-button {
@@ -2023,6 +2132,8 @@ body {
   box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
   animation: button-pulse 2s ease-in-out infinite;
   overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .btn-content {
@@ -2030,7 +2141,8 @@ body {
   align-items: center;
   gap: var(--space-3);
   position: relative;
-  z-index: 2;
+  z-index: 11;
+  pointer-events: none;
 }
 
 .btn-shine {
@@ -2041,6 +2153,8 @@ body {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   animation: shine 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
 }
 
 @keyframes button-pulse {
@@ -2377,10 +2491,10 @@ select:focus {
 
 .pricing-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin-bottom: 4rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2388,7 +2502,7 @@ select:focus {
 .pricing-card {
   background: var(--white);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
   transition: all 0.3s ease;
@@ -2431,39 +2545,49 @@ select:focus {
 .popular-badge {
   position: absolute;
   top: -1px;
-  right: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--primary-gradient);
   color: var(--white);
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 0 0 10px 10px;
   font-size: var(--font-size-sm);
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.25rem;
+  width: 200px;
 }
 
 .card-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .plan-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: var(--primary-gradient);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
-  font-size: 1.5rem;
+  margin: 0 auto 0.75rem;
+  font-size: 1.25rem;
   color: var(--white);
   box-shadow: var(--primary-glow);
 }
 
+/* Ícone especial para o plano Ultimate */
+.ultimate-plan .plan-icon {
+  background: var(--primary-gradient);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.4);
+  border: 3px solid #ffd700;
+}
+
 .plan-name {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 0.5rem;
@@ -2471,13 +2595,13 @@ select:focus {
 
 .plan-description {
   color: var(--gray-600);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .plan-pricing {
   text-align: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
   background: var(--gray-50);
   border-radius: 15px;
   border: 2px solid var(--gray-200);
@@ -2498,7 +2622,7 @@ select:focus {
 }
 
 .price {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-3xl);
   font-weight: 800;
   color: var(--primary);
   line-height: 1;
@@ -2532,14 +2656,14 @@ select:focus {
 }
 
 .plan-features {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--gray-100);
 }
 
@@ -2555,7 +2679,7 @@ select:focus {
 
 .feature-item span {
   color: var(--gray-700);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 500;
 }
 
@@ -2569,11 +2693,11 @@ select:focus {
   gap: 0.5rem;
   background: var(--gray-100);
   color: var(--gray-700);
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   transition: all 0.3s ease;
   width: 100%;
   justify-content: center;
@@ -2684,7 +2808,76 @@ select:focus {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* Desktop Large (1200px+) - 4 cards lado a lado */
+@media (min-width: 1200px) {
+  .pricing-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+  }
+}
+
+/* Desktop (1024px - 1199px) - 3 cards lado a lado */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .pricing-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+  }
+  
+  .pricing-card {
+    padding: 1.75rem;
+  }
+  
+  .plan-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .price {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Tablet (768px - 1023px) - 2 cards lado a lado */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 800px;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .plan-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .price {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .plan-name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .plan-description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .btn-pricing {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Mobile (até 767px) - 1 card por linha */
+@media (max-width: 767px) {
   .pricing-section {
     padding: 4rem 0;
   }
@@ -2696,6 +2889,8 @@ select:focus {
   .pricing-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .pricing-card {
@@ -2710,6 +2905,25 @@ select:focus {
     font-size: var(--font-size-4xl);
   }
   
+  .plan-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .plan-name {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .plan-description {
+    font-size: var(--font-size-base);
+  }
+  
+  .btn-pricing {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-base);
+  }
+  
   .pricing-benefits {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -2721,6 +2935,57 @@ select:focus {
   
   .pricing-cta {
     padding: 2rem 1.5rem;
+  }
+}
+
+/* Mobile Small (até 480px) - Otimização para telas muito pequenas */
+@media (max-width: 480px) {
+  .pricing-cards {
+    max-width: 350px;
+    gap: 1.25rem;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .plan-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .price {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .plan-name {
+    font-size: var(--font-size-xl);
+  }
+  
+  .plan-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .btn-pricing {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+  
+  .plan-pricing {
+    padding: 1rem;
+  }
+  
+  .price-container {
+    gap: 0.125rem;
+  }
+  
+  .currency {
+    font-size: var(--font-size-base);
+  }
+  
+  .period {
+    font-size: var(--font-size-base);
   }
 }
 
