@@ -693,6 +693,121 @@ function debounce(func, wait) {
   };
 }
 
+// ===== BARRA DE PROGRESSO DE SCROLL =====
+function initScrollProgress() {
+  // Criar elemento da barra
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  
+  // Atualizar progresso no scroll
+  window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+}
+
+// ===== CURSOR CUSTOMIZADO =====
+function initCustomCursor() {
+  // Não ativar em mobile
+  if (window.innerWidth < 768) return;
+  
+  const cursor = document.createElement('div');
+  cursor.className = 'custom-cursor';
+  cursor.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
+  document.body.appendChild(cursor);
+  
+  // Adicionar classe ao body para esconder cursor padrão
+  document.body.classList.add('custom-cursor-active');
+  
+  // Movimento direto sem lag - mix-blend-mode faz a mágica automaticamente
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursor.classList.add('active');
+  });
+  
+  // Efeito hover em elementos clicáveis
+  const clickableElements = document.querySelectorAll('a, button, .btn-primary, .btn-secondary, .feature-card, .pricing-card, .blog-card');
+  clickableElements.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+}
+
+// ===== NÚMEROS ANIMADOS (CONTADORES) =====
+function initCounters() {
+  const counters = document.querySelectorAll('.metric-value');
+  
+  const animateCounter = (element) => {
+    const target = parseInt(element.textContent);
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        element.textContent = Math.floor(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    };
+    
+    updateCounter();
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        animateCounter(entry.target);
+        entry.target.dataset.animated = 'true';
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => observer.observe(counter));
+}
+
+
+// ===== TILT EFFECT NOS CARDS =====
+function initTiltEffect() {
+  const cards = document.querySelectorAll('.feature-card, .pricing-card, .blog-card');
+  
+  cards.forEach(card => {
+    card.classList.add('tilt-card');
+    
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      
+      card.style.setProperty('--rotateX', rotateX + 'deg');
+      card.style.setProperty('--rotateY', rotateY + 'deg');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rotateX', '0deg');
+      card.style.setProperty('--rotateY', '0deg');
+    });
+  });
+}
+
+// ===== RIPPLE EFFECT NOS BOTÕES =====
+function initRippleEffect() {
+  const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta');
+  buttons.forEach(btn => btn.classList.add('ripple'));
+}
+
+
 // ===== INICIALIZAÇÃO QUANDO DOM ESTIVER PRONTO =====
 document.addEventListener('DOMContentLoaded', function() {
   // Definir elementos DOM
@@ -705,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Detectar e configurar idioma automaticamente baseado na URL
   setLang(null, langButtons, i18nElements);
   
-  // Inicializar animações
+  // Inicializar animações originais
   initAOS();
   initDeviceAnimations();
   initFloatingAnimations();
@@ -713,6 +828,13 @@ document.addEventListener('DOMContentLoaded', function() {
   initCardHoverEffects();
   initParallax();
   initLazyLoading();
+  
+  // Inicializar novas melhorias
+  initScrollProgress();
+  initCustomCursor();
+  initCounters();
+  initTiltEffect();
+  initRippleEffect();
   
   // Event listeners
   window.addEventListener('scroll', debounce(handleNavbarScroll, config.debounceDelay));
