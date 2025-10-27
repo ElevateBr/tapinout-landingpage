@@ -443,6 +443,50 @@
       font-weight: 600;
       margin-top: var(--space-2);
     }
+    
+    /* Hero Image Styles */
+    .blog-post-hero-image {
+      margin: var(--space-8) 0;
+      text-align: center;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      border-radius: var(--radius-lg);
+    }
+
+    .image-caption {
+      margin-top: var(--space-4);
+      font-style: italic;
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .blog-post-hero-image {
+        margin: var(--space-6) 0;
+      }
+      
+      .hero-image {
+        border-radius: var(--radius-md);
+      }
+      
+      .image-caption {
+        font-size: var(--font-size-xs);
+        padding: 0 var(--space-4);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-post-hero-image {
+        margin: var(--space-4) 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -457,22 +501,26 @@
     
       <div class="nav-menu">
         <a href="../index.html#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
-        <a href="../index.html#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
+        <a href="../index.html#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
         <a href="../index.html#demo" class="nav-link" title="Ver demonstração do sistema">Demo</a>
+        <a href="../index.html#pricing" class="nav-link" title="Ver preços e planos">Preços</a>
+        <a href="../index.html#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
         <a href="../index.html#contact" class="nav-link" title="Entre em contato conosco">Contato</a>
       </div>
     
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Seleção de idioma">
-          <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-          <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+          <a href="tapinout-atende-exigencias-regulamentacao-671-2021.html" class="lang-btn active" aria-pressed="true">PT</a>
+          <a href="en/tapinout-meets-requirements-regulation-671-2021.html" class="lang-btn" aria-pressed="false">EN</a>
+          <a href="es/tapinout-cumple-requisitos-regulacion-671-2021.html" class="lang-btn" aria-pressed="false">ES</a>
         </div>
-        <a href="../index.html#contact" class="btn-primary" title="Solicitar demonstração gratuita do TapInOut">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-          <span>Solicitar Demo</span>
+        
+        <a href="https://app.tapinout.com/register" class="nav-cta" target="_blank" rel="noopener">
+          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+          <span>Entrar</span>
         </a>
-        <button class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        
+        <button class="nav-toggle" aria-label="Menu mobile" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -492,6 +540,14 @@
         <span><i class="fas fa-calendar"></i> 12 de Agosto de 2025</span>
         <span><i class="fas fa-clock"></i> 7 min de leitura</span>
         <span><i class="fas fa-tag"></i> Conformidade Legal</span>
+      </div>
+      
+      <!-- Imagem principal sobre conformidade legal -->
+      <div class="blog-post-hero-image" data-aos="fade-up">
+        <img src="../img/blog2.jpg" alt="Conformidade com regulamentação 671/2021 e proteção legal empresarial" class="hero-image" width="800" height="400">
+        <div class="image-caption">
+          <p>Garanta conformidade total com a legislação trabalhista brasileira</p>
+        </div>
       </div>
     </header>
     
@@ -822,7 +878,7 @@
           <img src="../logo.png" alt="TapInOut" class="tapinout-ad-logo" width="120" height="120">
         </div>
         <div class="tapinout-ad-content">
-          <p><strong>Junte-se ao programa BETA!</strong> Faça seu pré-cadastro e ganhe crédito equivalente a 3 meses do seu plano. Seja um dos primeiros a garantir conformidade total!</p>
+          <p><strong>Junte-se ao programa BETA!</strong> Faça seu pré-cadastro e ganhe crédito equivalente a 1 mês do seu plano. Seja um dos primeiros a garantir conformidade total!</p>
         </div>
         <a href="../index.html#contact" class="tapinout-ad-cta">
           <i class="fas fa-rocket"></i>

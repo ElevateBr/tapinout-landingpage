@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Tutoriais TapInOut - Guia Completo do Sistema | Aprenda a Usar</title>
+  <meta name="description" content="Tutoriais completos do TapInOut: aprenda a usar o sistema de ponto digital com vídeos explicativos passo a passo.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tapinout.com/tutorial/">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles.css">
+  
+  <style>
+    /* Tutorial Specific Styles */
+    .tutorial-hero {
+      padding: var(--space-20) 0 var(--space-24);
+      background: linear-gradient(135deg, var(--primary-50) 0%, var(--white) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tutorial-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--primary-100) 0%, transparent 70%);
+      opacity: 0.5;
+      border-radius: 50%;
+    }
+    
+    .tutorial-hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tutorial-hero-title {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--gray-900);
+      margin-bottom: var(--space-4);
+      line-height: 1.2;
+    }
+    
+    .tutorial-hero-subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    
+    .tutorial-section {
+      padding: var(--space-24) 0;
+      background: var(--white);
+    }
+    
+    .tutorial-section:nth-child(even) {
+      background: var(--gray-50);
+    }
+    
+    .tutorial-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-20);
+    }
+    
+    .tutorial-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+      padding: var(--space-8);
+      border-radius: var(--radius-2xl);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-shadow);
+    }
+    
+    .tutorial-block:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .tutorial-block.reverse {
+      direction: rtl;
+    }
+    
+    .tutorial-block.reverse > * {
+      direction: ltr;
+    }
+    
+    .tutorial-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--gray-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-transform);
+    }
+    
+    .tutorial-video-wrapper:hover {
+      transform: translateY(-4px);
+    }
+    
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 50%, var(--primary-500) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--space-4);
+      position: relative;
+    }
+    
+    .video-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .play-icon {
+      font-size: 4rem;
+      color: var(--white);
+      opacity: 0.9;
+      z-index: 1;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    .video-placeholder-text {
+      color: var(--white);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      z-index: 1;
+      text-align: center;
+      padding: 0 var(--space-4);
+    }
+    
+    .tutorial-text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    
+    .tutorial-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-gradient);
+      color: var(--white);
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-2);
+      box-shadow: var(--shadow-primary);
+    }
+    
+    .tutorial-title {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--gray-800);
+      line-height: 1.3;
+    }
+    
+    .tutorial-description {
+      font-size: var(--font-size-base);
+      color: var(--gray-600);
+      line-height: var(--line-height-relaxed);
+    }
+    
+    .tutorial-features {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    
+    .tutorial-feature {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      color: var(--gray-600);
+    }
+    
+    .tutorial-feature i {
+      color: var(--primary);
+      font-size: var(--font-size-base);
+    }
+    
+     .tutorial-cta-section {
+       padding: var(--space-32) 0;
+       background: var(--primary-gradient);
+       background-image: url('../img/austin-distel-wD1LRb9OeEo-unsplash.jpg');
+       background-size: cover;
+       background-position: center;
+       background-blend-mode: overlay;
+       text-align: center;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .tutorial-cta-section::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: linear-gradient(135deg, rgba(13, 110, 253, 0.8) 0%, rgba(59, 130, 246, 0.7) 50%, rgba(96, 165, 250, 0.6) 100%);
+       z-index: 0;
+     }
+     
+     .tutorial-cta-section::after {
+       content: '';
+       position: absolute;
+       top: -50%;
+       left: -20%;
+       width: 800px;
+       height: 800px;
+       background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+       border-radius: 50%;
+       z-index: 1;
+     }
+    
+     .tutorial-cta-content {
+       max-width: 700px;
+       margin: 0 auto;
+       position: relative;
+       z-index: 2;
+     }
+    
+    .tutorial-cta-title {
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--white);
+      margin-bottom: var(--space-4);
+      line-height: 1.2;
+    }
+    
+    .tutorial-cta-subtitle {
+      font-size: var(--font-size-lg);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: var(--space-8);
+      line-height: 1.6;
+    }
+    
+    .tutorial-cta-buttons {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .tutorial-hero-title {
+        font-size: var(--font-size-3xl);
+      }
+      
+      .tutorial-hero-subtitle {
+        font-size: var(--font-size-lg);
+      }
+      
+      .tutorial-block {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        padding: var(--space-6);
+      }
+      
+      .tutorial-block.reverse {
+        direction: ltr;
+      }
+      
+      .tutorial-video-wrapper {
+        order: -1;
+      }
+      
+      .play-icon {
+        font-size: 3rem;
+      }
+      
+      .tutorial-cta-title {
+        font-size: var(--font-size-2xl);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container">
+      <div class="nav-logo">
+        <a href="../" aria-label="TapInOut - Página inicial">
+          <img src="../logo.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="logo-img" width="150" height="50">
+        </a>
+      </div>
+      
+      <div class="nav-menu">
+        <a href="../#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
+        <a href="../#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
+        <a href="../#demo" class="nav-link" title="Ver demonstração do sistema">Demo</a>
+        <a href="../#pricing" class="nav-link" title="Ver preços e planos">Preços</a>
+        <a href="../#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
+        <a href="../#contact" class="nav-link" title="Entre em contato conosco">Contato</a>
+      </div>
+      
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Seleção de idioma">
+          <a href="#" class="lang-btn active" aria-pressed="true">PT</a>
+          <a href="../en" class="lang-btn" aria-pressed="false">EN</a>
+          <a href="../es" class="lang-btn" aria-pressed="false">ES</a>
+        </div>
+        
+        <a href="https://app.tapinout.com/register" class="nav-cta" target="_blank" rel="noopener">
+          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+          <span>Entrar</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Menu mobile" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar Spacer -->
+  <div class="navbar-spacer"></div>
+
+  <!-- Tutorial Hero Section -->
+  <section class="tutorial-hero">
+    <div class="container">
+      <div class="tutorial-hero-content">
+        <h1 class="tutorial-hero-title">Tutoriais Completo do TapInOut</h1>
+        <p class="tutorial-hero-subtitle">
+          Aprenda a usar o sistema de ponto digital com vídeos explicativos passo a passo, guiados por especialistas
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorial Content -->
+  <main>
+    <!-- Tutorial 1 -->
+    <section class="tutorial-section">
+      <div class="container">
+        <div class="tutorial-blocks">
+          <div class="tutorial-block">
+             <div class="tutorial-text">
+             
+               <h2 class="tutorial-title">Primeiros Passos</h2>
+               <p class="tutorial-description">
+                 Neste tutorial inicial, você aprenderá a configurar sua conta no TapInOut, entender a interface principal e navegar pelos principais recursos do sistema.
+               </p>
+               <div class="tutorial-features">
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Configuração de conta e perfil</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Navegação na interface principal</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Explorando os recursos principais</span>
+                 </div>
+               </div>
+             </div>
+            
+            <div class="tutorial-video-wrapper">
+              <div class="video-placeholder">
+                <i class="fas fa-play play-icon"></i>
+                <div class="video-placeholder-text">Em breve: Vídeo Tutorial 01</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial 2 -->
+    <section class="tutorial-section">
+      <div class="container">
+        <div class="tutorial-blocks">
+          <div class="tutorial-block reverse">
+             <div class="tutorial-text">
+             
+               <h2 class="tutorial-title">Como Criar um Local de Trabalho</h2>
+               <p class="tutorial-description">
+                 Aprenda a criar e configurar locais de trabalho no TapInOut. Este tutorial mostra como adicionar novos locais, configurar perímetros de trabalho e gerenciar múltiplas unidades.
+               </p>
+               <div class="tutorial-features">
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Criar novo local de trabalho</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Configurar perímetro de trabalho</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Gerenciar múltiplas unidades</span>
+                 </div>
+               </div>
+             </div>
+            
+            <div class="tutorial-video-wrapper">
+              <div class="video-placeholder">
+                <i class="fas fa-play play-icon"></i>
+                <div class="video-placeholder-text">Em breve: Vídeo Tutorial 02</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial 3 -->
+    <section class="tutorial-section">
+      <div class="container">
+        <div class="tutorial-blocks">
+          <div class="tutorial-block">
+             <div class="tutorial-text">
+               
+               <h2 class="tutorial-title">Como Criar um Departamento</h2>
+               <p class="tutorial-description">
+                 Organize sua empresa criando departamentos no sistema. Este tutorial ensina como estruturar sua organização, atribuir colaboradores a departamentos e gerenciar hierarquias.
+               </p>
+               <div class="tutorial-features">
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Criar e organizar departamentos</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Atribuir colaboradores</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Gerenciar hierarquias organizacionais</span>
+                 </div>
+               </div>
+             </div>
+            
+            <div class="tutorial-video-wrapper">
+              <div class="video-placeholder">
+                <i class="fas fa-play play-icon"></i>
+                <div class="video-placeholder-text">Em breve: Vídeo Tutorial 03</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial 4 -->
+    <section class="tutorial-section">
+      <div class="container">
+        <div class="tutorial-blocks">
+          <div class="tutorial-block reverse">
+             <div class="tutorial-text">
+              
+               <h2 class="tutorial-title">Como Cadastrar um Colaborador</h2>
+               <p class="tutorial-description">
+                 Aprenda a cadastrar colaboradores no sistema TapInOut. Este tutorial mostra como adicionar novos funcionários, configurar permissões, vinculá-los a departamentos e locais de trabalho.
+               </p>
+               <div class="tutorial-features">
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Adicionar novo colaborador</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Configurar dados e permissões</span>
+                 </div>
+                 <div class="tutorial-feature">
+                   <i class="fas fa-check-circle"></i>
+                   <span>Vincular a departamentos e locais</span>
+                 </div>
+               </div>
+             </div>
+            
+            <div class="tutorial-video-wrapper">
+              <div class="video-placeholder">
+                <i class="fas fa-play play-icon"></i>
+                <div class="video-placeholder-text">Em breve: Vídeo Tutorial 04</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA Section -->
+  <section class="tutorial-cta-section">
+    <div class="container">
+      <div class="tutorial-cta-content">
+        <h2 class="tutorial-cta-title">Pronto para Começar?</h2>
+        <p class="tutorial-cta-subtitle">
+          Experimente o TapInOut gratuitamente por 1 mês. Sistema completo, seguro e de fácil uso para transformar a gestão de ponto da sua empresa.
+        </p>
+        <div class="tutorial-cta-buttons">
+          <a href="https://app.tapinout.com/register" class="btn-primary large" target="_blank" rel="noopener" title="Começar agora com TapInOut">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+            <span>Começar Agora</span>
+          </a>
+          <a href="../#contact" class="btn-secondary large" title="Falar com especialista">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span>Falar com Especialista</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../img/Logo tapinout FPR-Photoroom.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="footer-logo" width="150" height="50">
+          <p class="footer-description">
+            Sistema de ponto digital inteligente com biometria facial, GPS em tempo real e gestão completa para sua empresa.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn" title="Siga-nos no LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram" title="Siga-nos no Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook" title="Siga-nos no Facebook">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" title="Inscreva-se no nosso canal">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3 class="footer-title">Produto</h3>
+            <ul class="footer-list">
+              <li><a href="../#features" class="footer-link">Recursos</a></li>
+              <li><a href="../#integrations" class="footer-link">Integrações</a></li>
+              <li><a href="../#demo" class="footer-link">Demonstração</a></li>
+              <li><a href="../#pricing" class="footer-link">Preços</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3 class="footer-title">Empresa</h3>
+            <ul class="footer-list">
+              <li><a href="../#about" class="footer-link">Sobre Nós</a></li>
+              <li><a href="../#blog" class="footer-link">Blog</a></li>
+              <li><a href="../#contact" class="footer-link">Contato</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3 class="footer-title">Suporte</h3>
+            <ul class="footer-list">
+              <li><a href="#" class="footer-link">Central de Ajuda</a></li>
+              <li><a href="#" class="footer-link">Documentação</a></li>
+              <li><a href="../#tutoriais" class="footer-link">Tutoriais</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3 class="footer-title">Legal</h3>
+            <ul class="footer-list">
+              <li><a href="../politica-privacidade.html" class="footer-link">Política de Privacidade</a></li>
+              <li><a href="../termos-uso.html" class="footer-link">Termos de Uso</a></li>
+              <li><a href="../politica-cookies.html" class="footer-link">Política de Cookies</a></li>
+              <li><a href="../lgpd.html" class="footer-link">LGPD</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; 2025 TapInOut - Elevate. Todos os direitos reservados.</p>
+          <p class="footer-registration">CNPJ: 33.793.757/0001-39 | Registrado em 2025</p>
+        </div>
+        <div class="footer-badges">
+          <span class="badge">LGPD</span>
+          <span class="badge">SSL</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../main.js"></script>
+</body>
+</html>
