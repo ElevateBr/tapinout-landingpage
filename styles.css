@@ -1222,10 +1222,7 @@ svg {
 /* ===== FEATURES SECTION ===== */
 .features {
   padding: var(--space-24) 0;
-  background: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)), 
-              url('./img/lycs-architecture-U2BI3GMnSSE-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
+  background: rgba(248, 249, 250, 0.85);
   background-attachment: fixed;
 }
 
