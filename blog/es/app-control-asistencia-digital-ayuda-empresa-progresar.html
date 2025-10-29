@@ -358,6 +358,50 @@
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-20px) rotate(5deg); }
     }
+    
+    /* Hero Image Styles */
+    .blog-post-hero-image {
+      margin: var(--space-8) 0;
+      text-align: center;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      border-radius: var(--radius-lg);
+    }
+
+    .image-caption {
+      margin-top: var(--space-4);
+      font-style: italic;
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .blog-post-hero-image {
+        margin: var(--space-6) 0;
+      }
+      
+      .hero-image {
+        border-radius: var(--radius-md);
+      }
+      
+      .image-caption {
+        font-size: var(--font-size-xs);
+        padding: 0 var(--space-4);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-post-hero-image {
+        margin: var(--space-4) 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -379,13 +423,13 @@
     
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Selección de idioma">
-          <button class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-          <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <a href="../aplicativo-ponto-digital-ajuda-empresa-progredir.html" class="lang-btn" aria-pressed="false">PT</a>
+          <a href="../en/digital-time-tracking-app-help-company-progress.html" class="lang-btn" aria-pressed="false">EN</a>
+          <a href="app-control-asistencia-digital-ayuda-empresa-progresar.html" class="lang-btn active" aria-pressed="true">ES</a>
         </div>
-        <a href="../../es/index.html#contact" class="btn-primary" title="Solicitar demostración gratuita de TapInOut">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-          <span>Solicitar Demo</span>
+        <a href="https://app.tapinout.com/register" class="nav-cta" target="_blank" rel="noopener">
+          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+          <span>Entrar</span>
         </a>
         <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
           <span></span>
@@ -413,6 +457,14 @@
         <span><i class="fas fa-calendar"></i> 15 de Agosto de 2025</span>
         <span><i class="fas fa-clock"></i> 5 min de lectura</span>
         <span><i class="fas fa-tag"></i> Gestión Empresarial</span>
+      </div>
+      
+      <!-- Imagen principal del post -->
+      <div class="blog-post-hero-image" data-aos="fade-up">
+        <img src="../../img/blog1.jpg" alt="App de control de asistencia digital transformando la gestión empresarial" class="hero-image" width="800" height="400">
+        <div class="image-caption">
+          <p>La digitalización del control de asistencia revoluciona la gestión empresarial moderna</p>
+        </div>
       </div>
     </header>
     
@@ -552,10 +604,6 @@
       <div class="blog-post-cta">
         <h3>¿Listo para Transformar tu Gestión de Asistencia?</h3>
         <p>Descubre cómo TapInOut puede impulsar el progreso de tu empresa. Solicita una demostración gratuita y ve en la práctica los beneficios de la digitalización.</p>
-        <a href="../../es/index.html#contact" class="btn-primary">
-          <i class="fas fa-rocket"></i>
-          Solicitar Demostración
-        </a>
       </div>
     </article>
   </div>
