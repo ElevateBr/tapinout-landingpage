@@ -403,6 +403,50 @@
       50% { transform: translateY(-20px) rotate(5deg); }
     }
     
+    /* Hero Image Styles */
+    .blog-post-hero-image {
+      margin: var(--space-8) 0;
+      text-align: center;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      border-radius: var(--radius-lg);
+    }
+
+    .image-caption {
+      margin-top: var(--space-4);
+      font-style: italic;
+      color: var(--gray-600);
+      font-size: var(--font-size-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .blog-post-hero-image {
+        margin: var(--space-6) 0;
+      }
+      
+      .hero-image {
+        border-radius: var(--radius-md);
+      }
+      
+      .image-caption {
+        font-size: var(--font-size-xs);
+        padding: 0 var(--space-4);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-post-hero-image {
+        margin: var(--space-4) 0;
+      }
+    }
+    
     /* Compliance checklist styles */
     .compliance-checklist {
       background: var(--white);
@@ -507,13 +551,13 @@
     
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Language selection">
-          <button class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
-          <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
-          <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+          <a href="../tapinout-atende-exigencias-regulamentacao-671-2021.html" class="lang-btn" aria-pressed="false">PT</a>
+          <a href="tapinout-meets-requirements-regulation-671-2021.html" class="lang-btn active" aria-pressed="true">EN</a>
+          <a href="../es/tapinout-cumple-requisitos-regulacion-671-2021.html" class="lang-btn" aria-pressed="false">ES</a>
         </div>
-        <a href="../../en/index.html#contact" class="btn-primary" title="Request a free TapInOut demo">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-          <span>Request Demo</span>
+        <a href="https://app.tapinout.com/register" class="nav-cta" target="_blank" rel="noopener">
+          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+          <span>Sign In</span>
         </a>
         <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
           <span></span>
@@ -546,6 +590,14 @@
         <span><i class="fas fa-calendar"></i> August 12, 2025</span>
         <span><i class="fas fa-clock"></i> 7 min read</span>
         <span><i class="fas fa-tag"></i> Legal Compliance</span>
+      </div>
+      
+      <!-- Main post image -->
+      <div class="blog-post-hero-image" data-aos="fade-up">
+        <img src="../../img/blog2.jpg" alt="Compliance with regulation 671/2021 and legal business protection" class="hero-image" width="800" height="400">
+        <div class="image-caption">
+          <p>Ensure total compliance with Brazilian labor legislation</p>
+        </div>
       </div>
     </header>
     
@@ -885,10 +937,6 @@
       <div class="blog-post-cta">
         <h3>Ensure Your Company's Compliance</h3>
         <p>Protect your company from fines and labor lawsuits. Request a TapInOut demo and see how to ensure total compliance with regulation 671/2021.</p>
-        <a href="../../en/index.html#contact" class="btn-primary">
-          <i class="fas fa-shield-check"></i>
-          Request Demo
-        </a>
       </div>
     </article>
   </div>

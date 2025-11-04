@@ -21,11 +21,8 @@ const navCtaButton = document.querySelector('.nav-cta');
 // Sistema de tradução removido - todos os textos agora estão diretamente no HTML
 
 // ===== EVENT LISTENER PARA BOTÃO ENTRAR =====
-if (navCtaButton) {
-  navCtaButton.addEventListener('click', () => {
-    window.open('https://app.tapinout.com/login', '_blank');
-  });
-}
+// Removido - o botão agora usa apenas o href do HTML que aponta para /register
+// Isso evita conflito entre JavaScript e o comportamento padrão do link
 
 // ===== NAVEGAÇÃO MOBILE =====
 function toggleMobileMenu() {
