@@ -59,7 +59,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Background sync for offline functionality
+// Background sync for network resilience
 self.addEventListener('sync', event => {
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
