@@ -101,9 +101,9 @@ Este documento detalha todas as otimizações SEO implementadas no site prevenda
 
 ### Service Worker
 - Cache de recursos estáticos
-- Funcionalidade offline
 - Push notifications
 - Background sync
+- Melhor resiliência em redes instáveis
 
 ### Monitoramento de Performance
 - Core Web Vitals tracking
@@ -168,13 +168,13 @@ Este documento detalha todas as otimizações SEO implementadas no site prevenda
 - Configuração completa de PWA
 - Ícones em múltiplos tamanhos
 - Tema e cores personalizadas
-- Funcionalidade offline
+- Instalação como app (PWA)
 
 ### Service Worker
 - Cache inteligente de recursos
 - Sincronização em background
 - Notificações push
-- Experiência offline
+- Estratégia de cache para performance
 
 ## 🎨 Acessibilidade
 
