@@ -6,6 +6,23 @@ const config = {
   debounceDelay: 150
 };
 
+// ===== WIDGET DE SUPORTE (SEATHUB) =====
+const SUPPORT_WIDGET_SRC =
+  'https://app.gptmaker.ai/widget/3EBBCE26B25863D47D075ACDA2FE9334/float.js';
+
+function initSupportWidget() {
+  // Evitar carregar duas vezes
+  if (document.querySelector(`script[src="${SUPPORT_WIDGET_SRC}"]`)) return;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = SUPPORT_WIDGET_SRC;
+  script.dataset.widget = 'gptmaker-support-float';
+
+  // Preferir anexar ao body (ou head como fallback)
+  (document.body || document.head || document.documentElement).appendChild(script);
+}
+
 // Sistema de tradução removido - todos os textos agora estão diretamente no HTML
 
 // ===== ESTADO GLOBAL =====
@@ -374,6 +391,9 @@ function initRippleEffect() {
 // ===== INICIALIZAÇÃO QUANDO DOM ESTIVER PRONTO =====
 document.addEventListener('DOMContentLoaded', function() {
   
+  // Widget de suporte flutuante (canto inferior esquerdo)
+  initSupportWidget();
+
   // Inicializar animações originais
   initAOS();
   initDeviceAnimations();
