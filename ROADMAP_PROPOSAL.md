@@ -45,7 +45,7 @@ Este documento apresenta um roadmap técnico detalhado para o TapInOut, estrutur
 
 **MOBILE:**
 - [ ] Otimização de performance do app
-- [ ] Implementação de offline storage
+- [ ] Armazenamento local para resiliência de rede
 - [ ] Melhorias na biometria facial
 - [ ] Geolocalização otimizada
 - [ ] **Testes de estabilidade em produção**
@@ -95,7 +95,7 @@ Este documento apresenta um roadmap técnico detalhado para o TapInOut, estrutur
 
 **MOBILE:**
 - [ ] Analytics de uso do app
-- [ ] Relatórios offline
+- [ ] Relatórios com cache local
 - [ ] Sincronização inteligente
 - [ ] Métricas de performance
 - [ ] **Comprovantes digitais legais**
@@ -495,7 +495,7 @@ Este documento apresenta um roadmap técnico detalhado para o TapInOut, estrutur
 
 **MOBILE:**
 - [ ] Localização completa
-- [ ] Offline multi-idioma
+- [ ] Cache local de idiomas
 - [ ] Adaptação regional
 - [ ] Compliance mobile
 
@@ -508,7 +508,7 @@ Este documento apresenta um roadmap técnico detalhado para o TapInOut, estrutur
 #### **Sprint 5-6: Mobile First Avançado (Julho 2026)**
 **WEB:**
 - [ ] PWA completo
-- [ ] Offline total
+- [ ] PWA com cache avançado (resiliência de rede)
 - [ ] Push notifications
 - [ ] Geolocalização avançada
 
