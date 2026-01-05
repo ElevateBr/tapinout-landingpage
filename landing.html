@@ -967,7 +967,7 @@
       
       try {
         // Get API URL from environment or use default
-        const apiUrl = window.API_URL || 'http://localhost:8080/api/public/leads';//'https://api.tapinout.com/api/public/leads';
+        const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
         
         const response = await fetch(apiUrl, {
           method: 'POST',
