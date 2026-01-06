@@ -2233,10 +2233,12 @@ svg {
   padding: var(--space-8);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--gray-100);
-  margin-bottom: var(--space-16);
+  margin-bottom: 0;
   position: relative;
   overflow: hidden;
-  margin-top: var(--space-4);
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-methods-container::before {
@@ -2275,6 +2277,7 @@ svg {
   align-items: center;
   gap: var(--space-4);
   flex: 1;
+  min-width: 0;
 }
 
 .contact-method-icon {
@@ -2704,22 +2707,29 @@ svg {
 }
 
 /* Assurances */
-/* Contact Two Columns Layout */
+/* Contact Vertical Layout: Form on top, Contact Methods below */
 .contact-two-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-8);
   margin-bottom: var(--space-12);
+  align-items: start;
 }
 
 .contact-info-column {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .contact-form-column {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .contact-form-container {
@@ -2731,6 +2741,9 @@ svg {
   position: relative;
   overflow: hidden;
   height: 100%;
+  align-self: start;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .contact-form-container::before {
@@ -2748,12 +2761,14 @@ svg {
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: var(--space-2);
+  text-align: center;
 }
 
 .contact-form-subtitle {
   color: var(--gray-600);
   margin-bottom: var(--space-6);
   font-size: var(--font-size-base);
+  text-align: center;
 }
 
 .contact-form-group {

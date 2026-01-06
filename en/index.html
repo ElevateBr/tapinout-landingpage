@@ -910,9 +910,57 @@
 
       <div class="container">
         <div class="contact-content">
-          <!-- Two Column Layout: Contact Info (Left) and Form (Right) -->
+          <!-- Vertical Layout: Form (Top) and Contact Methods (Bottom) -->
           <div class="contact-two-columns">
-            <!-- Left Column: Contact Methods -->
+            <!-- Top: Contact Form -->
+            <div class="contact-form-column">
+              <div class="contact-form-container">
+                <h3 class="contact-form-title">Send us a Message</h3>
+                <p class="contact-form-subtitle">
+                  Fill out the form below and our team will contact you soon
+                </p>
+                
+                <form id="contactLeadForm" class="contact-form">
+                  <div class="contact-form-group">
+                    <label for="contactName" class="contact-form-label">Full Name *</label>
+                    <input type="text" id="contactName" name="name" class="contact-form-input" required>
+                  </div>
+                  
+                  <div class="contact-form-group">
+                    <label for="contactEmail" class="contact-form-label">Corporate Email *</label>
+                    <input type="email" id="contactEmail" name="email" class="contact-form-input" required>
+                  </div>
+                  
+                  <div class="contact-form-group">
+                    <label for="contactCompany" class="contact-form-label">Company *</label>
+                    <input type="text" id="contactCompany" name="company" class="contact-form-input" required>
+                  </div>
+                  
+                  <div class="contact-form-group">
+                    <label for="contactPhone" class="contact-form-label">Phone *</label>
+                    <input type="tel" id="contactPhone" name="phone" class="contact-form-input" required>
+                  </div>
+                  
+                  <div class="contact-form-group">
+                    <label for="contactCpf" class="contact-form-label">CPF (optional)</label>
+                    <input type="text" id="contactCpf" name="cpf" class="contact-form-input" placeholder="000.000.000-00">
+                  </div>
+                  
+                  <div class="contact-form-group">
+                    <label for="contactCnpj" class="contact-form-label">Company CNPJ (optional)</label>
+                    <input type="text" id="contactCnpj" name="cnpj" class="contact-form-input" placeholder="00.000.000/0000-00">
+                  </div>
+                  
+                  <button type="submit" class="contact-form-button" id="contactSubmitButton">
+                    Send Message
+                  </button>
+                  
+                  <div id="contactFormMessage" class="contact-form-message"></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Bottom: Contact Methods -->
             <div class="contact-info-column">
               <div class="contact-methods-container">
                 <div class="contact-method-row">
@@ -989,54 +1037,6 @@
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Contact Form -->
-            <div class="contact-form-column">
-              <div class="contact-form-container">
-                <h3 class="contact-form-title">Send us a Message</h3>
-                <p class="contact-form-subtitle">
-                  Fill out the form below and our team will contact you soon
-                </p>
-                
-                <form id="contactLeadForm" class="contact-form">
-                  <div class="contact-form-group">
-                    <label for="contactName" class="contact-form-label">Full Name *</label>
-                    <input type="text" id="contactName" name="name" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactEmail" class="contact-form-label">Corporate Email *</label>
-                    <input type="email" id="contactEmail" name="email" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCompany" class="contact-form-label">Company *</label>
-                    <input type="text" id="contactCompany" name="company" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactPhone" class="contact-form-label">Phone *</label>
-                    <input type="tel" id="contactPhone" name="phone" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCpf" class="contact-form-label">CPF (optional)</label>
-                    <input type="text" id="contactCpf" name="cpf" class="contact-form-input" placeholder="000.000.000-00">
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCnpj" class="contact-form-label">Company CNPJ (optional)</label>
-                    <input type="text" id="contactCnpj" name="cnpj" class="contact-form-input" placeholder="00.000.000/0000-00">
-                  </div>
-                  
-                  <button type="submit" class="contact-form-button" id="contactSubmitButton">
-                    Send Message
-                  </button>
-                  
-                  <div id="contactFormMessage" class="contact-form-message"></div>
-                </form>
               </div>
             </div>
           </div>
