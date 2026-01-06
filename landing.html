@@ -47,9 +47,10 @@
     }
     
     .landing-hero-logo {
-      width: 400px;
-      height: 400px;
-      margin: 0 auto 3rem auto;
+      /* ~1/3 do tamanho anterior (400px -> ~140px) com responsividade */
+      width: clamp(110px, 18vw, 140px);
+      height: clamp(110px, 18vw, 140px);
+      margin: 0 auto 2rem auto;
       display: block;
       position: relative;
       z-index: 1;
@@ -90,6 +91,26 @@
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
+
+    .landing-highlight {
+      display: inline-block;
+      padding: 0.12em 0.35em;
+      margin: -0.12em 0;
+      border-radius: 0.5rem;
+      background: rgba(255, 226, 89, 0.95);
+      color: #111827;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      white-space: nowrap;
+    }
+
+    .landing-hero-ctas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
     
     .landing-hero-subtitle {
       font-size: 1.25rem;
@@ -100,20 +121,45 @@
     
     .landing-cta-primary {
       display: inline-block;
-      background: white;
-      color: #0D6EFD;
-      padding: 16px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.125rem;
+      background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+      color: #111827;
+      padding: 20px 54px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1.35rem;
       text-decoration: none;
       margin: 0.5rem;
       transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+      position: relative;
+      overflow: hidden;
     }
     
     .landing-cta-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.33);
+    }
+
+    .landing-cta-primary:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(255, 226, 89, 0.35), 0 18px 44px rgba(0,0,0,0.33);
+    }
+
+    .landing-cta-primary::after {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -40%;
+      width: 50%;
+      height: 220%;
+      background: rgba(255, 255, 255, 0.38);
+      transform: rotate(25deg);
+      transition: left 0.6s ease;
+      pointer-events: none;
+    }
+
+    .landing-cta-primary:hover::after {
+      left: 130%;
     }
     
     .landing-cta-secondary {
@@ -543,9 +589,9 @@
     
     @media (max-width: 768px) {
       .landing-hero-logo {
-        width: 280px;
-        height: 280px;
-        margin-bottom: 2rem;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.75rem;
       }
       
       .landing-hero h1 {
@@ -576,14 +622,13 @@
       <img src="img/Logo tapinout BC.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut">
     </div>
     <div class="landing-hero-content">
-      <h1>Revolucione o Controle de Ponto da Sua Empresa</h1>
+      <h1>Comece 2026 com <span class="landing-highlight">30 dias grátis</span> e revolucione o ponto da sua empresa</h1>
       <p class="landing-hero-subtitle">
         Sistema de ponto digital inteligente com biometria facial, GPS em tempo real e gestão completa. 
         Modernize sua empresa com tecnologia de ponta.
       </p>
-      <div>
+      <div class="landing-hero-ctas">
         <a href="#form" class="landing-cta-primary">Experimente o TapInOut Gratuitamente</a>
-        <a href="#features" class="landing-cta-secondary">Agende uma Demo</a>
       </div>
     </div>
   </section>
@@ -964,10 +1009,22 @@
         cpf: document.getElementById('cpf').value || null,
         cnpj: document.getElementById('cnpj').value || null
       };
+
+      function buildRegisterUrl(data) {
+        const params = new URLSearchParams();
+        // Campos para pré-preenchimento no app (por query string)
+        params.set('name', data.name || '');
+        params.set('email', data.email || '');
+        params.set('company', data.company || '');
+        params.set('phone', data.phone || '');
+        if (data.cpf) params.set('cpf', data.cpf);
+        if (data.cnpj) params.set('cnpj', data.cnpj);
+        return `https://app.tapinout.com/register?${params.toString()}`;
+      }
       
       try {
         // Get API URL from environment or use default
-        const apiUrl = window.API_URL || 'http://localhost:8080/api/public/leads';//'https://api.tapinout.com/api/public/leads';
+        const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
         
         const response = await fetch(apiUrl, {
           method: 'POST',
@@ -979,12 +1036,19 @@
         
         if (response.ok) {
           formMessage.className = 'landing-form-message success';
-          formMessage.textContent = 'Obrigado! Entraremos em contato em breve.';
+          formMessage.textContent = 'Cadastro enviado com sucesso. Redirecionando...';
           formMessage.style.display = 'block';
-          form.reset();
           
           // Scroll to message
           formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          // Redirecionar para o app já com os dados para pré-preenchimento
+          const registerUrl = buildRegisterUrl(formData);
+          setTimeout(() => {
+            window.location.assign(registerUrl);
+          }, 900);
+          
+          // Evitar reset imediato (pode atrapalhar UX antes do redirect)
         } else {
           const errorData = await response.json().catch(() => ({}));
           throw new Error(errorData.message || 'Erro ao enviar formulário');
