@@ -1279,9 +1279,21 @@
             cnpj: document.getElementById('contactCnpj').value || null
           };
           
+          function buildRegisterUrl(data) {
+            const params = new URLSearchParams();
+            // Campos para pré-preenchimento no app (por query string)
+            params.set('name', data.name || '');
+            params.set('email', data.email || '');
+            params.set('company', data.company || '');
+            params.set('phone', data.phone || '');
+            if (data.cpf) params.set('cpf', data.cpf);
+            if (data.cnpj) params.set('cnpj', data.cnpj);
+            return `https://app.tapinout.com/register?${params.toString()}`;
+          }
+          
           try {
             // Get API URL from environment or use default
-            const apiUrl = window.API_URL || 'http://localhost:8080/api/public/leads';
+            const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
             
             const response = await fetch(apiUrl, {
               method: 'POST',
@@ -1293,12 +1305,19 @@
             
             if (response.ok) {
               formMessage.className = 'contact-form-message success';
-              formMessage.textContent = 'Obrigado! Entraremos em contato em breve.';
+              formMessage.textContent = 'Cadastro enviado com sucesso. Redirecionando...';
               formMessage.style.display = 'block';
-              form.reset();
               
               // Scroll to message
               formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+              // Redirecionar para o app já com os dados para pré-preenchimento
+              const registerUrl = buildRegisterUrl(formData);
+              setTimeout(() => {
+                window.location.assign(registerUrl);
+              }, 900);
+              
+              // Evitar reset imediato (pode atrapalhar UX antes do redirect)
             } else {
               const errorData = await response.json().catch(() => ({}));
               throw new Error(errorData.message || 'Erro ao enviar formulário');
