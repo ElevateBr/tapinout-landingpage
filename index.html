@@ -1279,7 +1279,7 @@
             cnpj: document.getElementById('contactCnpj').value || null
           };
           
-          function buildRegisterUrl(data) {
+          function buildRegisterUrl(data, leadId) {
             const params = new URLSearchParams();
             // Campos para pré-preenchimento no app (por query string)
             params.set('name', data.name || '');
@@ -1288,12 +1288,16 @@
             params.set('phone', data.phone || '');
             if (data.cpf) params.set('cpf', data.cpf);
             if (data.cnpj) params.set('cnpj', data.cnpj);
+            if (leadId) params.set('id', leadId);
             return `https://app.tapinout.com/register?${params.toString()}`;
           }
           
           try {
             // Get API URL from environment or use default
             const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
+            
+            console.log('Enviando requisição para:', apiUrl);
+            console.log('Dados do formulário:', formData);
             
             const response = await fetch(apiUrl, {
               method: 'POST',
@@ -1303,7 +1307,14 @@
               body: JSON.stringify(formData)
             });
             
+            console.log('Status da resposta:', response.status, response.statusText);
+            console.log('Headers da resposta:', [...response.headers.entries()]);
+            
             if (response.ok) {
+              // Ler a resposta JSON antes de redirecionar
+              const responseData = await response.json();
+              console.log('Resposta da API:', responseData);
+              
               formMessage.className = 'contact-form-message success';
               formMessage.textContent = 'Cadastro enviado com sucesso. Redirecionando...';
               formMessage.style.display = 'block';
@@ -1311,8 +1322,9 @@
               // Scroll to message
               formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-              // Redirecionar para o app já com os dados para pré-preenchimento
-              const registerUrl = buildRegisterUrl(formData);
+              // Redirecionar para o app já com os dados para pré-preenchimento e o ID do lead
+              const registerUrl = buildRegisterUrl(formData, responseData.id);
+              console.log('URL de redirecionamento:', registerUrl);
               setTimeout(() => {
                 window.location.assign(registerUrl);
               }, 900);
@@ -1320,6 +1332,7 @@
               // Evitar reset imediato (pode atrapalhar UX antes do redirect)
             } else {
               const errorData = await response.json().catch(() => ({}));
+              console.error('Erro na resposta:', errorData);
               throw new Error(errorData.message || 'Erro ao enviar formulário');
             }
           } catch (error) {

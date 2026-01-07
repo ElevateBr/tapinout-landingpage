@@ -1010,7 +1010,7 @@
         cnpj: document.getElementById('cnpj').value || null
       };
 
-      function buildRegisterUrl(data) {
+      function buildRegisterUrl(data, leadId) {
         const params = new URLSearchParams();
         // Campos para pré-preenchimento no app (por query string)
         params.set('name', data.name || '');
@@ -1019,6 +1019,7 @@
         params.set('phone', data.phone || '');
         if (data.cpf) params.set('cpf', data.cpf);
         if (data.cnpj) params.set('cnpj', data.cnpj);
+        if (leadId) params.set('id', leadId);
         return `https://app.tapinout.com/register?${params.toString()}`;
       }
       
@@ -1035,6 +1036,9 @@
         });
         
         if (response.ok) {
+          // Ler a resposta JSON antes de redirecionar
+          const responseData = await response.json();
+          
           formMessage.className = 'landing-form-message success';
           formMessage.textContent = 'Cadastro enviado com sucesso. Redirecionando...';
           formMessage.style.display = 'block';
@@ -1042,8 +1046,8 @@
           // Scroll to message
           formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-          // Redirecionar para o app já com os dados para pré-preenchimento
-          const registerUrl = buildRegisterUrl(formData);
+          // Redirecionar para o app já com os dados para pré-preenchimento e o ID do lead
+          const registerUrl = buildRegisterUrl(formData, responseData.id);
           setTimeout(() => {
             window.location.assign(registerUrl);
           }, 900);
