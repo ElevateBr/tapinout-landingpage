@@ -181,6 +181,25 @@
       color: #0D6EFD;
     }
     
+    /* Fale Conosco Button Specific Styles */
+    a[href^="tel:"] {
+      background: #0D6EFD !important;
+      color: white !important;
+      border: 2px solid #0D6EFD !important;
+      padding: 18px 40px !important;
+      border-radius: 12px !important;
+      font-weight: 700 !important;
+      font-size: 1.25rem !important;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) !important;
+    }
+    
+    a[href^="tel:"]:hover {
+      background: #0B5ED7 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(13, 110, 253, 0.4) !important;
+    }
+    
     .landing-section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -210,6 +229,25 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin: 3rem 0;
+    }
+    
+    .landing-usp-item:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 300px;
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .landing-usp-item:last-child {
+        grid-column: 2 / 3;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .landing-usp-item:last-child {
+        grid-column: 1 / -1;
+        max-width: 100%;
+      }
     }
     
     .landing-usp-item {
@@ -612,6 +650,42 @@
         width: 100%;
         margin: 0.5rem 0;
       }
+      
+      /* Demo Section Mobile */
+      section[style*="display: grid"] > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:first-child {
+        min-height: 200px !important;
+        padding: 1.5rem !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:first-child video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child {
+        min-height: 200px !important;
+        padding: 2rem 1.5rem !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child h2 {
+        font-size: 1.5rem !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child p {
+        font-size: 1.125rem !important;
+      }
+      
+      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child a {
+        display: block !important;
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.125rem !important;
+      }
     }
   </style>
 </head>
@@ -689,6 +763,44 @@
         <p class="landing-usp-desc">
           Totalmente alinhado com a legislação trabalhista brasileira, evitando multas e processos.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="landing-section" style="padding: 0; margin: 4rem auto; max-width: 900px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); background: linear-gradient(135deg, #0D6EFD 0%, #3B82F6 50%, #60A5FA 100%);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;">
+      <!-- Left Side - Video -->
+      <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; height: fit-content;">
+        <video 
+          src="video/chamada_tapinout.mp4" 
+          controls 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          style="max-height: 350px; height: auto; width: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #000000;"
+          title="Demonstração TapInOut">
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+      </div>
+      
+      <!-- Right Side - Text and CTA -->
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; color: white;">
+        <div style="margin-bottom: 1.5rem;">
+          <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+        </div>
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Demonstração Semanal</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">
+          Todas Terças e Quintas das 15 às 16! Não perca!
+        </p>
+        <a href="https://meet.google.com/tgo-kkqw-zir" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="display: inline-block; background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%); color: #111827; padding: 18px 40px; border-radius: 12px; font-weight: 700; font-size: 1.25rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 14px 34px rgba(0,0,0,0.28);">
+          <i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>
+          Participar da Demonstração
+        </a>
       </div>
     </div>
   </section>
@@ -931,7 +1043,7 @@
       <p class="landing-section-subtitle" style="margin-bottom: 2rem;">
         Junte-se a centenas de empresas que já confiam no TapInOut
       </p>
-      <div>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <a href="#form" class="landing-cta-primary">Comece Agora</a>
         <a href="tel:+5524999402412" class="landing-cta-secondary">Fale Conosco</a>
       </div>
