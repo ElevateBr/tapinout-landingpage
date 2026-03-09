@@ -244,71 +244,58 @@
           <h2 class="section-title" id="features-title">
             Recursos que transformam sua empresa
           </h2>
-          <p class="section-subtitle">
-            Tecnologia avançada para gestão moderna de ponto
-          </p>
         </header>
         
-        <div class="features-grid">
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-icon">
-              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+        <div class="features-carousel" role="region" aria-label="Carrossel de recursos">
+          <button type="button" class="features-carousel-prev" aria-label="Página anterior" title="Anterior">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="features-carousel-viewport" tabindex="0">
+            <div class="features-carousel-track">
+              <div class="features-slide" data-slide="0">
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                  </div>
+                  <h3>App Mobile Intuitivo</h3>
+                  <p>Ponto no celular com interface simples, utilizando <strong> biometria facial, GPS </strong> e registro em tempo real.</strong></p>
+                </article>
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                  </div>
+                  <h3>Dashboards e IA</h3>
+                  <p>IA para detecção de riscos, alertas de banco de horas, controle de férias e DSR. <strong>Tudo em tempo real.</strong></p>
+                </article>
+              </div>
+              <div class="features-slide" data-slide="1">
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                  </div>
+                  <h3>Segurança Avançada</h3>
+                  <p>Detecção de fraudes, criptografia end-to-end com AES-256 e <strong>auditoria completa.</strong></p>
+                </article>
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                  </div>
+                  <h3>Gestão Multi-Local</h3>
+                  <p>Plataforma web e mobile para líderes com <strong>gestão centralizada</strong>, múltiplos locais e painel para RH.</p>
+                </article>
+              </div>
             </div>
-            <h3>App Mobile Intuitivo</h3>
-            <p>
-              Ponto eletrônico com um toque no celular. Interface simples e rápida para todos os funcionários.
-            </p>
-            <ul class="feature-list">
-              <li>Biometria facial</li>
-              <li>GPS em tempo real</li>
-              <li>Registro em tempo real</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            </div>
-            <h3>Segurança Avançada</h3>
-            <p>
-              Proteção contra fraudes com validação de vivacidade e criptografia end-to-end.
-            </p>
-            <ul class="feature-list">
-              <li>Detecção de fraudes</li>
-              <li>Criptografia AES-256</li>
-              <li>Auditoria completa</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="feature-icon">
-              <i class="fas fa-chart-line" aria-hidden="true"></i>
-            </div>
-            <h3>Dashboards e IA Inteligente</h3>
-            <p>
-              Dashboards em tempo real com IA para identificação e notificação de riscos trabalhistas, banco de horas e férias DSR.
-            </p>
-            <ul class="feature-list">
-              <li>IA para detecção de riscos</li>
-              <li>Alertas de banco de horas</li>
-              <li>Controle de férias e DSR</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="feature-icon">
-              <i class="fas fa-building" aria-hidden="true"></i>
-            </div>
-            <h3>Gestão Multi-Local</h3>
-            <p>
-              Aplicação de gestão web para líderes e RH com controle centralizado de múltiplos locais de trabalho.
-            </p>
-            <ul class="feature-list">
-              <li>Gestão centralizada</li>
-              <li>Múltiplos locais</li>
-              <li>Painel para RH</li>
-            </ul>
-          </article>
+          </div>
+          <button type="button" class="features-carousel-next" aria-label="Próxima página" title="Próximo">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="features-dots" role="tablist" aria-label="Páginas do carrossel">
+            <button type="button" class="features-dot active" aria-label="Página 1" aria-selected="true" data-slide="0"></button>
+            <button type="button" class="features-dot" aria-label="Página 2" aria-selected="false" data-slide="1"></button>
+          </div>
+        </div>
+        <div class="features-ctas">
+          <a href="#contact" class="btn-primary" title="Agendar demonstração do TapInOut">Agendar Demonstração</a>
         </div>
       </div>
     </section>
@@ -1216,6 +1203,75 @@
         }
       }
     });
+
+    // Features carousel (2 páginas, bolinhas e rolamento automático)
+    (function() {
+      const viewport = document.querySelector('.features-carousel-viewport');
+      const slides = document.querySelectorAll('.features-slide');
+      const dots = document.querySelectorAll('.features-dot');
+      const prevBtn = document.querySelector('.features-carousel-prev');
+      const nextBtn = document.querySelector('.features-carousel-next');
+      if (!viewport || !slides.length) return;
+      const totalSlides = slides.length;
+      const autoplayInterval = 5000;
+      let autoplayTimer = null;
+      function setActiveDot(index) {
+        const i = Math.max(0, Math.min(index, totalSlides - 1));
+        dots.forEach(function(dot, j) {
+          dot.classList.toggle('active', j === i);
+          dot.setAttribute('aria-selected', j === i);
+        });
+      }
+      function goToSlide(index) {
+        const i = Math.max(0, Math.min(index, totalSlides - 1));
+        viewport.scrollTo({ left: i * viewport.clientWidth, behavior: 'smooth' });
+        setActiveDot(i);
+        resetAutoplay();
+      }
+      function updateDotsFromScroll() {
+        const w = viewport.clientWidth;
+        if (w <= 0) return;
+        const idx = Math.round(viewport.scrollLeft / w);
+        setActiveDot(Math.max(0, Math.min(idx, totalSlides - 1)));
+      }
+      function nextSlide() {
+        const w = viewport.clientWidth;
+        const current = w > 0 ? Math.floor(viewport.scrollLeft / w) : 0;
+        goToSlide(current + 1 >= totalSlides ? 0 : current + 1);
+      }
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, autoplayInterval);
+      }
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+      function resetAutoplay() {
+        startAutoplay();
+      }
+      if (prevBtn) prevBtn.addEventListener('click', function() {
+        const w = viewport.clientWidth;
+        const idx = w > 0 ? Math.max(0, Math.floor(viewport.scrollLeft / w) - 1) : 0;
+        goToSlide(idx);
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function() {
+        const w = viewport.clientWidth;
+        const idx = w > 0 ? Math.min(totalSlides - 1, Math.floor(viewport.scrollLeft / w) + 1) : 0;
+        goToSlide(idx);
+      });
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goToSlide(i); });
+      });
+      viewport.addEventListener('scroll', function() {
+        requestAnimationFrame(updateDotsFromScroll);
+      });
+      viewport.addEventListener('mouseenter', stopAutoplay);
+      viewport.addEventListener('mouseleave', startAutoplay);
+      startAutoplay();
+    })();
   </script>
 </body>
 </html> 
