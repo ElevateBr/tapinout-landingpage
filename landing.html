@@ -2,6 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18005983527"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18005983527');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
@@ -118,6 +127,21 @@
       opacity: 0.95;
       line-height: 1.6;
     }
+
+    .landing-hero-bullets {
+      list-style: disc;
+      text-align: left;
+      margin: 0 auto 1.75rem auto;
+      max-width: 680px;
+      padding-left: 1.25rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .landing-hero-bullets li + li {
+      margin-top: 0.35rem;
+    }
     
     .landing-cta-primary {
       display: inline-block;
@@ -198,6 +222,30 @@
       background: #0B5ED7 !important;
       transform: translateY(-2px) !important;
       box-shadow: 0 6px 16px rgba(13, 110, 253, 0.4) !important;
+    }
+
+    .landing-whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      z-index: 9999;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .landing-whatsapp-float:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.3);
     }
     
     .landing-section {
@@ -353,6 +401,86 @@
       color: #495057;
       line-height: 1.6;
     }
+
+    .landing-problem-solution {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .landing-problem,
+    .landing-solution {
+      background: #F8F9FA;
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .landing-problem-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #212529;
+    }
+
+    .landing-problem-text {
+      color: #495057;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .landing-problem-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .landing-problem-list li + li {
+      margin-top: 0.4rem;
+    }
+
+    .landing-demo {
+      padding: 0;
+      margin: 4rem auto;
+      max-width: 900px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #0D6EFD 0%, #3B82F6 50%, #60A5FA 100%);
+    }
+
+    .landing-demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .landing-demo-video-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .landing-demo-video {
+      max-height: 350px;
+      height: auto;
+      width: min(100%, 420px);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background: #000000;
+    }
+
+    .landing-demo-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: white;
+    }
     
     .landing-social-proof {
       text-align: center;
@@ -481,9 +609,10 @@
     
     .landing-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
       gap: 2rem;
-      margin: 3rem 0;
+      margin: 3rem auto;
+      max-width: 900px;
       text-align: center;
     }
     
@@ -672,41 +801,61 @@
         width: 100%;
         margin: 0.5rem 0;
       }
-      
-      /* Demo Section Mobile */
-      section[style*="display: grid"] > div[style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
+
+      .landing-section {
+        padding: 3rem 16px;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:first-child {
-        min-height: 200px !important;
-        padding: 1.5rem !important;
+
+      .landing-usp {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 1.25rem;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:first-child video {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
+
+      .landing-usp-item {
+        padding: 1rem;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child {
-        min-height: 200px !important;
-        padding: 2rem 1.5rem !important;
+
+      .landing-usp-item:last-child {
+        grid-column: auto;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child h2 {
-        font-size: 1.5rem !important;
+
+      .landing-usp-icon {
+        font-size: 2.2rem;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child p {
-        font-size: 1.125rem !important;
+
+      .landing-stats {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 1.25rem;
       }
-      
-      section[style*="display: grid"] > div[style*="grid-template-columns"] > div:last-child a {
-        display: block !important;
-        width: 100% !important;
-        padding: 16px 24px !important;
-        font-size: 1.125rem !important;
+
+      .landing-testimonials {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .landing-logos {
+        gap: 1.5rem;
+      }
+
+      .landing-demo {
+        margin: 3rem auto;
+      }
+
+      .landing-demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-demo-video-wrap {
+        padding: 1.25rem;
+      }
+
+      .landing-demo-video {
+        width: 100%;
+        max-height: none;
+      }
+
+      .landing-demo-content {
+        padding: 2rem 1.25rem;
       }
     }
   </style>
@@ -718,13 +867,18 @@
       <img src="img/Logo tapinout BC.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut">
     </div>
     <div class="landing-hero-content">
-      <h1>Comece 2026 com <span class="landing-highlight">30 dias grátis</span> e revolucione o ponto da sua empresa</h1>
+      <h1>Revolucione o ponto da sua empresa com uma plataforma completa de gestão de jornada</h1>
       <p class="landing-hero-subtitle">
-        Sistema de ponto digital inteligente com biometria facial, GPS em tempo real e gestão completa. 
-        Modernize sua empresa com tecnologia de ponta.
+        Gestão completa de jornada e ponto em um só sistema — do registro à folha.
       </p>
+      <ul class="landing-hero-bullets">
+        <li>Reduza fraudes e inconsistências com <strong>biometria facial + GPS</strong></li>
+        <li>Automatize rotinas do DP com <strong>regras, tratamentos e relatórios</strong></li>
+        <li>Tenha visibilidade do time com <strong>painel e indicadores de jornada</strong></li>
+      </ul>
       <div class="landing-hero-ctas">
-        <a href="#form" class="landing-cta-primary">Experimente o TapInOut Gratuitamente</a>
+        <a href="#form" class="landing-cta-primary">Testar 30 dias grátis</a>
+        <a href="https://wa.me/5524999402412" class="landing-cta-secondary" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -790,10 +944,10 @@
   </section>
 
   <!-- Demo Section -->
-  <section class="landing-section" style="padding: 0; margin: 4rem auto; max-width: 900px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); background: linear-gradient(135deg, #0D6EFD 0%, #3B82F6 50%, #60A5FA 100%);">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;">
+  <section class="landing-section landing-demo">
+    <div class="landing-demo-grid">
       <!-- Left Side - Video -->
-      <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; height: fit-content;">
+      <div class="landing-demo-video-wrap">
         <video 
           src="video/chamada_tapinout.mp4" 
           controls 
@@ -801,27 +955,35 @@
           muted 
           loop 
           playsinline
-          style="max-height: 350px; height: auto; width: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #000000;"
+          class="landing-demo-video"
           title="Demonstração TapInOut">
           Seu navegador não suporta a reprodução de vídeo.
         </video>
       </div>
       
       <!-- Right Side - Text and CTA -->
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; color: white;">
+      <div class="landing-demo-content">
         <div style="margin-bottom: 1.5rem;">
           <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;"></i>
         </div>
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Demonstração Semanal</h2>
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Veja o TapInOut funcionando ao vivo</h2>
         <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">
-          Todas Terças e Quintas das 15 às 16! Não perca!
+          Terças e Quintas, 15h às 16h
         </p>
+        <div style="text-align: left; max-width: 380px; margin-bottom: 1.5rem;">
+          <div style="font-weight: 700; margin-bottom: 0.5rem;">Você vai ver:</div>
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li>Como reduzimos inconsistências e “ponto amigo”</li>
+            <li>Como o RH trata ocorrências e consolida horas</li>
+            <li>Como os relatórios aceleram o fechamento do período</li>
+          </ul>
+        </div>
         <a href="https://meet.google.com/tgo-kkqw-zir" 
            target="_blank" 
            rel="noopener noreferrer"
            style="display: inline-block; background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%); color: #111827; padding: 18px 40px; border-radius: 12px; font-weight: 700; font-size: 1.25rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 14px 34px rgba(0,0,0,0.28);">
           <i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>
-          Participar da Demonstração
+          Quero participar da demonstração
         </a>
       </div>
     </div>
@@ -830,7 +992,7 @@
   <!-- Social Proof Section -->
   <section class="landing-section">
     <div class="landing-social-proof">
-      <h2 class="landing-social-proof-title">Empresas que Confiam no TapInOut</h2>
+      <h2 class="landing-social-proof-title">Empresas que confiam no TapInOut</h2>
       <div class="landing-logos">
         <div class="landing-logo-item">
           <img src="img/logoCondata.webp" alt="CondataWeb - Cliente TapInOut" title="CondataWeb">
@@ -941,48 +1103,37 @@
     </div>
   </section>
 
-  <!-- Challenges Section -->
+  <!-- Problem/Solution Section -->
   <section class="landing-section">
-    <div class="landing-challenges">
-      <h2 class="landing-challenges-title">Problemas que o TapInOut Resolve</h2>
-      <ul class="landing-challenges-list">
-        <li class="landing-challenges-item">
-          <i class="fas fa-times-circle landing-challenges-icon"></i>
-          <p class="landing-challenges-text">
-            <strong>Ponto manual é lento e propenso a erros:</strong> Elimine planilhas e registros manuais que consomem tempo e geram inconsistências.
-          </p>
-        </li>
-        <li class="landing-challenges-item">
-          <i class="fas fa-times-circle landing-challenges-icon"></i>
-          <p class="landing-challenges-text">
-            <strong>Fraudes e "bater ponto" para colegas:</strong> Biometria facial garante que cada funcionário registre apenas seu próprio ponto.
-          </p>
-        </li>
-        <li class="landing-challenges-item">
-          <i class="fas fa-times-circle landing-challenges-icon"></i>
-          <p class="landing-challenges-text">
-            <strong>Dificuldade em controlar funcionários remotos:</strong> GPS e biometria permitem controle eficiente de equipes distribuídas.
-          </p>
-        </li>
-        <li class="landing-challenges-item">
-          <i class="fas fa-times-circle landing-challenges-icon"></i>
-          <p class="landing-challenges-text">
-            <strong>Cálculos trabalhistas complexos e demorados:</strong> Sistema calcula automaticamente horas trabalhadas, extras e banco de horas.
-          </p>
-        </li>
-        <li class="landing-challenges-item">
-          <i class="fas fa-times-circle landing-challenges-icon"></i>
-          <p class="landing-challenges-text">
-            <strong>Risco de multas por não conformidade:</strong> Garanta conformidade total com a legislação trabalhista brasileira.
-          </p>
-        </li>
-      </ul>
+    <div class="landing-problem-solution">
+      <div class="landing-problem">
+        <h2 class="landing-problem-title">O problema</h2>
+        <p class="landing-problem-text">
+          O ponto não é só “bater ponto” — é fechar a jornada sem erro. Quando o controle é manual,
+          misturado em planilhas ou com processos frágeis, o RH/DP perde tempo conferindo, lidando com
+          inconsistências e correndo risco de retrabalho e passivos.
+        </p>
+        <ul class="landing-problem-list">
+          <li>Ajustes manuais e conferências intermináveis no fim do mês</li>
+          <li>Dificuldade para controlar equipes externas/híbridas</li>
+          <li>“Ponto amigo” e registros inconsistentes</li>
+          <li>Falta de relatórios e rastreabilidade para auditoria</li>
+        </ul>
+      </div>
+      <div class="landing-solution">
+        <h2 class="landing-problem-title">A solução</h2>
+        <p class="landing-problem-text">
+          O TapInOut organiza a jornada inteira — do registro ao fechamento do período. Você centraliza o
+          controle em um sistema único: registros, regras, ocorrências, banco de horas e relatórios, com uma
+          operação mais ágil e segura.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section class="landing-section">
-    <h2 class="landing-section-title">O Que Nossos Clientes Dizem</h2>
+    <h2 class="landing-section-title">Depoimentos</h2>
     <p class="landing-section-subtitle">
       Depoimentos reais de empresas que transformaram sua gestão de ponto
     </p>
@@ -1266,36 +1417,17 @@
       });
     }
     
-    // ===== WIDGET DE SUPORTE (GPTMAKER) =====
-    const SUPPORT_WIDGET_SRC = 'https://app.gptmaker.ai/widget/3EBBCE26B25863D47D075ACDA2FE9334/float.js';
-    
-    function initSupportWidget() {
-      // Evitar carregar duas vezes
-      if (document.querySelector(`script[src="${SUPPORT_WIDGET_SRC}"]`)) return;
-      
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = SUPPORT_WIDGET_SRC;
-      script.dataset.widget = 'gptmaker-support-float';
-      
-      // Preferir anexar ao body (ou head como fallback)
-      (document.body || document.head || document.documentElement).appendChild(script);
-    }
-    
-    // Inicializar widget de chat quando a página carregar
-    document.addEventListener('DOMContentLoaded', function() {
-      initSupportWidget();
-    });
-    
-    // Fallback se DOMContentLoaded já foi disparado
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        initSupportWidget();
-      });
-    } else {
-      initSupportWidget();
-    }
   </script>
+  <a
+    href="https://wa.me/5524999402412?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20TapInOut."
+    class="landing-whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    title="Falar no WhatsApp"
+  >
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
 </body>
 </html>
 
