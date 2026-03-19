@@ -25,7 +25,7 @@
     /* Tutorial Specific Styles */
     .tutorial-hero {
       padding: var(--space-20) 0 var(--space-24);
-      background: linear-gradient(135deg, var(--primary-50) 0%, var(--white) 100%);
+      
       position: relative;
       overflow: hidden;
     }
@@ -37,7 +37,7 @@
       right: -10%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, var(--primary-100) 0%, transparent 70%);
+     
       opacity: 0.5;
       border-radius: 50%;
     }
@@ -291,6 +291,62 @@
       flex-wrap: wrap;
     }
     
+    /* Category cards */
+    .tutorial-categories {
+      padding: var(--space-8) 0 var(--space-12);
+      background: var(--white);
+    }
+    
+    .tutorial-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    
+    .tutorial-category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      padding: var(--space-8) var(--space-6);
+      background: var(--white);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      color: var(--gray-800);
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      text-align: center;
+      min-height: 130px;
+    }
+    
+    .tutorial-category-card:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tutorial-category-card.selected,
+    .tutorial-category-card:focus-visible {
+      border-color: var(--gray-900);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      outline: none;
+    }
+    
+    .tutorial-category-card i {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+    
+    .tutorial-category-card span {
+      line-height: 1.3;
+    }
+    
     /* Responsive Design */
     @media (max-width: 768px) {
       .tutorial-hero-title {
@@ -322,6 +378,21 @@
       .tutorial-cta-title {
         font-size: var(--font-size-2xl);
       }
+      
+      .tutorial-categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+      
+      .tutorial-category-card {
+        padding: var(--space-6) var(--space-4);
+        min-height: 110px;
+        font-size: var(--font-size-sm);
+      }
+      
+      .tutorial-category-card i {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -338,7 +409,7 @@
       <div class="nav-menu">
         <a href="../#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
         <a href="../#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
-        <a href="../#demo" class="nav-link" title="Ver demonstração do sistema">Demo</a>
+        <a href="../#demo" class="nav-link" title="Ver tutoriais e dúvidas frequentes">Tutoriais</a>
         <a href="../#pricing" class="nav-link" title="Ver preços e planos">Preços</a>
         <a href="../#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
         <a href="../#contact" class="nav-link" title="Entre em contato conosco">Contato</a>
@@ -380,10 +451,42 @@
     </div>
   </section>
 
+  <!-- Category filter -->
+  <section class="tutorial-categories" aria-label="Filtrar tutoriais por categoria">
+    <div class="container">
+      <div class="tutorial-categories-grid">
+        <button type="button" class="tutorial-category-card" data-category="config-inicial" aria-pressed="false">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+          <span>configuração inicial e cadastro</span>
+        </button>
+        <button type="button" class="tutorial-category-card" data-category="escalas-locais" aria-pressed="false">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>gestão de escalas e locais</span>
+        </button>
+        <button type="button" class="tutorial-category-card" data-category="registro-ponto" aria-pressed="false">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <span>registro de ponto e controle</span>
+        </button>
+        <button type="button" class="tutorial-category-card" data-category="folha-fechamento" aria-pressed="false">
+          <i class="fas fa-file-invoice" aria-hidden="true"></i>
+          <span>gestão de folha e fechamento</span>
+        </button>
+        <button type="button" class="tutorial-category-card" data-category="documentacao" aria-pressed="false">
+          <i class="fas fa-file-alt" aria-hidden="true"></i>
+          <span>documentação e administrativo</span>
+        </button>
+        <button type="button" class="tutorial-category-card" data-category="financeiro" aria-pressed="false">
+          <i class="fas fa-wallet" aria-hidden="true"></i>
+          <span>financeiro e carteira</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Tutorial Content -->
   <main>
     <!-- Tutorial 1 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="config-inicial">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block">
@@ -424,7 +527,7 @@
     </section>
 
     <!-- Tutorial 2 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="escalas-locais">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block reverse">
@@ -465,7 +568,7 @@
     </section>
 
     <!-- Tutorial 3 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="config-inicial">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block">
@@ -506,7 +609,7 @@
     </section>
 
     <!-- Tutorial 4 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="config-inicial">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block reverse">
@@ -550,7 +653,7 @@
     </section>
 
     <!-- Tutorial 5 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="config-inicial">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block">
@@ -591,7 +694,7 @@
     </section>
 
     <!-- Tutorial 6 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="escalas-locais">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block reverse">
@@ -632,7 +735,7 @@
     </section>
 
     <!-- Tutorial 7 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="escalas-locais">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block">
@@ -673,7 +776,7 @@
     </section>
 
     <!-- Tutorial 8 -->
-    <section class="tutorial-section">
+    <section class="tutorial-section" data-category="escalas-locais">
       <div class="container">
         <div class="tutorial-blocks">
           <div class="tutorial-block reverse">
@@ -767,7 +870,7 @@
             <ul class="footer-list">
               <li><a href="../#features" class="footer-link">Recursos</a></li>
               <li><a href="../#integrations" class="footer-link">Integrações</a></li>
-              <li><a href="../#demo" class="footer-link">Demonstração</a></li>
+              <li><a href="../#demo" class="footer-link">Tutoriais</a></li>
               <li><a href="../#pricing" class="footer-link">Preços</a></li>
             </ul>
           </div>
@@ -817,5 +920,34 @@
 
   <!-- Scripts -->
   <script src="../main.js"></script>
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.tutorial-category-card');
+      var sections = document.querySelectorAll('.tutorial-section[data-category]');
+      if (!cards.length || !sections.length) return;
+
+      function filterByCategory(category) {
+        var card = document.querySelector('.tutorial-category-card[data-category="' + category + '"]');
+        var isCurrentlySelected = card && card.classList.contains('selected');
+        var nextCategory = isCurrentlySelected ? null : category;
+        sections.forEach(function (section) {
+          var sectionCategory = section.getAttribute('data-category');
+          var show = !nextCategory || sectionCategory === nextCategory;
+          section.style.display = show ? '' : 'none';
+        });
+        cards.forEach(function (c) {
+          var isSelected = nextCategory && c.getAttribute('data-category') === nextCategory;
+          c.classList.toggle('selected', isSelected);
+          c.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        });
+      }
+
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          filterByCategory(this.getAttribute('data-category'));
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

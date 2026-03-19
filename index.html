@@ -109,8 +109,8 @@
               <div class="nav-menu">
           <a href="#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
           <a href="#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
-          <a href="#demo" class="nav-link" title="Ver demonstração do sistema">Demo</a>
-          <a href="#pricing" class="nav-link" title="Ver preços e planos">Preços</a>
+          <a href="/tutorial/" class="nav-link" title="Ver tutoriais e guias do TapInOut">Tutoriais</a>
+     
           <a href="#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
           <a href="#contact" class="nav-link" title="Entre em contato conosco">Contato</a>
         </div>
@@ -206,7 +206,7 @@
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" aria-labelledby="partners-title">
+    <section id="partners" class="partners-section" aria-labelledby="partners-title">
       <div class="container">
         <header class="section-header">
           <h2 class="section-title" id="partners-title">Parceiros</h2>
@@ -244,74 +244,97 @@
           <h2 class="section-title" id="features-title">
             Recursos que transformam sua empresa
           </h2>
-          <p class="section-subtitle">
-            Tecnologia avançada para gestão moderna de ponto
-          </p>
         </header>
         
-        <div class="features-grid">
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-icon">
-              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+        <div class="features-carousel" role="region" aria-label="Carrossel de recursos">
+          <button type="button" class="features-carousel-prev" aria-label="Página anterior" title="Anterior">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="features-carousel-viewport" tabindex="0">
+            <div class="features-carousel-track">
+              <div class="features-slide" data-slide="0">
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                  </div>
+                  <h3>App Mobile Intuitivo</h3>
+                  <p>Ponto no celular com interface simples, utilizando <strong> biometria facial, GPS </strong> e registro em tempo real.</strong></p>
+                </article>
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                  </div>
+                  <h3>Dashboards e IA</h3>
+                  <p>IA para detecção de riscos, alertas de banco de horas, controle de férias e DSR. <strong>Tudo em tempo real.</strong></p>
+                </article>
+              </div>
+              <div class="features-slide" data-slide="1">
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                  </div>
+                  <h3>Segurança Avançada</h3>
+                  <p>Detecção de fraudes, criptografia end-to-end com AES-256 e <strong>auditoria completa.</strong></p>
+                </article>
+                <article class="feature-card-compact" role="listitem">
+                  <div class="feature-icon-compact">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                  </div>
+                  <h3>Gestão Multi-Local</h3>
+                  <p>Plataforma web e mobile para líderes com <strong>gestão centralizada</strong>, múltiplos locais e painel para RH.</p>
+                </article>
+              </div>
             </div>
-            <h3>App Mobile Intuitivo</h3>
-            <p>
-              Ponto eletrônico com um toque no celular. Interface simples e rápida para todos os funcionários.
-            </p>
-            <ul class="feature-list">
-              <li>Biometria facial</li>
-              <li>GPS em tempo real</li>
-              <li>Registro em tempo real</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            </div>
-            <h3>Segurança Avançada</h3>
-            <p>
-              Proteção contra fraudes com validação de vivacidade e criptografia end-to-end.
-            </p>
-            <ul class="feature-list">
-              <li>Detecção de fraudes</li>
-              <li>Criptografia AES-256</li>
-              <li>Auditoria completa</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="feature-icon">
-              <i class="fas fa-chart-line" aria-hidden="true"></i>
-            </div>
-            <h3>Dashboards e IA Inteligente</h3>
-            <p>
-              Dashboards em tempo real com IA para identificação e notificação de riscos trabalhistas, banco de horas e férias DSR.
-            </p>
-            <ul class="feature-list">
-              <li>IA para detecção de riscos</li>
-              <li>Alertas de banco de horas</li>
-              <li>Controle de férias e DSR</li>
-            </ul>
-          </article>
-          
-          <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="feature-icon">
-              <i class="fas fa-building" aria-hidden="true"></i>
-            </div>
-            <h3>Gestão Multi-Local</h3>
-            <p>
-              Aplicação de gestão web para líderes e RH com controle centralizado de múltiplos locais de trabalho.
-            </p>
-            <ul class="feature-list">
-              <li>Gestão centralizada</li>
-              <li>Múltiplos locais</li>
-              <li>Painel para RH</li>
-            </ul>
-          </article>
+          </div>
+          <button type="button" class="features-carousel-next" aria-label="Próxima página" title="Próximo">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="features-dots" role="tablist" aria-label="Páginas do carrossel">
+            <button type="button" class="features-dot active" aria-label="Página 1" aria-selected="true" data-slide="0"></button>
+            <button type="button" class="features-dot" aria-label="Página 2" aria-selected="false" data-slide="1"></button>
+          </div>
+        </div>
+        <div class="features-ctas">
+          <a href="#contact" class="btn-primary" title="Agendar demonstração do TapInOut">Agendar Demonstração</a>
         </div>
       </div>
     </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" id="testimonial" aria-labelledby="testimonial-title">
+      <div class="container">
+        <header class="testimonial-header">
+          <h2 class="testimonial-title" id="testimonial-title">
+            Depoimentos
+          </h2>
+        </header>
+        <div class="testimonial-content">
+          <div class="testimonial-visual">
+            <div class="testimonial-video-wrap">
+              <div class="testimonial-video-container testimonial-shorts">
+                <iframe
+                  src="https://www.youtube.com/embed/-bbOtfz02mU"
+                  title="Depoimento de cliente sobre o TapInOut"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            <p class="testimonial-subtitle">
+              Descubra por que gestores estão trocando o ponto tradicional pela tecnologia do tapinout.
+            </p>
+            <p class="testimonial-cta-line">
+              <i class="fas fa-play-circle" aria-hidden="true"></i>
+              <span>Assista a entrevista com um de nossos parceiros.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" aria-labelledby="cta-title">
       <div class="container">
@@ -586,261 +609,6 @@
       </div>
     </section>
 
-    
-
-    <!-- Demo Section -->
-    <section class="demo" id="demo" aria-labelledby="demo-title">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="demo-title" class="section-title">Veja como funciona</h2>
-          <p class="section-subtitle">
-            Assista aos vídeos e descubra como o TapInOut pode transformar a gestão de ponto da sua empresa
-          </p>
-        </header>
-        
-        <div class="demo-content">
-          <div class="demo-text">
-            <div class="demo-features">
-              <h3 class="demo-video-title">Vídeo de introdução</h3>
-            <p>Vídeo de introdução para você conhecer os primeiros passos com o TapInOut</p>
-            
-              <div class="demo-feature">
-            
-                <i class="fas fa-play-circle" aria-hidden="true"></i>
-                <span>Demonstração completa</span>
-              </div>
-              <div class="demo-feature">
-                <i class="fas fa-clock" aria-hidden="true"></i>
-                <span>2 minutos</span>
-              </div>
-              <div class="demo-feature">
-                <i class="fas fa-closed-captioning" aria-hidden="true"></i>
-                <span>Legendas disponíveis</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="video-container">
-            <div class="video-placeholder">
-              <div class="play-button">
-                <i class="fas fa-play" aria-hidden="true"></i>
-              </div>
-              <div class="video-overlay">
-                <span>Assistir Demo</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="demo-cta">
-          <a href="/tutorial/" class="btn-secondary" title="Acessar tutoriais completos de como usar o TapInOut">
-            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-            <span>Ver Tutoriais Completos</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
-      <div class="container">
-        <div class="pricing-content">
-          <!-- Section Header -->
-          <header class="pricing-header">
-            
-            <h2 id="pricing-title" class="pricing-title">
-              Escolha o plano ideal para sua empresa
-            </h2>
-            <p class="pricing-subtitle">
-              Sem taxas ocultas, sem surpresas. Preços claros e justos para todos os tamanhos de empresa.
-            </p>
-          </header>
-
-          <!-- Pricing Cards -->
-          <div class="pricing-cards">
-            <!-- Plano 10 Funcionários - 12 meses -->
-            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-              <div class="popular-badge">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <span>Mais Popular</span>
-              </div>
-              
-              <div class="card-header">
-                <div class="plan-icon">
-                  <i class="fas fa-rocket" aria-hidden="true"></i>
-                </div>
-                <h3 class="plan-name">Starter</h3>
-                <p class="plan-description">10 funcionários</p>
-              </div>
-              
-              <div class="plan-pricing">
-                <div class="price-container">
-                  <span class="currency">R$</span>
-                  <span class="price">69,00</span>
-                  <span class="period">/mês</span>
-                </div>
-                <div class="price-note">
-                  <span class="note-text">R$ 6,90 por funcionário</span>
-                </div>
-                <div class="discount-badge">
-                  <i class="fas fa-percentage" aria-hidden="true"></i>
-                  <span>19% desconto</span>
-                </div>
-              </div>
-
-
-              <div class="plan-cta">
-                <a href="https://app.tapinout.com/register" class="btn-pricing primary" target="_blank" rel="noopener">
-                  <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                  <span>Começar Agora</span>
-                </a>
-                <p class="plan-note">Contrato de 12 meses</p>
-              </div>
-            </div>
-
-            <!-- Plano 25 Funcionários - 12 meses -->
-            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="card-header">
-                <div class="plan-icon">
-                  <i class="fas fa-building" aria-hidden="true"></i>
-                </div>
-                <h3 class="plan-name">Professional</h3>
-                <p class="plan-description">25 funcionários</p>
-              </div>
-              
-              <div class="plan-pricing">
-                <div class="price-container">
-                  <span class="currency">R$</span>
-                  <span class="price">167,50</span>
-                  <span class="period">/mês</span>
-                </div>
-                <div class="price-note">
-                  <span class="note-text">R$ 6,70 por funcionário</span>
-                </div>
-                <div class="discount-badge">
-                  <i class="fas fa-percentage" aria-hidden="true"></i>
-                  <span>21% desconto</span>
-                </div>
-              </div>
-
-
-              <div class="plan-cta">
-                <a href="https://app.tapinout.com/register" class="btn-pricing" target="_blank" rel="noopener">
-                  <i class="fas fa-rocket" aria-hidden="true"></i>
-                  <span>Escolher Plano</span>
-                </a>
-                <p class="plan-note">Contrato de 12 meses</p>
-              </div>
-            </div>
-
-            <!-- Plano 50 Funcionários - 12 meses -->
-            <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
-              <div class="card-header">
-                <div class="plan-icon">
-                  <i class="fas fa-crown" aria-hidden="true"></i>
-                </div>
-                <h3 class="plan-name">Business</h3>
-                <p class="plan-description">50 funcionários</p>
-              </div>
-              
-              <div class="plan-pricing">
-                <div class="price-container">
-                  <span class="currency">R$</span>
-                  <span class="price">325,00</span>
-                  <span class="period">/mês</span>
-                </div>
-                <div class="price-note">
-                  <span class="note-text">R$ 6,50 por funcionário</span>
-                </div>
-                <div class="discount-badge">
-                  <i class="fas fa-percentage" aria-hidden="true"></i>
-                  <span>24% desconto</span>
-                </div>
-              </div>
-
-
-              <div class="plan-cta">
-                <a href="https://app.tapinout.com/register" class="btn-pricing" target="_blank" rel="noopener">
-                  <i class="fas fa-rocket" aria-hidden="true"></i>
-                  <span>Escolher Plano</span>
-                </a>
-                <p class="plan-note">Contrato de 12 meses</p>
-              </div>
-            </div>
-
-            <!-- Plano 100 Funcionários - 12 meses -->
-            <div class="pricing-card ultimate-plan" data-aos="fade-up" data-aos-delay="400">
-              <div class="card-header">
-                <div class="plan-icon">
-                  <i class="fas fa-gem" aria-hidden="true"></i>
-                </div>
-                <h3 class="plan-name">Ultimate</h3>
-                <p class="plan-description">100 funcionários</p>
-              </div>
-              
-              <div class="plan-pricing">
-                <div class="price-container">
-                  <span class="currency">R$</span>
-                  <span class="price">620,00</span>
-                  <span class="period">/mês</span>
-                </div>
-                <div class="price-note">
-                  <span class="note-text">R$ 6,20 por funcionário</span>
-                </div>
-                <div class="discount-badge">
-                  <i class="fas fa-percentage" aria-hidden="true"></i>
-                  <span>27% desconto</span>
-                </div>
-              </div>
-              
-              <div class="plan-cta">
-                <a href="https://app.tapinout.com/register" class="btn-pricing" target="_blank" rel="noopener">
-                  <i class="fas fa-rocket" aria-hidden="true"></i>
-                  <span>Escolher Plano</span>
-                </a>
-                <p class="plan-note">Contrato de 12 meses</p>
-              </div>
-            </div>
-          </div>
-
-         
-          
-
-          <!-- Pricing Benefits -->
-          <div class="pricing-benefits">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-shield-alt" aria-hidden="true"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Crédito de 1 mês</h4>
-                <p>Teste sem compromisso. Se não gostar, cancelamento gratuito após o período.</p>
-              </div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Dados 100% seguros</h4>
-                <p>Criptografia de ponta a ponta e conformidade com LGPD.</p>
-              </div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-headset" aria-hidden="true"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Suporte especializado</h4>
-                <p>Equipe técnica dedicada para ajudar sua empresa a crescer.</p>
-              </div>
-            </div>
-          </div>
-
-          
-        </div>
-      </div>
-    </section>
     <!-- CTA Section -->
     <section class="cta-section" aria-labelledby="cta-title">
       <div class="container">
@@ -1183,7 +951,6 @@
               <li><a href="#features" class="footer-link">Recursos</a></li>
               <li><a href="#integrations" class="footer-link">Integrações</a></li>
               <li><a href="#demo" class="footer-link">Demonstração</a></li>
-              <li><a href="#pricing" class="footer-link">Preços</a></li>
               <!-- <li><a href="#security" class="footer-link">Segurança</a></li> -->
             </ul>
           </div>
@@ -1436,6 +1203,75 @@
         }
       }
     });
+
+    // Features carousel (2 páginas, bolinhas e rolamento automático)
+    (function() {
+      const viewport = document.querySelector('.features-carousel-viewport');
+      const slides = document.querySelectorAll('.features-slide');
+      const dots = document.querySelectorAll('.features-dot');
+      const prevBtn = document.querySelector('.features-carousel-prev');
+      const nextBtn = document.querySelector('.features-carousel-next');
+      if (!viewport || !slides.length) return;
+      const totalSlides = slides.length;
+      const autoplayInterval = 5000;
+      let autoplayTimer = null;
+      function setActiveDot(index) {
+        const i = Math.max(0, Math.min(index, totalSlides - 1));
+        dots.forEach(function(dot, j) {
+          dot.classList.toggle('active', j === i);
+          dot.setAttribute('aria-selected', j === i);
+        });
+      }
+      function goToSlide(index) {
+        const i = Math.max(0, Math.min(index, totalSlides - 1));
+        viewport.scrollTo({ left: i * viewport.clientWidth, behavior: 'smooth' });
+        setActiveDot(i);
+        resetAutoplay();
+      }
+      function updateDotsFromScroll() {
+        const w = viewport.clientWidth;
+        if (w <= 0) return;
+        const idx = Math.round(viewport.scrollLeft / w);
+        setActiveDot(Math.max(0, Math.min(idx, totalSlides - 1)));
+      }
+      function nextSlide() {
+        const w = viewport.clientWidth;
+        const current = w > 0 ? Math.floor(viewport.scrollLeft / w) : 0;
+        goToSlide(current + 1 >= totalSlides ? 0 : current + 1);
+      }
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, autoplayInterval);
+      }
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+      function resetAutoplay() {
+        startAutoplay();
+      }
+      if (prevBtn) prevBtn.addEventListener('click', function() {
+        const w = viewport.clientWidth;
+        const idx = w > 0 ? Math.max(0, Math.floor(viewport.scrollLeft / w) - 1) : 0;
+        goToSlide(idx);
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function() {
+        const w = viewport.clientWidth;
+        const idx = w > 0 ? Math.min(totalSlides - 1, Math.floor(viewport.scrollLeft / w) + 1) : 0;
+        goToSlide(idx);
+      });
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goToSlide(i); });
+      });
+      viewport.addEventListener('scroll', function() {
+        requestAnimationFrame(updateDotsFromScroll);
+      });
+      viewport.addEventListener('mouseenter', stopAutoplay);
+      viewport.addEventListener('mouseleave', startAutoplay);
+      startAutoplay();
+    })();
   </script>
 </body>
 </html> 
