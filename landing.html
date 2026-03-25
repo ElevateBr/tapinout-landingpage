@@ -314,35 +314,62 @@
       margin-right: auto;
     }
     
-    .landing-usp {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+    .landing-usp-carousel {
+      --usp-gap: 1rem;
+      display: flex;
+      align-items: center;
+      gap: var(--usp-gap);
       margin: 3rem 0;
     }
-    
-    .landing-usp-item:last-child {
-      grid-column: 1 / -1;
-      justify-self: center;
-      max-width: 300px;
+
+    .landing-usp-viewport {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 12px;
     }
-    
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .landing-usp-item:last-child {
-        grid-column: 2 / 3;
-      }
+
+    .landing-usp {
+      display: flex;
+      gap: var(--usp-gap);
+      will-change: transform;
     }
-    
-    @media (max-width: 768px) {
-      .landing-usp-item:last-child {
-        grid-column: 1 / -1;
-        max-width: 100%;
-      }
+
+    .landing-usp-arrow {
+      border: 1px solid #DEE2E6;
+      background: white;
+      color: #0D6EFD;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .landing-usp-arrow:hover {
+      transform: translateY(-1px);
+      background: #F8FAFF;
+      box-shadow: 0 8px 18px rgba(13, 110, 253, 0.16);
+    }
+
+    .landing-usp-arrow:focus-visible {
+      outline: 2px solid #0D6EFD;
+      outline-offset: 2px;
     }
     
     .landing-usp-item {
+      flex: 0 0 calc((100% - (2 * var(--usp-gap))) / 3);
       text-align: center;
       padding: 2rem;
+      background: #FFFFFF;
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
     .landing-usp-icon {
@@ -601,7 +628,6 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 3rem;
-      opacity: 0.6;
       margin: 2rem 0;
     }
     
@@ -631,14 +657,13 @@
       width: auto;
       height: auto;
       object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s, opacity 0.3s;
+      filter: none;
+      opacity: 1;
+      transition: transform 0.3s;
     }
     
     .landing-logo-item:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
+      transform: scale(1.02);
     }
     
     .landing-logo-goa {
@@ -955,21 +980,22 @@
         padding: 3rem 16px;
       }
 
-      .landing-usp {
-        grid-template-columns: repeat(2, minmax(140px, 1fr));
-        gap: 1.25rem;
-      }
-
       .landing-usp-item {
         padding: 1rem;
       }
 
-      .landing-usp-item:last-child {
-        grid-column: auto;
-      }
-
       .landing-usp-icon {
         font-size: 2.2rem;
+      }
+
+      .landing-usp-carousel {
+        --usp-gap: 0.75rem;
+        gap: 0.5rem;
+      }
+
+      .landing-usp-arrow {
+        width: 40px;
+        height: 40px;
       }
 
       .landing-stats {
@@ -1110,16 +1136,17 @@
         font-size: 1.1rem;
       }
 
-      .landing-usp {
-        grid-template-columns: 1fr;
-      }
-
       .landing-stats {
         grid-template-columns: 1fr;
       }
 
       .landing-stat-value {
         font-size: 2.4rem;
+      }
+
+      .landing-usp-arrow {
+        width: 36px;
+        height: 36px;
       }
     }
   </style>
@@ -1158,56 +1185,68 @@
       A solução completa para gestão de ponto digital que sua empresa precisa
     </p>
     
-    <div class="landing-usp">
-      <div class="landing-usp-item">
-        <div class="landing-usp-icon">
-          <i class="fas fa-mobile-alt"></i>
+    <div class="landing-usp-carousel" id="landingUspCarousel" aria-label="Carrossel de benefícios do TapInOut">
+      <button class="landing-usp-arrow landing-usp-arrow-prev" type="button" aria-label="Item anterior">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="landing-usp-viewport">
+        <div class="landing-usp">
+          <div class="landing-usp-item">
+            <div class="landing-usp-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="landing-usp-title">Ponto via Celular</h3>
+            <p class="landing-usp-desc">
+              Seus funcionários registram o ponto diretamente pelo celular, de qualquer lugar, a qualquer hora.
+            </p>
+          </div>
+          
+          <div class="landing-usp-item">
+            <div class="landing-usp-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="landing-usp-title">Segurança Máxima</h3>
+            <p class="landing-usp-desc">
+              Biometria facial com detecção de vivacidade garante que não há fraudes no registro de ponto.
+            </p>
+          </div>
+          
+          <div class="landing-usp-item">
+            <div class="landing-usp-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="landing-usp-title">Relatórios Inteligentes</h3>
+            <p class="landing-usp-desc">
+              Dashboards em tempo real com insights valiosos para tomada de decisões estratégicas.
+            </p>
+          </div>
+          
+          <div class="landing-usp-item">
+            <div class="landing-usp-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 class="landing-usp-title">Economia de Tempo</h3>
+            <p class="landing-usp-desc">
+              Reduza em até 80% o tempo gasto com controle de ponto manual e cálculos trabalhistas.
+            </p>
+          </div>
+          
+          <div class="landing-usp-item">
+            <div class="landing-usp-icon">
+              <i class="fas fa-gavel"></i>
+            </div>
+            <h3 class="landing-usp-title">Conformidade Legal</h3>
+            <p class="landing-usp-desc">
+              Totalmente alinhado com a legislação trabalhista brasileira, evitando multas e processos.
+            </p>
+          </div>
         </div>
-        <h3 class="landing-usp-title">Ponto via Celular</h3>
-        <p class="landing-usp-desc">
-          Seus funcionários registram o ponto diretamente pelo celular, de qualquer lugar, a qualquer hora.
-        </p>
       </div>
-      
-      <div class="landing-usp-item">
-        <div class="landing-usp-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3 class="landing-usp-title">Segurança Máxima</h3>
-        <p class="landing-usp-desc">
-          Biometria facial com detecção de vivacidade garante que não há fraudes no registro de ponto.
-        </p>
-      </div>
-      
-      <div class="landing-usp-item">
-        <div class="landing-usp-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3 class="landing-usp-title">Relatórios Inteligentes</h3>
-        <p class="landing-usp-desc">
-          Dashboards em tempo real com insights valiosos para tomada de decisões estratégicas.
-        </p>
-      </div>
-      
-      <div class="landing-usp-item">
-        <div class="landing-usp-icon">
-          <i class="fas fa-clock"></i>
-        </div>
-        <h3 class="landing-usp-title">Economia de Tempo</h3>
-        <p class="landing-usp-desc">
-          Reduza em até 80% o tempo gasto com controle de ponto manual e cálculos trabalhistas.
-        </p>
-      </div>
-      
-      <div class="landing-usp-item">
-        <div class="landing-usp-icon">
-          <i class="fas fa-gavel"></i>
-        </div>
-        <h3 class="landing-usp-title">Conformidade Legal</h3>
-        <p class="landing-usp-desc">
-          Totalmente alinhado com a legislação trabalhista brasileira, evitando multas e processos.
-        </p>
-      </div>
+
+      <button class="landing-usp-arrow landing-usp-arrow-next" type="button" aria-label="Próximo item">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
     </div>
   </section>
 
@@ -1709,6 +1748,101 @@
           e.target.value = value;
         }
       });
+    }
+
+    // USP Carousel (3 itens visiveis + movimento continuo)
+    const uspCarousel = document.getElementById('landingUspCarousel');
+    if (uspCarousel) {
+      const uspTrack = uspCarousel.querySelector('.landing-usp');
+      const uspPrevButton = uspCarousel.querySelector('.landing-usp-arrow-prev');
+      const uspNextButton = uspCarousel.querySelector('.landing-usp-arrow-next');
+      const uspBaseItems = Array.from(uspTrack.querySelectorAll('.landing-usp-item'));
+      const uspSpeedPxPerFrame = 0.35;
+      let uspOffset = 0;
+      let uspAnimationId = null;
+      let uspPaused = false;
+
+      // Duplica os itens para loop continuo sem salto visivel.
+      uspBaseItems.forEach(function(item) {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        uspTrack.appendChild(clone);
+      });
+
+      function getUspStep() {
+        const firstItem = uspTrack.querySelector('.landing-usp-item');
+        if (!firstItem) return 0;
+        const trackStyles = window.getComputedStyle(uspTrack);
+        const gap = parseFloat(trackStyles.gap) || 0;
+        return firstItem.getBoundingClientRect().width + gap;
+      }
+
+      function getUspLoopWidth() {
+        return getUspStep() * uspBaseItems.length;
+      }
+
+      function normalizeUspOffset() {
+        const loopWidth = getUspLoopWidth();
+        if (!loopWidth) return;
+        while (uspOffset >= loopWidth) uspOffset -= loopWidth;
+        while (uspOffset < 0) uspOffset += loopWidth;
+      }
+
+      function renderUsp() {
+        uspTrack.style.transform = `translate3d(-${uspOffset}px, 0, 0)`;
+      }
+
+      function animateUsp() {
+        if (!uspPaused) {
+          uspOffset += uspSpeedPxPerFrame;
+          normalizeUspOffset();
+          renderUsp();
+        }
+        uspAnimationId = requestAnimationFrame(animateUsp);
+      }
+
+      function stepUsp(direction) {
+        const step = getUspStep();
+        if (!step) return;
+        uspOffset += direction * step;
+        normalizeUspOffset();
+        renderUsp();
+      }
+
+      uspPrevButton.addEventListener('click', function() {
+        stepUsp(-1);
+      });
+
+      uspNextButton.addEventListener('click', function() {
+        stepUsp(1);
+      });
+
+      uspCarousel.addEventListener('mouseenter', function() {
+        uspPaused = true;
+      });
+      uspCarousel.addEventListener('mouseleave', function() {
+        uspPaused = false;
+      });
+      uspCarousel.addEventListener('touchstart', function() {
+        uspPaused = true;
+      }, { passive: true });
+      uspCarousel.addEventListener('touchend', function() {
+        uspPaused = false;
+      }, { passive: true });
+
+      document.addEventListener('visibilitychange', function() {
+        uspPaused = document.hidden;
+      });
+
+      window.addEventListener('resize', function() {
+        normalizeUspOffset();
+        renderUsp();
+      });
+
+      renderUsp();
+      if (!uspAnimationId) {
+        uspAnimationId = requestAnimationFrame(animateUsp);
+      }
     }
     
   </script>
