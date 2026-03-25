@@ -72,6 +72,22 @@
   
   <style>
     /* Landing Page Specific Styles */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
     .landing-hero {
       background: linear-gradient(135deg, #0D6EFD 0%, #3B82F6 50%, #60A5FA 100%);
       color: white;
@@ -507,6 +523,65 @@
       text-align: center;
       color: white;
     }
+
+    .landing-demo-icon-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .landing-demo-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .landing-demo-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .landing-demo-time {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      line-height: 1.6;
+    }
+
+    .landing-demo-points {
+      text-align: left;
+      max-width: 380px;
+      margin-bottom: 1.5rem;
+    }
+
+    .landing-demo-points-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .landing-demo-points-list {
+      margin: 0;
+      padding-left: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .landing-demo-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+      color: #111827;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+      text-align: center;
+    }
+
+    .landing-demo-cta i {
+      margin-right: 0.5rem;
+    }
     
     .landing-social-proof {
       text-align: center;
@@ -753,6 +828,49 @@
       color: #C82333;
       display: block;
     }
+
+    .landing-faq-section {
+      background: #F8F9FA;
+      border-radius: 12px;
+      margin: 0 auto 2rem auto;
+      padding: 3rem;
+      max-width: 1200px;
+    }
+
+    .landing-faq-list {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .landing-faq-item h3 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.3rem;
+      color: #212529;
+    }
+
+    .landing-faq-item p {
+      margin: 0;
+      color: #495057;
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+
+    .landing-final-cta-box {
+      text-align: center;
+      padding: 3rem;
+      background: #F8F9FA;
+      border-radius: 12px;
+    }
+
+    .landing-final-cta-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     
     .landing-footer {
       background: #212529;
@@ -816,6 +934,11 @@
       .landing-hero-subtitle {
         font-size: 1rem;
       }
+
+      .landing-hero-bullets {
+        font-size: 0.98rem;
+        padding-left: 1rem;
+      }
       
       .landing-section-title {
         font-size: 2rem;
@@ -854,6 +977,32 @@
         gap: 1.25rem;
       }
 
+      .landing-features,
+      .landing-problem-solution,
+      .landing-footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-feature-card,
+      .landing-testimonial,
+      .landing-problem,
+      .landing-solution,
+      .landing-challenges {
+        padding: 1.5rem;
+      }
+
+      .landing-feature-icon {
+        font-size: 2rem;
+      }
+
+      .landing-challenges-title {
+        font-size: 1.6rem;
+      }
+
+      .landing-challenges-icon {
+        font-size: 1.25rem;
+      }
+
       .landing-testimonials {
         grid-template-columns: 1fr;
         gap: 1.25rem;
@@ -882,6 +1031,95 @@
 
       .landing-demo-content {
         padding: 2rem 1.25rem;
+      }
+
+      .landing-demo-icon {
+        font-size: 2.3rem;
+      }
+
+      .landing-demo-heading {
+        font-size: 1.55rem;
+      }
+
+      .landing-demo-time {
+        font-size: 1.05rem;
+      }
+
+      .landing-demo-points {
+        max-width: 100%;
+      }
+
+      .landing-demo-cta {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 1rem;
+      }
+
+      .landing-form-section {
+        padding: 3rem 12px;
+      }
+
+      .landing-form-container {
+        padding: 2rem 1.25rem;
+      }
+
+      .landing-final-cta-box {
+        padding: 2rem 1.25rem;
+      }
+
+      .landing-final-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .landing-faq-section {
+        padding: 2rem 1.25rem;
+      }
+
+      .landing-faq-item h3 {
+        font-size: 1.15rem;
+      }
+
+      .landing-whatsapp-float {
+        width: 54px;
+        height: 54px;
+        font-size: 28px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      a[href^="tel:"] {
+        padding: 14px 18px !important;
+        font-size: 1.05rem !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .landing-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .landing-section-title {
+        font-size: 1.7rem;
+      }
+
+      .landing-cta-primary {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+      }
+
+      .landing-usp {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-stat-value {
+        font-size: 2.4rem;
       }
     }
   </style>
@@ -993,16 +1231,16 @@
       
       <!-- Right Side - Text and CTA -->
       <div class="landing-demo-content">
-        <div style="margin-bottom: 1.5rem;">
-          <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+        <div class="landing-demo-icon-wrap">
+          <i class="fas fa-video landing-demo-icon"></i>
         </div>
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Veja o TapInOut funcionando ao vivo</h2>
-        <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">
+        <h2 class="landing-demo-heading">Veja o TapInOut funcionando ao vivo</h2>
+        <p class="landing-demo-time">
           Terças e Quintas, 15h às 16h
         </p>
-        <div style="text-align: left; max-width: 380px; margin-bottom: 1.5rem;">
-          <div style="font-weight: 700; margin-bottom: 0.5rem;">Você vai ver:</div>
-          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+        <div class="landing-demo-points">
+          <div class="landing-demo-points-title">Você vai ver:</div>
+          <ul class="landing-demo-points-list">
             <li>Como reduzimos inconsistências e “ponto amigo”</li>
             <li>Como o RH trata ocorrências e consolida horas</li>
             <li>Como os relatórios aceleram o fechamento do período</li>
@@ -1011,8 +1249,8 @@
         <a href="https://meet.google.com/tgo-kkqw-zir" 
            target="_blank" 
            rel="noopener noreferrer"
-           style="display: inline-block; background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%); color: #111827; padding: 18px 40px; border-radius: 12px; font-weight: 700; font-size: 1.25rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 14px 34px rgba(0,0,0,0.28);">
-          <i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>
+           class="landing-demo-cta">
+          <i class="fas fa-calendar-check"></i>
           Quero participar da demonstração
         </a>
       </div>
@@ -1245,14 +1483,40 @@
 
   <!-- CTA Section -->
   <section class="landing-section">
-    <div style="text-align: center; padding: 3rem; background: #F8F9FA; border-radius: 12px;">
+    <div class="landing-final-cta-box">
       <h2 class="landing-section-title" style="margin-bottom: 1rem;">Pronto para Modernizar sua Empresa?</h2>
       <p class="landing-section-subtitle" style="margin-bottom: 2rem;">
         Junte-se a centenas de empresas que já confiam no TapInOut
       </p>
-      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div class="landing-final-cta-actions">
         <a href="#form" class="landing-cta-primary">Comece Agora</a>
         <a href="tel:+5524999402412" class="landing-cta-secondary">Fale Conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="landing-faq-section" id="faq">
+    <h2 class="landing-section-title">FAQ</h2>
+    <div class="landing-faq-list">
+      <div class="landing-faq-item">
+        <h3>Leva quanto tempo para implantar?</h3>
+        <p>Em geral, a implantação é rápida e você conta com suporte para configurar regras e iniciar o uso.</p>
+      </div>
+
+      <div class="landing-faq-item">
+        <h3>Funciona para equipe externa/híbrida?</h3>
+        <p>Sim. O sistema permite controle com GPS e políticas por operação/jornada.</p>
+      </div>
+
+      <div class="landing-faq-item">
+        <h3>Dá para usar em mais de uma unidade?</h3>
+        <p>Sim. A plataforma atende operações com múltiplas unidades e perfis.</p>
+      </div>
+
+      <div class="landing-faq-item">
+        <h3>Como ficam relatórios e auditoria?</h3>
+        <p>Registros e ajustes possuem rastreabilidade, e você gera relatórios para conferência e fechamento do período.</p>
       </div>
     </div>
   </section>
