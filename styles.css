@@ -4367,8 +4367,9 @@ svg {
 /* Floating Pre-Sales Bar */
 .floating-pre-sales-bar {
   position: fixed;
-  bottom: var(--space-6);
+  top: calc(80px + var(--space-3));
   right: var(--space-6);
+  bottom: auto;
   background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-700) 50%, var(--primary-600) 100%);
   border-radius: var(--radius-2xl);
   padding: var(--space-5);
@@ -4471,6 +4472,37 @@ svg {
   transform: scale(1.1);
 }
 
+/* Botão flutuante WhatsApp (canto inferior esquerdo; substitui widget de IA) */
+.support-whatsapp-float {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  z-index: 1020;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-whatsapp-float:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.support-whatsapp-float:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .pre-sales-section {
@@ -4499,7 +4531,8 @@ svg {
   }
   
   .floating-pre-sales-bar {
-    bottom: var(--space-4);
+    top: calc(80px + var(--space-3));
+    bottom: auto;
     right: var(--space-4);
     left: var(--space-4);
     max-width: none;

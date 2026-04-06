@@ -6,7 +6,7 @@ const config = {
   debounceDelay: 150
 };
 
-// ===== WIDGET DE SUPORTE (SEATHUB) =====
+/* // ===== WIDGET DE SUPORTE (SEATHUB) =====
 const SUPPORT_WIDGET_SRC =
   'https://app.gptmaker.ai/widget/3EBBCE26B25863D47D075ACDA2FE9334/float.js';
 
@@ -21,7 +21,7 @@ function initSupportWidget() {
 
   // Preferir anexar ao body (ou head como fallback)
   (document.body || document.head || document.documentElement).appendChild(script);
-}
+*/
 
 // Sistema de tradução removido - todos os textos agora estão diretamente no HTML
 
@@ -46,7 +46,7 @@ function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
   navMenu.classList.toggle('active', isMobileMenuOpen);
   navToggle.classList.toggle('active', isMobileMenuOpen);
-  
+
   // Prevenir scroll do body quando menu está aberto
   document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
 }
@@ -110,23 +110,23 @@ function initAOS() {
 function initDeviceAnimations() {
   const phoneMockup = document.querySelector('.phone-mockup');
   const desktopMockup = document.querySelector('.desktop-mockup');
-  
+
   if (phoneMockup) {
-    phoneMockup.addEventListener('mouseenter', function() {
+    phoneMockup.addEventListener('mouseenter', function () {
       this.style.transform = 'scale(1.05) rotate(2deg)';
     });
-    
-    phoneMockup.addEventListener('mouseleave', function() {
+
+    phoneMockup.addEventListener('mouseleave', function () {
       this.style.transform = '';
     });
   }
-  
+
   if (desktopMockup) {
-    desktopMockup.addEventListener('mouseenter', function() {
+    desktopMockup.addEventListener('mouseenter', function () {
       this.style.transform = 'scale(1.05) rotate(-1deg)';
     });
-    
-    desktopMockup.addEventListener('mouseleave', function() {
+
+    desktopMockup.addEventListener('mouseleave', function () {
       this.style.transform = '';
     });
   }
@@ -135,14 +135,14 @@ function initDeviceAnimations() {
 // ===== ANIMAÇÕES DOS ELEMENTOS FLUTUANTES =====
 function initFloatingAnimations() {
   const floatCards = document.querySelectorAll('.float-card');
-  
+
   floatCards.forEach((card, index) => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-10px) scale(1.05)';
       this.style.boxShadow = '0 20px 40px rgba(48, 92, 222, 0.2)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
       this.style.transform = '';
       this.style.boxShadow = '';
     });
@@ -157,7 +157,7 @@ function initContactForm() {
   // Botão de orçamento
   const quoteBtn = form.querySelector('button[type="button"]');
   if (quoteBtn) {
-    quoteBtn.addEventListener('click', function() {
+    quoteBtn.addEventListener('click', function () {
       // Coletar dados do formulário
       const formData = new FormData(form);
       const name = formData.get('name');
@@ -165,7 +165,7 @@ function initContactForm() {
       const company = formData.get('company');
       const phone = formData.get('phone');
       const employees = formData.get('employees');
-      
+
       // Criar mensagem para orçamento
       const message = `💰 *Nova Solicitação de Orçamento - TapInOut*
 
@@ -179,30 +179,30 @@ function initContactForm() {
 
 ---
 *Enviado via landing page TapInOut*`;
-      
+
       // Codificar mensagem para URL
       const encodedMessage = encodeURIComponent(message);
-      
+
       // Número do WhatsApp
-      const whatsappNumber = '5524999402412';
-      
+      const whatsappNumber = '5524999712243';
+
       // URL do WhatsApp
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      
+
       // Mostrar feedback visual
       const originalText = this.innerHTML;
-      
+
       this.innerHTML = '<i class="fas fa-calculator"></i> Abrindo WhatsApp...';
       this.disabled = true;
-      
+
       // Abrir WhatsApp
       window.open(whatsappUrl, '_blank');
-      
+
       // Resetar botão após um delay
       setTimeout(() => {
         this.innerHTML = '<i class="fas fa-check"></i> WhatsApp Aberto!';
         this.style.background = 'var(--success)';
-        
+
         setTimeout(() => {
           this.innerHTML = originalText;
           this.disabled = false;
@@ -217,13 +217,13 @@ function initContactForm() {
 // ===== EFEITOS DE HOVER PARA CARDS =====
 function initCardHoverEffects() {
   const cards = document.querySelectorAll('.feature-card');
-  
+
   cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-8px) scale(1.02)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
       this.style.transform = '';
     });
   });
@@ -234,7 +234,7 @@ function initParallax() {
   window.addEventListener('scroll', debounce(() => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.gradient-orb');
-    
+
     parallaxElements.forEach((element, index) => {
       const speed = 0.5 + (index * 0.1);
       element.style.transform = `translateY(${scrolled * speed}px)`;
@@ -245,7 +245,7 @@ function initParallax() {
 // ===== LAZY LOADING PARA IMAGENS =====
 function initLazyLoading() {
   const images = document.querySelectorAll('img[data-src]');
-  
+
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -256,7 +256,7 @@ function initLazyLoading() {
       }
     });
   });
-  
+
   images.forEach(img => imageObserver.observe(img));
 }
 
@@ -279,7 +279,7 @@ function initScrollProgress() {
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
-  
+
   // Atualizar progresso no scroll
   window.addEventListener('scroll', () => {
     const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -292,22 +292,22 @@ function initScrollProgress() {
 function initCustomCursor() {
   // Não ativar em mobile
   if (window.innerWidth < 768) return;
-  
+
   const cursor = document.createElement('div');
   cursor.className = 'custom-cursor';
   cursor.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
   document.body.appendChild(cursor);
-  
+
   // Adicionar classe ao body para esconder cursor padrão
   document.body.classList.add('custom-cursor-active');
-  
+
   // Movimento direto sem lag - mix-blend-mode faz a mágica automaticamente
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
     cursor.classList.add('active');
   });
-  
+
   // Efeito hover em elementos clicáveis
   const clickableElements = document.querySelectorAll('a, button, .btn-primary, .btn-secondary, .feature-card, .pricing-card, .blog-card');
   clickableElements.forEach(el => {
@@ -319,13 +319,13 @@ function initCustomCursor() {
 // ===== NÚMEROS ANIMADOS (CONTADORES) =====
 function initCounters() {
   const counters = document.querySelectorAll('.metric-value');
-  
+
   const animateCounter = (element) => {
     const target = parseInt(element.textContent);
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
     const updateCounter = () => {
       current += increment;
       if (current < target) {
@@ -335,10 +335,10 @@ function initCounters() {
         element.textContent = target;
       }
     };
-    
+
     updateCounter();
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !entry.target.dataset.animated) {
@@ -347,7 +347,7 @@ function initCounters() {
       }
     });
   }, { threshold: 0.5 });
-  
+
   counters.forEach(counter => observer.observe(counter));
 }
 
@@ -355,25 +355,25 @@ function initCounters() {
 // ===== TILT EFFECT NOS CARDS =====
 function initTiltEffect() {
   const cards = document.querySelectorAll('.feature-card, .pricing-card, .blog-card');
-  
+
   cards.forEach(card => {
     card.classList.add('tilt-card');
-    
+
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
+
       const rotateX = ((y - centerY) / centerY) * -5;
       const rotateY = ((x - centerX) / centerX) * 5;
-      
+
       card.style.setProperty('--rotateX', rotateX + 'deg');
       card.style.setProperty('--rotateY', rotateY + 'deg');
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.style.setProperty('--rotateX', '0deg');
       card.style.setProperty('--rotateY', '0deg');
@@ -389,10 +389,7 @@ function initRippleEffect() {
 
 
 // ===== INICIALIZAÇÃO QUANDO DOM ESTIVER PRONTO =====
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // Widget de suporte flutuante (canto inferior esquerdo)
-  initSupportWidget();
+document.addEventListener('DOMContentLoaded', function () {
 
   // Inicializar animações originais
   initAOS();
@@ -402,24 +399,24 @@ document.addEventListener('DOMContentLoaded', function() {
   initCardHoverEffects();
   initParallax();
   initLazyLoading();
-  
+
   // Inicializar novas melhorias
   initScrollProgress();
   // initCustomCursor(); // Desativado - cursor customizado removido
   initCounters();
   initTiltEffect();
   initRippleEffect();
-  
+
   // Event listeners
   // handleNavbarScroll removido - navbar mantém transparência constante
-  
+
   // Fechar menu mobile com ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isMobileMenuOpen) {
       toggleMobileMenu();
     }
   });
-  
+
   // Prevenir zoom em iOS
   document.addEventListener('gesturestart', (e) => e.preventDefault());
   document.addEventListener('gesturechange', (e) => e.preventDefault());
