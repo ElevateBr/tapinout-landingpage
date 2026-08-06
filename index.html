@@ -27,7 +27,7 @@
   <!-- End Meta Pixel Code -->
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
   <!-- SEO Meta Tags Otimizadas -->
   <title>TapInOut - Sistema de Ponto Digital com IA e Gestão Multi-Local | RH e Líderes</title>
@@ -74,7 +74,7 @@
   
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#305CDE">
+  <meta name="theme-color" content="#0D6EFD">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="TapInOut">
@@ -86,8 +86,9 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -112,11 +113,6 @@
       "@type": "Organization",
       "name": "Elevate",
       "url": "https://elevatebr.org"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "150"
     }
   }
   </script>
@@ -129,34 +125,35 @@
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Navegação principal">
     <div class="container">
-              <div class="nav-logo">
-          <a href="/" aria-label="TapInOut - Página inicial">
-            <img src="logo.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="logo-img" width="150" height="50">
-          </a>
-        </div>
-      
-              <div class="nav-menu">
-          <a href="#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
-          <a href="#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
-          <a href="/tutorial/" class="nav-link" title="Ver tutoriais e guias do TapInOut">Tutoriais</a>
-     
-          <a href="#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
-          <a href="#contact" class="nav-link" title="Entre em contato conosco">Contato</a>
-        </div>
-      
+      <div class="nav-logo">
+        <a href="/" aria-label="TapInOut - Página inicial">
+          <img src="logo.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="logo-img" width="150" height="50">
+        </a>
+      </div>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#produto" class="nav-link" title="Ver o painel de gestão">Produto</a>
+        <a href="#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
+        <a href="#testimonial" class="nav-link" title="Ver depoimentos de clientes">Depoimentos</a>
+        <a href="#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
+        <a href="#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
+        <a href="#contact" class="nav-link" title="Agendar demonstração">Demonstração</a>
+        <a href="https://app.tapinout.com/login" class="nav-link nav-link-entrar-mobile" target="_blank" rel="noopener" title="Acessar o aplicativo TapInOut">Entrar</a>
+      </div>
+
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Seleção de idioma">
           <a href="/" class="lang-btn active" aria-pressed="true">PT</a>
           <a href="/en" class="lang-btn" aria-pressed="false">EN</a>
           <a href="/es" class="lang-btn" aria-pressed="false">ES</a>
         </div>
-        
-        <a href="https://app.tapinout.com/login" class="nav-cta" target="_blank" rel="noopener">
+
+        <a href="https://app.tapinout.com/login" class="nav-cta" target="_blank" rel="noopener" title="Acessar o aplicativo TapInOut">
           <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
           <span>Entrar</span>
         </a>
-        
-        <button class="nav-toggle" aria-label="Menu mobile" aria-expanded="false">
+
+        <button class="nav-toggle" type="button" aria-label="Menu mobile" aria-expanded="false" aria-controls="navMenu">
           <span></span>
           <span></span>
           <span></span>
@@ -165,69 +162,50 @@
     </div>
   </nav>
 
-  <!-- Navbar Spacer - Espaçador invisível para evitar sobreposição -->
-  <div class="navbar-spacer"></div>
+  <div class="navbar-spacer" aria-hidden="true"></div>
 
   <!-- Hero Section -->
   <main>
     <section class="hero" role="banner" aria-labelledby="hero-title">
-      <div class="hero-bg">
-        <div class="gradient-orb orb-1" aria-hidden="true"></div>
-        <div class="gradient-orb orb-2" aria-hidden="true"></div>
-        <div class="gradient-orb orb-3" aria-hidden="true"></div>
-        <div class="floating-shapes" aria-hidden="true">
-          <div class="shape shape-1"></div>
-          <div class="shape shape-2"></div>
-          <div class="shape shape-3"></div>
-        </div>
-      </div>
-      
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <div class="hero-badge">
-              
-            </div>
-            
             <h1 class="hero-title" id="hero-title">
-              Revolucione o controle de ponto da sua empresa
+              Ponto, presença e RH <span class="hero-title-accent">num só lugar</span>
             </h1>
-            
+
             <p class="hero-subtitle">
-              Aplicação de gestão web para líderes e RH com dashboards inteligentes, IA para detecção de riscos trabalhistas e gestão centralizada de múltiplos locais de trabalho.
+              Seu time bate ponto pelo celular. Você vê quem está atrasado, quem estourou banco de horas e o que pode virar problema trabalhista antes de virar processo.
             </p>
-            
-                         <div class="hero-cta">
-               <a href="https://app.tapinout.com/register" class="btn-primary" title="Solicitar demonstração gratuita do TapInOut" target="_blank" rel="noopener">
-                 <i class="fas fa-rocket" aria-hidden="true"></i>
-                 <span>Começar Agora</span>
-               </a>
-               <a href="#demo" class="btn-secondary" title="Assistir demonstração do sistema TapInOut">
-                 <i class="fas fa-play" aria-hidden="true"></i>
-                 <span>Ver Demonstração</span>
-               </a>
-             </div>
+
+            <div class="hero-cta">
+              <a href="#contact" class="btn-primary" title="Agendar demonstração gratuita do TapInOut">
+                <span>Agendar demonstração gratuita</span>
+                <span class="btn-icon-wrap" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
+              <a href="#produto" class="btn-secondary" title="Ver o painel de gestão TapInOut">
+                <span>Ver o produto</span>
+              </a>
+            </div>
+
+            <p class="hero-trust">
+              Integração com SAP, Domínio e SuccessFactors
+            </p>
           </div>
-          
+
           <div class="hero-visual">
-            <div class="devices-container">
-              <!-- Phone Mockup -->
-              <div class="phone-mockup">
-                <div class="phone-frame">
-                  <div class="phone-screen">
-                    <img src="mobile-screenshot.png" alt="Aplicativo mobile TapInOut mostrando tela de ponto eletrônico" title="Aplicativo Mobile TapInOut - Ponto Eletrônico via Celular" class="app-screenshot" loading="lazy" width="300" height="600">
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Desktop Mockup -->
-              <div class="desktop-mockup">
-                <div class="desktop-frame">
-                  <div class="desktop-screen">
-                    <img src="desktop-screenshot.png" alt="Dashboard web TapInOut mostrando painel de gestão" title="Dashboard Web TapInOut - Painel de Gestão de Funcionários" class="web-screenshot" loading="lazy" width="500" height="300">
-                  </div>
-                </div>
-              </div>
+            <div class="hero-media">
+              <img
+                src="img/hero-mobile-hand.png"
+                alt="Mão segurando celular com o app TapInOut aberto — ponto, pendências e jornada do dia"
+                class="hero-hand-img"
+                width="720"
+                height="900"
+                sizes="(max-width: 768px) 88vw, (max-width: 1024px) 55vw, 480px"
+                fetchpriority="high"
+              >
             </div>
           </div>
         </div>
@@ -237,31 +215,102 @@
     <!-- Partners Section -->
     <section id="partners" class="partners-section" aria-labelledby="partners-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="partners-title">Parceiros</h2>
-          <p class="section-subtitle">Empresas que crescem com o TapInOut</p>
-        </header>
+        <div class="partners-row" data-aos="fade-up">
+          <h2 class="partners-heading" id="partners-title">
+            Conheça<br>alguns parceiros
+          </h2>
 
-        <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:3rem;opacity:0.6;margin:2rem 0;">
-          <div style="display:flex;align-items:center;justify-content:center;height:80px;max-width:200px;transition:opacity 0.3s,transform 0.3s;">
-            <img src="img/logoCondata.webp" alt="CondataWeb - Parceiro do TapInOut" title="CondataWeb" loading="lazy" style="max-height:80px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(100%);opacity:0.7;transition:filter 0.3s,opacity 0.3s;">
-          </div>
-          <div style="display:flex;align-items:center;justify-content:center;height:80px;max-width:200px;transition:opacity 0.3s,transform 0.3s;">
-            <img src="img/logoVitriniDireta.png" alt="VitriniDireta - Parceiro do TapInOut" title="VitriniDireta" loading="lazy" style="max-height:80px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(100%);opacity:0.7;transition:filter 0.3s,opacity 0.3s;">
-          </div>
-          <div style="display:flex;align-items:center;justify-content:center;height:80px;max-width:200px;transition:opacity 0.3s,transform 0.3s;">
-            <img src="img/logoPalermoAdvocacia.png" alt="Palermo Advocacia - Parceiro do TapInOut" title="Palermo Advocacia" loading="lazy" style="max-height:80px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(100%);opacity:0.7;transition:filter 0.3s,opacity 0.3s;">
+          <ul class="partners-logos">
+            <li class="partner-logo partner-logo--flix">
+              <img src="img/logo-flix.png" alt="Flix" width="160" height="64" loading="lazy" decoding="async">
+            </li>
+            <li class="partner-logo">
+              <img src="img/logoCondata.webp" alt="CondataWeb" width="160" height="64" loading="lazy" decoding="async">
+            </li>
+            <li class="partner-logo">
+              <img src="img/logoPalermoAdvocacia.png" alt="Palermo Advocacia" width="160" height="64" loading="lazy" decoding="async">
+            </li>
+            <li class="partner-logo partner-logo--goa">
+              <img src="img/Logo-GOA-technologies-1.png" alt="GOA Technologies" width="140" height="64" loading="lazy" decoding="async">
+            </li>
+            <li class="partner-logo">
+              <img src="img/logo-dominiosis.png" alt="Domínio" width="160" height="64" loading="lazy" decoding="async">
+            </li>
+            <li class="partner-logo">
+              <img src="img/logo-thomson-reuters.png" alt="Thomson Reuters" width="160" height="56" loading="lazy" decoding="async">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section" id="produto" aria-labelledby="product-title">
+      <div class="container">
+        <div class="product-showcase">
+          <div class="product-copy" data-aos="fade-right">
+            <h2 class="product-title" id="product-title">O painel que o RH abre todo dia</h2>
+            <p class="product-intro">
+              Presença do dia, pendências de aprovação, alertas de conformidade e relatórios — sem abrir cinco sistemas diferentes.
+            </p>
+            <ul class="product-highlights">
+              <li>Quem está presente, atrasado ou ausente hoje</li>
+              <li>Alertas de banco de horas e DSR antes do fechamento</li>
+              <li>Filiais, obras e home office no mesmo login</li>
+            </ul>
+            <div class="product-cta">
+              <a href="#contact" class="btn-primary" title="Agendar demonstração do painel TapInOut">
+                <span>Agendar demonstração</span>
+                <span class="btn-icon-wrap" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
+            </div>
           </div>
 
-          <!-- GOA com fundo (igual à landing) -->
-          <div style="display:flex;align-items:center;justify-content:center;background:#E9ECEF;border-radius:50%;padding:15px;width:110px;height:110px;">
-            <img src="img/Logo-GOA-technologies-1.png" alt="GOA Technologies - Parceiro do TapInOut" title="GOA Technologies" loading="lazy" style="max-height:80px;max-width:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(0%);opacity:1;">
+          <div class="product-visual" data-aos="fade-left" data-aos-delay="150">
+            <div class="device-shell device-shell--product">
+              <div class="product-browser" role="img" aria-label="Captura do painel web TapInOut com alertas, avisos e indicadores do RH">
+                <div class="product-browser-bar" aria-hidden="true">
+                  <span class="product-browser-dots">
+                    <span class="product-browser-dot"></span>
+                    <span class="product-browser-dot"></span>
+                    <span class="product-browser-dot"></span>
+                  </span>
+                  <span class="product-browser-url">app.tapinout.com</span>
+                </div>
+                <div class="product-browser-screen">
+                  <img
+                    src="img/painel-rh.png"
+                    alt="Painel TapInOut com alertas, colaboradores e indicadores de pontualidade"
+                    class="product-screenshot"
+                    loading="lazy"
+                    width="1200"
+                    height="750"
+                  >
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div style="display:flex;align-items:center;justify-content:center;height:92px;max-width:420px;gap:16px;transition:opacity 0.3s,transform 0.3s;">
-            <img src="img/logo-dominiosis.png" alt="Domínio - Parceiro do TapInOut" title="Domínio" loading="lazy" style="max-height:92px;max-width:280px;width:auto;height:auto;object-fit:contain;filter:grayscale(100%);opacity:0.7;transition:filter 0.3s,opacity 0.3s;">
-            <img src="img/logo-thomson-reuters.png" alt="Thomson Reuters - Domínio" title="Thomson Reuters" loading="lazy" style="max-height:70px;max-width:240px;width:auto;height:auto;object-fit:contain;filter:grayscale(100%);opacity:0.7;transition:filter 0.3s,opacity 0.3s;transform:scale(1.15);transform-origin:center left;">
-          </div>
+        <div class="product-capabilities">
+          <article class="product-capability" data-aos="fade-up" data-aos-delay="50">
+            <h3>Alertas antes do problema virar multa</h3>
+            <p>Irregularidades de ponto e banco de horas aparecem com prioridade. O RH age antes do DP ou do jurídico entrar em cena.</p>
+          </article>
+          <article class="product-capability" data-aos="fade-up" data-aos-delay="100">
+            <h3>Métricas que o gestor usa de verdade</h3>
+            <p>Atrasos, absenteísmo e horas extras por equipe — sem planilha paralela e sem relatório genérico que ninguém abre.</p>
+          </article>
+          <article class="product-capability" data-aos="fade-up" data-aos-delay="150">
+            <h3>Várias unidades, um login</h3>
+            <p>Filiais, obras e equipes remotas no mesmo lugar. Você compara unidades sem consolidar dados na mão.</p>
+          </article>
+          <article class="product-capability" data-aos="fade-up" data-aos-delay="200">
+            <h3>Portaria 671 no automático</h3>
+            <p>Registros auditáveis e trilha completa para fiscalização. Menos retrabalho quando o contador ou o auditor pede o histórico.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -269,62 +318,50 @@
     <!-- Features Section -->
     <section class="features" id="features" aria-labelledby="features-title">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="zoom-in-up">
           <h2 class="section-title" id="features-title">
-            Recursos que transformam sua empresa
+            O que o TapInOut resolve no dia a dia
           </h2>
         </header>
-        
-        <div class="features-carousel" role="region" aria-label="Carrossel de recursos">
-          <button type="button" class="features-carousel-prev" aria-label="Página anterior" title="Anterior">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          <div class="features-carousel-viewport" tabindex="0">
-            <div class="features-carousel-track">
-              <div class="features-slide" data-slide="0">
-                <article class="feature-card-compact" role="listitem">
-                  <div class="feature-icon-compact">
-                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                  </div>
-                  <h3>App Mobile Intuitivo</h3>
-                  <p>Ponto no celular com interface simples, utilizando <strong> biometria facial, GPS </strong> e registro em tempo real.</strong></p>
-                </article>
-                <article class="feature-card-compact" role="listitem">
-                  <div class="feature-icon-compact">
-                    <i class="fas fa-chart-line" aria-hidden="true"></i>
-                  </div>
-                  <h3>Dashboards e IA</h3>
-                  <p>IA para detecção de riscos, alertas de banco de horas, controle de férias e DSR. <strong>Tudo em tempo real.</strong></p>
-                </article>
-              </div>
-              <div class="features-slide" data-slide="1">
-                <article class="feature-card-compact" role="listitem">
-                  <div class="feature-icon-compact">
-                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                  </div>
-                  <h3>Segurança Avançada</h3>
-                  <p>Detecção de fraudes, criptografia end-to-end com AES-256 e <strong>auditoria completa.</strong></p>
-                </article>
-                <article class="feature-card-compact" role="listitem">
-                  <div class="feature-icon-compact">
-                    <i class="fas fa-building" aria-hidden="true"></i>
-                  </div>
-                  <h3>Gestão Multi-Local</h3>
-                  <p>Plataforma web e mobile para líderes com <strong>gestão centralizada</strong>, múltiplos locais e painel para RH.</p>
-                </article>
-              </div>
+
+        <div class="features-grid-static" role="list" data-aos="fade-up">
+          <article class="feature-card-compact" role="listitem">
+            <div class="feature-icon-compact">
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
             </div>
-          </div>
-          <button type="button" class="features-carousel-next" aria-label="Próxima página" title="Próximo">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </button>
-          <div class="features-dots" role="tablist" aria-label="Páginas do carrossel">
-            <button type="button" class="features-dot active" aria-label="Página 1" aria-selected="true" data-slide="0"></button>
-            <button type="button" class="features-dot" aria-label="Página 2" aria-selected="false" data-slide="1"></button>
-          </div>
+            <h3>App mobile</h3>
+            <p>O colaborador bate ponto no celular com biometria facial e GPS — sem catraca nem papel.</p>
+          </article>
+          <article class="feature-card-compact" role="listitem">
+            <div class="feature-icon-compact">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <h3>Dashboards e IA</h3>
+            <p>Indicadores do dia e tendências de risco, para o RH agir antes do fechamento virar problema.</p>
+          </article>
+          <article class="feature-card-compact" role="listitem">
+            <div class="feature-icon-compact">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            </div>
+            <h3>Segurança</h3>
+            <p>Detecção de fraude no ponto, criptografia AES-256 e trilha de auditoria dos registros.</p>
+          </article>
+          <article class="feature-card-compact" role="listitem">
+            <div class="feature-icon-compact">
+              <i class="fas fa-building" aria-hidden="true"></i>
+            </div>
+            <h3>Gestão multi-local</h3>
+            <p>Uma operação só para filiais, obras e home office — sem planilha por unidade.</p>
+          </article>
         </div>
+
         <div class="features-ctas">
-          <a href="#contact" class="btn-primary" title="Agendar demonstração do TapInOut">Agendar Demonstração</a>
+          <a href="#contact" class="btn-primary" title="Agendar demonstração do TapInOut">
+            <span>Agendar demonstração</span>
+            <span class="btn-icon-wrap" aria-hidden="true">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -332,13 +369,13 @@
     <!-- Testimonial Section -->
     <section class="testimonial-section" id="testimonial" aria-labelledby="testimonial-title">
       <div class="container">
-        <header class="testimonial-header">
+        <header class="testimonial-header" data-aos="zoom-in-up">
           <h2 class="testimonial-title" id="testimonial-title">
             Depoimentos
           </h2>
         </header>
         <div class="testimonial-content">
-          <div class="testimonial-visual">
+          <div class="testimonial-visual" data-aos="fade-right">
             <div class="testimonial-video-wrap">
               <div class="testimonial-video-container testimonial-shorts">
                 <iframe
@@ -351,9 +388,9 @@
               </div>
             </div>
           </div>
-          <div class="testimonial-text">
+          <div class="testimonial-text" data-aos="fade-left">
             <p class="testimonial-subtitle">
-              Descubra por que gestores estão trocando o ponto tradicional pela tecnologia do tapinout.
+              Gestores trocando o ponto tradicional pelo TapInOut — com menos retrabalho no fechamento.
             </p>
             <p class="testimonial-cta-line">
               <i class="fas fa-play-circle" aria-hidden="true"></i>
@@ -364,297 +401,119 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-title" >Pronto para modernizar sua empresa?</h2>
-          <p >
-            Junte-se a empresas que já confiam no TapInOut.
-          </p>
-          
-                     <div class="cta-buttons">
-             <a href="#contact" class="btn-primary large" title="Falar com especialista do TapInOut">
-               <i class="fas fa-comments" aria-hidden="true"></i>
-               <span >Falar com Especialista</span>
-             </a>
-           </div>
-        </div>
-      </div>
-    </section>
-    <!-- Management Section -->
-    <section class="management-section" aria-labelledby="management-title">
-      <div class="container">
-        <div class="management-content">
-          
-          <!-- Top Section: Title/Subtitle and Dashboard -->
-          <div class="management-top">
-            <div class="management-text">
-              <h2 id="management-title" >
-                Aplicação de Gestão Web para Líderes e RH
-              </h2>
-              <p >
-                Plataforma completa para gestão de pessoas com dashboards inteligentes e controle centralizado
-              </p>
-            </div>
-            
-            <div class="management-visual">
-              <div class="dashboard-preview">
-                <div class="dashboard-header">
-                  <div class="dashboard-title" >Painel de Gestão TapInOut</div>
-                  <div class="dashboard-status">
-                    <span class="status-dot"></span>
-                    <span >Tempo Real</span>
-                  </div>
-                </div>
-                <div class="dashboard-content">
-                  <div class="metric-card">
-                    <div class="metric-icon">
-                      <i class="fas fa-users" aria-hidden="true"></i>
-                    </div>
-                    <div class="metric-info">
-                      <div class="metric-value">247</div>
-                      <div class="metric-label" >Funcionários</div>
-                    </div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-icon">
-                      <i class="fas fa-clock" aria-hidden="true"></i>
-                    </div>
-                    <div class="metric-info">
-                      <div class="metric-value">98%</div>
-                      <div class="metric-label" >Pontualidade</div>
-                    </div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-icon">
-                      <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                    </div>
-                    <div class="metric-info">
-                      <div class="metric-value">3</div>
-                      <div class="metric-label" >Alertas</div>
-                    </div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-icon">
-                      <i class="fas fa-building" aria-hidden="true"></i>
-                    </div>
-                    <div class="metric-info">
-                      <div class="metric-value">12</div>
-                      <div class="metric-label" >Locais</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Section: Feature Cards (Alternating Layout) -->
-          <div class="management-features">
-            <div class="management-feature management-feature-left">
-              <div class="management-icon">
-                <i class="fas fa-brain" aria-hidden="true"></i>
-              </div>
-              <div class="management-details">
-                <h3 >IA para Identificação de Riscos</h3>
-                <p >
-                  IA avançada para identificação automática de riscos trabalhistas, irregularidades de ponto e conformidade legal.
-                </p>
-              </div>
-            </div>
-            
-            <div class="management-feature management-feature-right">
-              <div class="management-icon">
-                <i class="fas fa-chart-pie" aria-hidden="true"></i>
-              </div>
-              <div class="management-details">
-                <h3 >Visualização de Métricas em Tempo Real</h3>
-                <p >
-                  Visualização em tempo real de métricas de produtividade, banco de horas, férias e indicadores de DSR.
-                </p>
-              </div>
-            </div>
-            
-            <div class="management-feature management-feature-left">
-              <div class="management-icon">
-                <i class="fas fa-globe" aria-hidden="true"></i>
-              </div>
-              <div class="management-details">
-                <h3 >Gestão Multi-Local</h3>
-                <p >
-                  Controle centralizado de múltiplos locais de trabalho, filiais e equipes remotas em uma única plataforma.
-                </p>
-              </div>
-            </div>
-
-            <div class="management-feature management-feature-right">
-              <div class="management-icon">
-                <i class="fas fa-gavel" aria-hidden="true"></i>
-              </div>
-              <div class="management-details">
-                <h3 >Conformidade Legal Automática</h3>
-                <p >
-                  Garanta conformidade total com a legislação 671/2021 automaticamente, evitando multas e problemas jurídicos.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Integrations Section -->
     <section class="integrations-section" id="integrations" aria-labelledby="integrations-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="integrations-title" >
-            Integrações Empresariais Nativas
+        <header class="section-header" data-aos="zoom-in-up">
+          <h2 class="section-title" id="integrations-title">
+            Integrações Empresariais
           </h2>
-          <p class="section-subtitle" >
-            API robusta para integração com seus sistemas corporativos de gestão
+          <p class="section-subtitle">
+            Conecte o ponto aos sistemas que o RH e o DP já usam
           </p>
         </header>
         <div class="integrations-content">
-          <!-- Top Section: API Panel (Left) and Title/Subtitle (Right) -->
           <div class="integrations-top">
-            <div class="integrations-visual">
+            <div class="integrations-visual" data-aos="fade-right">
               <div class="api-showcase">
-                <div class="api-header">
-                  <div class="api-badge">
-                    <i class="fas fa-link" aria-hidden="true"></i>
-                    <span >API REST</span>
-                  </div>
-                  <div class="api-status">
-                    <span class="status-dot"></span>
-                    <span >99.9% Uptime</span>
-                  </div>
-                </div>
-                <div class="integration-logos">
-                  <div class="integration-logo sap">
+                <p class="api-showcase-label">Sistemas conectados</p>
+                <div class="integration-logos" role="list">
+                  <div class="integration-logo" role="listitem">
                     <i class="fas fa-server" aria-hidden="true"></i>
                     <span>SAP</span>
                   </div>
-                  <div class="integration-logo success-factors">
+                  <div class="integration-logo" role="listitem">
                     <i class="fas fa-users-cog" aria-hidden="true"></i>
                     <span>SuccessFactors</span>
                   </div>
-                  <div class="integration-logo webhook">
+                  <div class="integration-logo" role="listitem">
+                    <i class="fas fa-file-invoice" aria-hidden="true"></i>
+                    <span>Domínio</span>
+                  </div>
+                  <div class="integration-logo" role="listitem">
                     <i class="fas fa-bolt" aria-hidden="true"></i>
                     <span>Webhooks</span>
                   </div>
-                  <div class="integration-logo cpi">
-                    <i class="fas fa-cloud" aria-hidden="true"></i>
-                    <span>SAP CPI</span>
-                  </div>
-                </div>
-                <div class="code-preview">
-                  <div class="code-line"><span class="code-comment">// Webhook Event Payload</span></div>
-                  <div class="code-line"><span class="code-key">"event"</span>: <span class="code-value">"punch.created"</span>,</div>
-                  <div class="code-line"><span class="code-key">"timestamp"</span>: <span class="code-value">"2025-10-10T14:30:00Z"</span></div>
                 </div>
               </div>
             </div>
 
-            <div class="integrations-text">
-              <h2 id="integrations-title" >
-                Módulo de API para Sistemas Corporativos
-              </h2>
-              <p >
-                Nossa plataforma oferece um módulo de API completo que se integra nativamente com sistemas externos de gestão corporativa, permitindo sincronização em tempo real de dados de ponto, presença e jornada de trabalho.
+            <div class="integrations-text" data-aos="fade-left">
+              <h3 id="integrations-module-title">
+                Integra com SAP, Domínio e SuccessFactors
+              </h3>
+              <p>
+                Sincronize ponto, presença e jornada com os sistemas da empresa. Menos exportação manual, menos divergência na folha.
               </p>
             </div>
           </div>
 
-          <!-- Bottom Section: Integration Features (2x2 Grid) -->
-          <div class="integration-features">
-            <div class="integration-feature integration-feature-left">
-              <div class="integration-icon">
-                <i class="fab fa-sap" aria-hidden="true"></i>
-              </div>
-              <div class="integration-details">
-                <h4 >Integração SAP e SuccessFactors</h4>
-                <p >
-                  Conecte-se diretamente ao SAP e SAP SuccessFactors para sincronizar dados de funcionários, registros de ponto e gestão de jornada de trabalho de forma automática e bidirecional.
-                </p>
-              </div>
-            </div>
-
-            <div class="integration-feature integration-feature-right">
-              <div class="integration-icon">
-                <i class="fas fa-bolt" aria-hidden="true"></i>
-              </div>
-              <div class="integration-details">
-                <h4 >APIs de Eventos com Webhooks</h4>
-                <p >
-                  Receba notificações instantâneas através de webhooks para eventos de ponto, ausências, horas extras e irregularidades. Integre facilmente com qualquer sistema via eventos em tempo real.
-                </p>
-              </div>
-            </div>
-
-            <div class="integration-feature integration-feature-left">
-              <div class="integration-icon">
-                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-              </div>
-              <div class="integration-details">
-                <h4 >Interfaces via SAP CPI</h4>
-                <p >
-                  Disponibilidade de interfaces pré-configuradas via SAP Cloud Platform Integration (CPI) para orquestração de processos e integração simplificada com todo o ecossistema SAP.
-                </p>
+          <div class="integration-audiences">
+            <div class="integration-audience">
+              <h3 class="integration-audience-title">Para o RH e o DP</h3>
+              <div class="integration-features">
+                <article class="integration-feature">
+                  <div class="integration-icon">
+                    <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                  </div>
+                  <div class="integration-details">
+                    <h4>SAP e SuccessFactors</h4>
+                    <p>
+                      Sincronize funcionários, ponto e jornada com o ecossistema SAP — inclusive via interfaces CPI quando a TI já opera nesse padrão.
+                    </p>
+                  </div>
+                </article>
+                <article class="integration-feature">
+                  <div class="integration-icon">
+                    <i class="fas fa-file-invoice" aria-hidden="true"></i>
+                  </div>
+                  <div class="integration-details">
+                    <h4>Domínio (Thomson Reuters)</h4>
+                    <p>
+                      Conecte o ponto às rotinas de RH/DP no Domínio para reduzir retrabalho e manter consistência entre presença e folha.
+                    </p>
+                  </div>
+                </article>
               </div>
             </div>
 
-            <div class="integration-feature integration-feature-right">
-              <div class="integration-icon">
-                <i class="fas fa-code" aria-hidden="true"></i>
-              </div>
-              <div class="integration-details">
-                <h4 >API REST Completa</h4>
-                <p >
-                  Documentação completa, autenticação OAuth 2.0, rate limiting inteligente e SDKs em múltiplas linguagens para facilitar a integração com qualquer sistema corporativo.
-                </p>
-              </div>
-            </div>
-
-            <div class="integration-feature integration-feature-left">
-              <div class="integration-icon">
-                <i class="fas fa-file-invoice" aria-hidden="true"></i>
-              </div>
-              <div class="integration-details">
-                <h4>Integração com Domínio (Thomson Reuters)</h4>
-                <p>
-                  Nova integração com o sistema Domínio da Thomson Reuters para automatizar processos de RH/DP e reduzir retrabalho, garantindo consistência de dados entre ponto e rotinas administrativas.
-                </p>
+            <div class="integration-audience">
+              <h3 class="integration-audience-title">Para a TI</h3>
+              <div class="integration-features">
+                <article class="integration-feature">
+                  <div class="integration-icon">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                  </div>
+                  <div class="integration-details">
+                    <h4>Webhooks de eventos</h4>
+                    <p>
+                      Notificações de ponto, ausência e irregularidade em tempo real, para plugar o TapInOut no fluxo que a TI já mantém.
+                    </p>
+                  </div>
+                </article>
+                <article class="integration-feature">
+                  <div class="integration-icon">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                  </div>
+                  <div class="integration-details">
+                    <h4>API REST</h4>
+                    <p>
+                      Endpoints com autenticação OAuth 2.0 para leitura e sincronização. Detalhes de contrato e rate limit na demonstração técnica.
+                    </p>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
 
           <div class="integration-cta">
-            <a href="#contact" class="btn-primary" title="Solicitar documentação da API">
-              <i class="fas fa-book" aria-hidden="true"></i>
-              <span >Documentação da API</span>
+            <a href="#contact" class="btn-primary" title="Agendar demonstração e falar sobre integrações">
+              <span>Agendar demonstração</span>
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <i class="fas fa-arrow-right"></i>
+              </span>
             </a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-title" >Não tem certeza qual plano escolher?</h2>
-          <p >
-            Nossa equipe de especialistas pode ajudar você a encontrar a solução perfeita para sua empresa.
-
-
-          </p>
-          
-                     <div class="cta-buttons">
-             <a href="#contact" class="btn-primary large" title="Falar com especialista do TapInOut">
-               <i class="fas fa-comments" aria-hidden="true"></i>
-               <span >Falar com Especialista</span>
-             </a>
-           </div>
         </div>
       </div>
     </section>
@@ -662,12 +521,12 @@
     <!-- Blog Section -->
     <section class="blog-section" id="blog" aria-labelledby="blog-title">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="zoom-in-up">
           <h2 class="section-title" id="blog-title" >
             Artigos e Insights
           </h2>
           <p class="section-subtitle" >
-            Conteúdo especializado para ajudar sua empresa a evoluir
+            Leituras curtas sobre ponto digital, Portaria 671 e gestão de jornada
           </p>
         </header>
         
@@ -728,9 +587,8 @@
         </div>
 
         <div class="blog-cta">
-          <a href="#blog" class="btn-secondary" >
-            <i class="fas fa-newspaper" aria-hidden="true"></i>
-            Ver Todos os Artigos
+          <a href="blog/aplicativo-ponto-digital-ajuda-empresa-progredir.html" class="btn-secondary">
+            Ler o artigo em destaque
           </a>
         </div>
       </div>
@@ -740,207 +598,121 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-hero">
-        <div class="container">
-          <header class="section-header">
-            <h2 class="section-title" id="contact-title" >Entre em contato</h2>
-            <p class="section-subtitle" >
-              Nossa equipe está pronta para ajudar você a implementar o TapInOut na sua empresa
-            </p>
-          </header>
-        </div>
-      </div>
-
       <div class="container">
-        <div class="contact-content">
-          <!-- Vertical Layout: Form (Top) and Contact Methods (Bottom) -->
-          <div class="contact-two-columns">
-            <!-- Top: Contact Form -->
-            <div class="contact-form-column">
-              <div class="contact-form-container">
-                <h3 class="contact-form-title">Envie sua Mensagem</h3>
-                <p class="contact-form-subtitle">
-                  Preencha o formulário abaixo e nossa equipe entrará em contato em breve
-                </p>
-                
-                <form id="contactLeadForm" class="contact-form">
-                  <div class="contact-form-group">
-                    <label for="contactName" class="contact-form-label">Nome Completo *</label>
-                    <input type="text" id="contactName" name="name" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactEmail" class="contact-form-label">Email Corporativo *</label>
-                    <input type="email" id="contactEmail" name="email" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCompany" class="contact-form-label">Empresa *</label>
-                    <input type="text" id="contactCompany" name="company" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactPhone" class="contact-form-label">Telefone *</label>
-                    <input type="tel" id="contactPhone" name="phone" class="contact-form-input" required>
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCpf" class="contact-form-label">CPF (opcional)</label>
-                    <input type="text" id="contactCpf" name="cpf" class="contact-form-input" placeholder="000.000.000-00">
-                  </div>
-                  
-                  <div class="contact-form-group">
-                    <label for="contactCnpj" class="contact-form-label">CNPJ da Empresa (opcional)</label>
-                    <input type="text" id="contactCnpj" name="cnpj" class="contact-form-input" placeholder="00.000.000/0000-00">
-                  </div>
-                  
-                  <button type="submit" class="contact-form-button" id="contactSubmitButton">
-                    Enviar Mensagem
-                  </button>
-                  
-                  <div id="contactFormMessage" class="contact-form-message"></div>
-                </form>
-              </div>
-            </div>
-
-            <!-- Bottom: Contact Methods -->
-            <div class="contact-info-column">
-              <div class="contact-methods-container">
-                <div class="contact-method-row">
-                  <div class="contact-method-info">
-                    <div class="contact-method-icon">
-                      <i class="fas fa-phone" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-method-details">
-                      <h4 >Telefone</h4>
-                      <p><a href="tel:+5524999712243" title="Ligar para TapInOut">+55 (24) 99971-2243</a></p>
-                    </div>
-                  </div>
-                  <div class="contact-method-action">
-                    <a href="tel:+5524999712243" class="contact-action-btn" title="Ligar agora">
-                      <i class="fas fa-phone" aria-hidden="true"></i>
-                      <span>Ligar</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="contact-method-row">
-                  <div class="contact-method-info">
-                    <div class="contact-method-icon whatsapp">
-                      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-method-details">
-                      <h4 >WhatsApp</h4>
-                      <p><a href="https://wa.me/5524999712243" target="_blank" rel="noopener" title="Enviar mensagem via WhatsApp">+55 (24) 99971-2243</a></p>
-                    </div>
-                  </div>
-                  <div class="contact-method-action">
-                    <a href="https://wa.me/5524999712243" class="contact-action-btn whatsapp" target="_blank" rel="noopener" title="Conversar no WhatsApp">
-                      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                      <span>Conversar</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="contact-method-row">
-                  <div class="contact-method-info">
-                    <div class="contact-method-icon">
-                      <i class="fas fa-envelope" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-method-details">
-                      <h4 >Email</h4>
-                      <p><a href="mailto:contato@elevatebr.org" title="Enviar email para TapInOut">contato@elevatebr.org</a></p>
-                    </div>
-                  </div>
-                  <div class="contact-method-action">
-                    <a href="mailto:contato@elevatebr.org" class="contact-action-btn" title="Enviar email">
-                      <i class="fas fa-envelope" aria-hidden="true"></i>
-                      <span>Enviar</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="contact-method-row">
-                  <div class="contact-method-info">
-                    <div class="contact-method-icon">
-                      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="contact-method-details">
-                      <h4 >Endereço</h4>
-                      <address >
-                        Rua Vinte Nove de Setembro, 53, 2º andar<br>
-                        Campos Elíseos, Resende - RJ, Brasil
-                      </address>
-                    </div>
-                  </div>
-                  <div class="contact-method-action">
-                    <a href="https://maps.google.com/?q=Rua+Vinte+Nove+de+Setembro,+53,+Campos+Elíseos,+Resende+-+RJ" target="_blank" rel="noopener" class="contact-action-btn" title="Ver no mapa">
-                      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                      <span>Ver Mapa</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="contact-layout">
+          <div class="contact-intro" data-aos="fade-right">
+            <h2 class="contact-headline" id="contact-title">
+              Agende uma <span class="contact-headline-accent">demonstração gratuita</span>
+            </h2>
+            <p class="contact-lead">
+              Veja o painel com a sua rotina de RH: presença, banco de horas e conformidade.
+            </p>
+            <p class="contact-trust">
+              Em até 1 dia útil · Sem compromisso
+            </p>
           </div>
 
-          <!-- Quick Actions Section -->
-          
+          <form id="contactLeadForm" class="contact-form" novalidate data-aos="fade-up">
+              <div class="contact-form-group">
+                <label for="contactName" class="contact-form-label">Nome completo *</label>
+                <input type="text" id="contactName" name="name" class="contact-form-input" required autocomplete="name" maxlength="120" aria-describedby="contactNameError">
+                <p id="contactNameError" class="contact-field-error" hidden></p>
+              </div>
 
-          <!-- CTA Banner -->
-          <div class="contact-cta-banner">
-            <div class="cta-banner-content">
-              <div class="cta-banner-icon">
-                <i class="fas fa-headset" aria-hidden="true"></i>
-                <div class="icon-pulse"></div>
+              <div class="contact-form-group">
+                <label for="contactEmail" class="contact-form-label">Email corporativo *</label>
+                <input type="email" id="contactEmail" name="email" class="contact-form-input" required autocomplete="email" maxlength="160" aria-describedby="contactEmailError">
+                <p id="contactEmailError" class="contact-field-error" hidden></p>
               </div>
-              <div class="cta-banner-text">
-                <h4>Precisando de suporte?</h4>
-                <p>Chame no WhatsApp</p>
-              </div>
-              <div class="cta-banner-action">
-                <a href="https://wa.me/5524999712243" class="whatsapp-cta-btn" target="_blank" rel="noopener" title="Iniciar conversa no WhatsApp">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                  <span>Conversar Agora</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Assurances -->
-          <div class="contact-assurances">
-            <div class="assurance-item">
-              <div class="assurance-icon">
-                <i class="fas fa-bolt" aria-hidden="true"></i>
-                <div class="icon-bg"></div>
+              <div class="contact-form-group">
+                <label for="contactCompany" class="contact-form-label">Empresa *</label>
+                <input type="text" id="contactCompany" name="company" class="contact-form-input" required autocomplete="organization" maxlength="120" aria-describedby="contactCompanyError">
+                <p id="contactCompanyError" class="contact-field-error" hidden></p>
               </div>
-              <div class="assurance-text">
-                <h5>Atendimento Rápido</h5>
-                <p>Segunda a Sexta, 8h às 18h</p>
+
+              <div class="contact-form-group">
+                <label for="contactPhone" class="contact-form-label">Telefone / WhatsApp *</label>
+                <input type="tel" id="contactPhone" name="phone" class="contact-form-input" required autocomplete="tel" inputmode="tel" maxlength="16" placeholder="(24) 99999-9999" aria-describedby="contactPhoneError">
+                <p id="contactPhoneError" class="contact-field-error" hidden></p>
               </div>
-            </div>
-            <div class="assurance-item">
-              <div class="assurance-icon">
-                <i class="fas fa-user-check" aria-hidden="true"></i>
-                <div class="icon-bg"></div>
-              </div>
-              <div class="assurance-text">
-                <h5>Atendimento Humano</h5>
-                <p>Consultivo e personalizado</p>
-              </div>
-            </div>
-            <div class="assurance-item">
-              <div class="assurance-icon">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-                <div class="icon-bg"></div>
-              </div>
-              <div class="assurance-text">
-                <h5>Dados Protegidos</h5>
-                <p>LGPD e sem spam</p>
-              </div>
-            </div>
+
+              <button type="submit" class="contact-form-button" id="contactSubmitButton">
+                Agendar demonstração
+                <span class="btn-icon-wrap" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </button>
+
+              <p class="contact-form-privacy">Usamos seus dados só para retorno comercial, conforme a LGPD.</p>
+
+              <div id="contactFormMessage" class="contact-form-message" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="contact-aside" data-aos="fade-right" data-aos-delay="80">
+            <ul class="contact-channels">
+              <li class="contact-channel">
+                <span class="contact-channel-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                <div class="contact-channel-body">
+                  <span class="contact-channel-label">Telefone</span>
+                  <a href="tel:+5524999712243" title="Ligar para TapInOut">+55 (24) 99971-2243</a>
+                </div>
+              </li>
+              <li class="contact-channel">
+                <span class="contact-channel-icon is-whatsapp" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+                <div class="contact-channel-body">
+                  <span class="contact-channel-label">WhatsApp</span>
+                  <a href="https://wa.me/5524999712243?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20TapInOut" target="_blank" rel="noopener" title="Conversar no WhatsApp">+55 (24) 99971-2243</a>
+                </div>
+              </li>
+              <li class="contact-channel">
+                <span class="contact-channel-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                <div class="contact-channel-body">
+                  <span class="contact-channel-label">Email</span>
+                  <a href="mailto:contato@elevatebr.org" title="Enviar email para TapInOut">contato@elevatebr.org</a>
+                </div>
+              </li>
+              <li class="contact-channel">
+                <span class="contact-channel-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                <div class="contact-channel-body">
+                  <span class="contact-channel-label">Endereço</span>
+                  <address>
+                    Rua Vinte Nove de Setembro, 53, 2º andar<br>
+                    Campos Elíseos, Resende - RJ
+                  </address>
+                  <a href="https://maps.google.com/?q=Rua+Vinte+Nove+de+Setembro,+53,+Campos+El%C3%ADseos,+Resende+-+RJ" target="_blank" rel="noopener" class="contact-channel-map" title="Ver no mapa">Ver no mapa</a>
+                </div>
+              </li>
+            </ul>
+
+            <p class="contact-wa-alt">
+              Prefere falar com um especialista agora?
+              <a href="https://wa.me/5524999712243?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20TapInOut" target="_blank" rel="noopener" class="contact-wa-alt-link" title="Agendar demonstração no WhatsApp">Abrir WhatsApp</a>
+            </p>
           </div>
         </div>
+
+        <ul class="contact-assurances" aria-label="Garantias do atendimento">
+          <li class="assurance-item">
+            <span class="assurance-icon" aria-hidden="true"><i class="fas fa-bolt"></i></span>
+            <div class="assurance-text">
+              <strong>Atendimento rápido</strong>
+              <span>Segunda a sexta, 8h às 18h</span>
+            </div>
+          </li>
+          <li class="assurance-item">
+            <span class="assurance-icon" aria-hidden="true"><i class="fas fa-user-check"></i></span>
+            <div class="assurance-text">
+              <strong>Atendimento humano</strong>
+              <span>Consultivo e personalizado</span>
+            </div>
+          </li>
+          <li class="assurance-item">
+            <span class="assurance-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></span>
+            <div class="assurance-text">
+              <strong>Sem spam</strong>
+              <span>Só retorno sobre a demonstração</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -953,6 +725,15 @@
           <img src="img/Logo tapinout FPR-Photoroom.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="footer-logo" width="150" height="50">
           <p class="footer-description">
             Sistema de ponto digital inteligente com biometria facial, GPS em tempo real e gestão completa para sua empresa.
+          </p>
+          <address class="footer-address">
+            Rua Vinte Nove de Setembro, 53, 2º andar<br>
+            Campos Elíseos, Resende - RJ
+          </address>
+          <p class="footer-contact-line">
+            <a href="mailto:contato@elevatebr.org">contato@elevatebr.org</a>
+            ·
+            <a href="tel:+5524999712243">+55 (24) 99971-2243</a>
           </p>
           <div class="social-links">
             <!-- Redes sociais desabilitadas - sem links funcionais -->
@@ -977,9 +758,9 @@
           <div class="footer-column">
             <h3 class="footer-title">Produto</h3>
             <ul class="footer-list">
+              <li><a href="#produto" class="footer-link">Produto</a></li>
               <li><a href="#features" class="footer-link">Recursos</a></li>
-              <li><a href="#integrations" class="footer-link">Integrações</a></li>
-              <li><a href="#demo" class="footer-link">Demonstração</a></li>
+              <li><a href="#contact" class="footer-link">Demonstração</a></li>
               <!-- <li><a href="#security" class="footer-link">Segurança</a></li> -->
             </ul>
           </div>
@@ -989,8 +770,8 @@
             <ul class="footer-list">
               <!-- <li><a href="#about" class="footer-link">Sobre Nós</a></li> -->
               <li><a href="#blog" class="footer-link">Blog</a></li>
-              <!-- <li><a href="#careers" class="footer-link">Carreiras</a></li> -->
               <li><a href="#contact" class="footer-link">Contato</a></li>
+              <!-- <li><a href="#careers" class="footer-link">Carreiras</a></li> -->
             </ul>
           </div>
           
@@ -1018,8 +799,8 @@
       
       <div class="footer-bottom">
         <div class="footer-copyright">
-          <p>&copy; 2025 TapInOut - Elevate. Todos os direitos reservados.</p>
-          <p class="footer-registration">CNPJ: 33.793.757/0001-39 | Registrado em 2025</p>
+          <p>&copy; 2026 TapInOut - Elevate. Todos os direitos reservados.</p>
+          <p class="footer-registration">CNPJ: 33.793.757/0001-39</p>
         </div>
         <div class="footer-badges">
           <span class="badge">LGPD</span>
@@ -1030,281 +811,217 @@
   </footer>
 
   <!-- Scripts -->
-  <!-- Floating Pre-Sales Bar -->
-  <div class="floating-pre-sales-bar" id="floatingPreSalesBar">
-    <div class="floating-content">
-      <div class="floating-text">
-        <div class="floating-badge">
-          <i class="fas fa-fire"></i>
-          <span>Oferta Limitada</span>
-        </div>
-        <div class="floating-title">
-          Cancele <strong>sem custo</strong> no primeiro mês
-        </div>
-      </div>
-      <div class="floating-cta">
-        <a href="https://app.tapinout.com/register" class="floating-btn" target="_blank" rel="noopener">
-          <i class="fas fa-rocket"></i>
-          <span>Cadastrar Agora</span>
-        </a>
-      </div>
-    </div>
-    <div class="floating-close" onclick="closeFloatingBar()">
-      <i class="fas fa-times"></i>
-    </div>
-  </div>
-
-  <a href="https://wa.me/5524999712243" class="support-whatsapp-float" target="_blank" rel="noopener" title="Atendimento no WhatsApp" aria-label="Abrir atendimento no WhatsApp">
+  <a href="https://wa.me/5524999712243?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20TapInOut" class="support-whatsapp-float" target="_blank" rel="noopener" title="Agendar demonstração no WhatsApp" aria-label="Agendar demonstração no WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="main.js"></script>
   <script>
-    // Floating bar functionality
-    function closeFloatingBar() {
-      const bar = document.getElementById('floatingPreSalesBar');
-      if (bar) {
-        bar.style.display = 'none';
-        localStorage.setItem('floatingBarClosed', 'true');
-      }
-    }
-    
-    // Show floating bar after 3 seconds (always show on page load)
-    function showFloatingBar() {
-      const bar = document.getElementById('floatingPreSalesBar');
-      if (bar) {
-        // Always show the bar on page load (reset on refresh)
-        bar.classList.add('show');
-        console.log('Floating bar shown');
-      } else {
-        console.error('Floating bar element not found');
-      }
-    }
-    
-    // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(showFloatingBar, 3000);
-    });
-    
-    // Fallback if DOMContentLoaded already fired
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(showFloatingBar, 3000);
-      });
-    } else {
-      setTimeout(showFloatingBar, 3000);
-    }
-
-    // Contact Form Submission
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const contactForm = document.getElementById('contactLeadForm');
-      if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const submitButton = document.getElementById('contactSubmitButton');
-          const formMessage = document.getElementById('contactFormMessage');
-          const form = e.target;
-          
-          // Disable button
-          submitButton.disabled = true;
-          submitButton.textContent = 'Enviando...';
-          formMessage.className = 'contact-form-message';
-          formMessage.style.display = 'none';
-          
-          // Get form data
-          const formData = {
-            name: document.getElementById('contactName').value,
-            email: document.getElementById('contactEmail').value,
-            company: document.getElementById('contactCompany').value,
-            phone: document.getElementById('contactPhone').value,
-            cpf: document.getElementById('contactCpf').value || null,
-            cnpj: document.getElementById('contactCnpj').value || null
-          };
-          
-          function buildRegisterUrl(data, leadId) {
-            const params = new URLSearchParams();
-            // Campos para pré-preenchimento no app (por query string)
-            params.set('name', data.name || '');
-            params.set('email', data.email || '');
-            params.set('company', data.company || '');
-            params.set('phone', data.phone || '');
-            if (data.cpf) params.set('cpf', data.cpf);
-            if (data.cnpj) params.set('cnpj', data.cnpj);
-            if (leadId) params.set('id', leadId);
-            return `https://app.tapinout.com/register?${params.toString()}`;
-          }
-          
-          try {
-            // Get API URL from environment or use default
-            const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
-            
-            console.log('Enviando requisição para:', apiUrl);
-            console.log('Dados do formulário:', formData);
-            
-            const response = await fetch(apiUrl, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(formData)
-            });
-            
-            console.log('Status da resposta:', response.status, response.statusText);
-            console.log('Headers da resposta:', [...response.headers.entries()]);
-            
-            if (response.ok) {
-              // Ler a resposta JSON antes de redirecionar
-              const responseData = await response.json();
-              console.log('Resposta da API:', responseData);
-              
-              formMessage.className = 'contact-form-message success';
-              formMessage.textContent = 'Cadastro enviado com sucesso. Redirecionando...';
-              formMessage.style.display = 'block';
-              
-              // Scroll to message
-              formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (!contactForm) return;
 
-              // Redirecionar para o app já com os dados para pré-preenchimento e o ID do lead
-              const registerUrl = buildRegisterUrl(formData, responseData.id);
-              console.log('URL de redirecionamento:', registerUrl);
-              setTimeout(() => {
-                window.location.assign(registerUrl);
-              }, 900);
-              
-              // Evitar reset imediato (pode atrapalhar UX antes do redirect)
-            } else {
-              const errorData = await response.json().catch(() => ({}));
-              console.error('Erro na resposta:', errorData);
-              throw new Error(errorData.message || 'Erro ao enviar formulário');
-            }
-          } catch (error) {
-            formMessage.className = 'contact-form-message error';
-            formMessage.textContent = error.message || 'Erro ao enviar formulário. Tente novamente.';
-            formMessage.style.display = 'block';
-          } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Enviar Mensagem';
+      const WA_DEMO_URL = 'https://wa.me/5524999712243?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20TapInOut';
+      const submitButton = document.getElementById('contactSubmitButton');
+      const formMessage = document.getElementById('contactFormMessage');
+      const fields = [
+        {
+          input: document.getElementById('contactName'),
+          error: document.getElementById('contactNameError'),
+          empty: 'Informe seu nome completo.',
+          invalid: 'Informe um nome válido.'
+        },
+        {
+          input: document.getElementById('contactEmail'),
+          error: document.getElementById('contactEmailError'),
+          empty: 'Informe seu email corporativo.',
+          invalid: 'Digite um email válido (ex.: nome@empresa.com).'
+        },
+        {
+          input: document.getElementById('contactCompany'),
+          error: document.getElementById('contactCompanyError'),
+          empty: 'Informe o nome da empresa.',
+          invalid: 'Informe o nome da empresa.'
+        },
+        {
+          input: document.getElementById('contactPhone'),
+          error: document.getElementById('contactPhoneError'),
+          empty: 'Informe telefone ou WhatsApp com DDD.',
+          invalid: 'Use um número com DDD (10 ou 11 dígitos).'
+        }
+      ];
+
+      function formatPhoneDigits(digits) {
+        const value = digits.slice(0, 11);
+        if (value.length <= 2) return value.length ? '(' + value : '';
+        if (value.length <= 6) return '(' + value.slice(0, 2) + ') ' + value.slice(2);
+        if (value.length <= 10) {
+          return '(' + value.slice(0, 2) + ') ' + value.slice(2, 6) + '-' + value.slice(6);
+        }
+        return '(' + value.slice(0, 2) + ') ' + value.slice(2, 7) + '-' + value.slice(7);
+      }
+
+      function escapeHtml(text) {
+        return String(text)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function clearFieldError(field) {
+        field.input.classList.remove('is-invalid');
+        field.input.removeAttribute('aria-invalid');
+        field.error.hidden = true;
+        field.error.textContent = '';
+      }
+
+      function setFieldError(field, message) {
+        field.input.classList.add('is-invalid');
+        field.input.setAttribute('aria-invalid', 'true');
+        field.error.hidden = false;
+        field.error.textContent = message;
+      }
+
+      function validateField(field) {
+        const value = field.input.value.trim();
+        const id = field.input.id;
+
+        if (!value) {
+          setFieldError(field, field.empty);
+          return false;
+        }
+
+        if (id === 'contactEmail' && !field.input.checkValidity()) {
+          setFieldError(field, field.invalid);
+          return false;
+        }
+
+        if (id === 'contactPhone') {
+          const digits = value.replace(/\D/g, '');
+          if (digits.length < 10 || digits.length > 11) {
+            setFieldError(field, field.invalid);
+            return false;
+          }
+        }
+
+        if (id === 'contactName' && value.length < 2) {
+          setFieldError(field, field.invalid);
+          return false;
+        }
+
+        clearFieldError(field);
+        return true;
+      }
+
+      function validateForm() {
+        let firstInvalid = null;
+        let ok = true;
+        fields.forEach(function (field) {
+          if (!validateField(field)) {
+            ok = false;
+            if (!firstInvalid) firstInvalid = field.input;
           }
         });
+        if (firstInvalid) firstInvalid.focus();
+        return ok;
+      }
 
-        // CPF Mask
-        const cpfInput = document.getElementById('contactCpf');
-        if (cpfInput) {
-          cpfInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length <= 11) {
-              value = value.replace(/(\d{3})(\d)/, '$1.$2');
-              value = value.replace(/(\d{3})(\d)/, '$1.$2');
-              value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-              e.target.value = value;
-            }
-          });
+      function setFormLocked(locked) {
+        fields.forEach(function (field) {
+          field.input.disabled = locked;
+        });
+        submitButton.disabled = locked;
+        contactForm.setAttribute('aria-busy', locked ? 'true' : 'false');
+      }
+
+      function setSubmitLabel(label, withIcon) {
+        if (withIcon) {
+          submitButton.innerHTML =
+            label +
+            ' <span class="btn-icon-wrap" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>';
+        } else {
+          submitButton.textContent = label;
         }
-        
-        // CNPJ Mask
-        const cnpjInput = document.getElementById('contactCnpj');
-        if (cnpjInput) {
-          cnpjInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length <= 14) {
-              value = value.replace(/(\d{2})(\d)/, '$1.$2');
-              value = value.replace(/(\d{3})(\d)/, '$1.$2');
-              value = value.replace(/(\d{3})(\d)/, '$1/$2');
-              value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
-              e.target.value = value;
-            }
+      }
+
+      function showMessage(type, html) {
+        formMessage.className = 'contact-form-message ' + type;
+        formMessage.innerHTML = html;
+        formMessage.style.display = 'block';
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      fields.forEach(function (field) {
+        field.input.addEventListener('input', function () {
+          if (field.input.classList.contains('is-invalid')) validateField(field);
+        });
+        field.input.addEventListener('blur', function () {
+          if (field.input.value.trim()) validateField(field);
+        });
+      });
+
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        const formData = {
+          name: fields[0].input.value.trim(),
+          email: fields[1].input.value.trim(),
+          company: fields[2].input.value.trim(),
+          phone: fields[3].input.value.trim()
+        };
+
+        setFormLocked(true);
+        setSubmitLabel('Agendando demonstração...', false);
+        formMessage.className = 'contact-form-message';
+        formMessage.style.display = 'none';
+        formMessage.innerHTML = '';
+
+        try {
+          const apiUrl = window.API_URL || 'https://api.tapinout.com/api/public/leads';
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
           });
+
+          if (!response.ok) {
+            const errorData = await response.json().catch(function () { return {}; });
+            throw new Error(errorData.message || '');
+          }
+
+          showMessage(
+            'success',
+            '<strong>Demonstração agendada, ' + escapeHtml(formData.name.split(' ')[0]) + '.</strong> ' +
+            'Em até <strong>1 dia útil</strong> um especialista fala com você em ' +
+            escapeHtml(formData.email) + ' ou no ' + escapeHtml(formData.phone) + '. ' +
+            '<a href="' + WA_DEMO_URL + '" target="_blank" rel="noopener">Quer adiantar? Fale no WhatsApp</a>.'
+          );
+          setSubmitLabel('Demonstração enviada', false);
+          contactForm.setAttribute('aria-busy', 'false');
+        } catch (error) {
+          setFormLocked(false);
+          setSubmitLabel('Agendar demonstração', true);
+          const detail = error && error.message ? escapeHtml(error.message) + ' ' : '';
+          showMessage(
+            'error',
+            detail +
+            'Não foi possível enviar agora. Tente de novo ou ' +
+            '<a href="' + WA_DEMO_URL + '" target="_blank" rel="noopener">agende pelo WhatsApp</a>.'
+          );
         }
-        
-        // Phone Mask (Brazilian format)
-        const phoneInput = document.getElementById('contactPhone');
-        if (phoneInput) {
-          phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length <= 11) {
-              if (value.length <= 10) {
-                value = value.replace(/(\d{2})(\d)/, '($1) $2');
-                value = value.replace(/(\d{4})(\d)/, '$1-$2');
-              } else {
-                value = value.replace(/(\d{2})(\d)/, '($1) $2');
-                value = value.replace(/(\d{5})(\d)/, '$1-$2');
-              }
-              e.target.value = value;
-            }
-          });
-        }
+      });
+
+      const phoneInput = fields[3].input;
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function (e) {
+          e.target.value = formatPhoneDigits(e.target.value.replace(/\D/g, ''));
+        });
       }
     });
-
-    // Features carousel (2 páginas, bolinhas e rolamento automático)
-    (function() {
-      const viewport = document.querySelector('.features-carousel-viewport');
-      const slides = document.querySelectorAll('.features-slide');
-      const dots = document.querySelectorAll('.features-dot');
-      const prevBtn = document.querySelector('.features-carousel-prev');
-      const nextBtn = document.querySelector('.features-carousel-next');
-      if (!viewport || !slides.length) return;
-      const totalSlides = slides.length;
-      const autoplayInterval = 5000;
-      let autoplayTimer = null;
-      function setActiveDot(index) {
-        const i = Math.max(0, Math.min(index, totalSlides - 1));
-        dots.forEach(function(dot, j) {
-          dot.classList.toggle('active', j === i);
-          dot.setAttribute('aria-selected', j === i);
-        });
-      }
-      function goToSlide(index) {
-        const i = Math.max(0, Math.min(index, totalSlides - 1));
-        viewport.scrollTo({ left: i * viewport.clientWidth, behavior: 'smooth' });
-        setActiveDot(i);
-        resetAutoplay();
-      }
-      function updateDotsFromScroll() {
-        const w = viewport.clientWidth;
-        if (w <= 0) return;
-        const idx = Math.round(viewport.scrollLeft / w);
-        setActiveDot(Math.max(0, Math.min(idx, totalSlides - 1)));
-      }
-      function nextSlide() {
-        const w = viewport.clientWidth;
-        const current = w > 0 ? Math.floor(viewport.scrollLeft / w) : 0;
-        goToSlide(current + 1 >= totalSlides ? 0 : current + 1);
-      }
-      function startAutoplay() {
-        stopAutoplay();
-        autoplayTimer = setInterval(nextSlide, autoplayInterval);
-      }
-      function stopAutoplay() {
-        if (autoplayTimer) {
-          clearInterval(autoplayTimer);
-          autoplayTimer = null;
-        }
-      }
-      function resetAutoplay() {
-        startAutoplay();
-      }
-      if (prevBtn) prevBtn.addEventListener('click', function() {
-        const w = viewport.clientWidth;
-        const idx = w > 0 ? Math.max(0, Math.floor(viewport.scrollLeft / w) - 1) : 0;
-        goToSlide(idx);
-      });
-      if (nextBtn) nextBtn.addEventListener('click', function() {
-        const w = viewport.clientWidth;
-        const idx = w > 0 ? Math.min(totalSlides - 1, Math.floor(viewport.scrollLeft / w) + 1) : 0;
-        goToSlide(idx);
-      });
-      dots.forEach(function(dot, i) {
-        dot.addEventListener('click', function() { goToSlide(i); });
-      });
-      viewport.addEventListener('scroll', function() {
-        requestAnimationFrame(updateDotsFromScroll);
-      });
-      viewport.addEventListener('mouseenter', stopAutoplay);
-      viewport.addEventListener('mouseleave', startAutoplay);
-      startAutoplay();
-    })();
   </script>
 </body>
 </html> 
