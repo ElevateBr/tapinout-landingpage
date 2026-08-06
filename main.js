@@ -46,8 +46,8 @@ function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
   navMenu.classList.toggle('active', isMobileMenuOpen);
   navToggle.classList.toggle('active', isMobileMenuOpen);
+  navToggle.setAttribute('aria-expanded', isMobileMenuOpen ? 'true' : 'false');
 
-  // Prevenir scroll do body quando menu está aberto
   document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
 }
 
@@ -80,10 +80,111 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== NAVBAR SCROLL EFFECT =====
-// Removido - navbar mantém transparência constante
+function initNavbarScroll() {
+  if (!navbar) return;
 
-// ===== ANIMAÇÕES AOS (ANIMATE ON SCROLL) =====
+  const onScroll = () => {
+    navbar.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// ===== HERO REVEAL =====
+function initHeroReveal() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    hero.classList.add('is-revealed');
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    hero.classList.add('is-revealed');
+  });
+}
+
+// ===== PRODUCT SECTION REVEAL =====
+function initProductReveal() {
+  const section = document.querySelector('.product-section');
+  if (!section) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    section.classList.add('is-inview');
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-inview');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+  observer.observe(section);
+}
+
+// ===== PRODUCT PANEL — PERSPECTIVA LIGADA AO SCROLL =====
+function initProductPerspectiveScroll() {
+  const section = document.querySelector('.product-section');
+  const browser = document.querySelector('.product-browser');
+  if (!section || !browser) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    browser.style.transform = 'none';
+    return;
+  }
+
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const rect = section.getBoundingClientRect();
+    const viewH = window.innerHeight || 1;
+    const travel = viewH + rect.height;
+    const progress = Math.min(1, Math.max(0, (viewH - rect.top) / travel));
+
+    const isCompact = window.matchMedia('(max-width: 1023px)').matches;
+    const rotateY = (isCompact ? -12 : -26) + progress * (isCompact ? 7 : 16);
+    const rotateX = (isCompact ? 7 : 12) - progress * (isCompact ? 4 : 7);
+    const rotateZ = (isCompact ? -1.2 : -2.5) + progress * (isCompact ? 0.8 : 1.5);
+
+    browser.style.transform =
+      'rotateY(' + rotateY.toFixed(2) + 'deg) ' +
+      'rotateX(' + rotateX.toFixed(2) + 'deg) ' +
+      'rotateZ(' + rotateZ.toFixed(2) + 'deg)';
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+}
+
 function initAOS() {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 750,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80,
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    });
+    return;
+  }
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -108,28 +209,7 @@ function initAOS() {
 
 // ===== ANIMAÇÕES DOS DISPOSITIVOS =====
 function initDeviceAnimations() {
-  const phoneMockup = document.querySelector('.phone-mockup');
-  const desktopMockup = document.querySelector('.desktop-mockup');
-
-  if (phoneMockup) {
-    phoneMockup.addEventListener('mouseenter', function () {
-      this.style.transform = 'scale(1.05) rotate(2deg)';
-    });
-
-    phoneMockup.addEventListener('mouseleave', function () {
-      this.style.transform = '';
-    });
-  }
-
-  if (desktopMockup) {
-    desktopMockup.addEventListener('mouseenter', function () {
-      this.style.transform = 'scale(1.05) rotate(-1deg)';
-    });
-
-    desktopMockup.addEventListener('mouseleave', function () {
-      this.style.transform = '';
-    });
-  }
+  // Hover de escala/rotação removido — deixava o mockup brusco
 }
 
 // ===== ANIMAÇÕES DOS ELEMENTOS FLUTUANTES =====
@@ -397,8 +477,11 @@ document.addEventListener('DOMContentLoaded', function () {
   initFloatingAnimations();
   initContactForm();
   initCardHoverEffects();
-  initParallax();
   initLazyLoading();
+  initNavbarScroll();
+  initHeroReveal();
+  initProductReveal();
+  initProductPerspectiveScroll();
 
   // Inicializar novas melhorias
   initScrollProgress();
