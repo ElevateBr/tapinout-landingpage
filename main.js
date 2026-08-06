@@ -2,7 +2,7 @@
 const config = {
   animationDuration: 300,
   scrollOffset: 80,
-  mobileBreakpoint: 768,
+  mobileBreakpoint: 1024,
   debounceDelay: 150
 };
 
@@ -27,55 +27,99 @@ function initSupportWidget() {
 
 // ===== ESTADO GLOBAL =====
 let isMobileMenuOpen = false;
+let lastFocusedBeforeMenu = null;
 
 // ===== ELEMENTOS DOM =====
-// Estes elementos serão definidos dentro do DOMContentLoaded
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navbar = document.querySelector('.navbar');
+const navBackdrop = document.querySelector('#navBackdrop');
 const navCtaButton = document.querySelector('.nav-cta');
 
-// Sistema de tradução removido - todos os textos agora estão diretamente no HTML
+function isMobileNav() {
+  return window.innerWidth <= config.mobileBreakpoint;
+}
 
-// ===== EVENT LISTENER PARA BOTÃO ENTRAR =====
-// Removido - o botão agora usa apenas o href do HTML que aponta para /register
-// Isso evita conflito entre JavaScript e o comportamento padrão do link
+function getMenuFocusables() {
+  if (!navMenu) return [];
+  const items = Array.from(
+    navMenu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+  ).filter((el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
+  if (navToggle) items.push(navToggle);
+  return items;
+}
+
+function setMenuOpen(open) {
+  if (!navMenu || !navToggle) return;
+
+  isMobileMenuOpen = open;
+  navMenu.classList.toggle('active', open);
+  navToggle.classList.toggle('active', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const openLabel = navToggle.dataset.labelOpen || 'Abrir menu';
+  const closeLabel = navToggle.dataset.labelClose || 'Fechar menu';
+  navToggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+  document.body.style.overflow = open ? 'hidden' : '';
+
+  if (navBackdrop) {
+    navBackdrop.hidden = !open;
+    navBackdrop.classList.toggle('is-visible', open);
+  }
+
+  if (open) {
+    lastFocusedBeforeMenu = document.activeElement;
+    const focusables = getMenuFocusables();
+    if (focusables.length) {
+      requestAnimationFrame(() => focusables[0].focus());
+    }
+  } else if (lastFocusedBeforeMenu && typeof lastFocusedBeforeMenu.focus === 'function') {
+    lastFocusedBeforeMenu.focus();
+    lastFocusedBeforeMenu = null;
+  }
+}
 
 // ===== NAVEGAÇÃO MOBILE =====
 function toggleMobileMenu() {
-  isMobileMenuOpen = !isMobileMenuOpen;
-  navMenu.classList.toggle('active', isMobileMenuOpen);
-  navToggle.classList.toggle('active', isMobileMenuOpen);
-  navToggle.setAttribute('aria-expanded', isMobileMenuOpen ? 'true' : 'false');
-
-  document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+  setMenuOpen(!isMobileMenuOpen);
 }
 
 if (navToggle) {
   navToggle.addEventListener('click', toggleMobileMenu);
 }
 
-// ===== FECHAR MENU MOBILE AO CLICAR EM UM LINK =====
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    if (isMobileMenuOpen) {
-      toggleMobileMenu();
-    }
+if (navBackdrop) {
+  navBackdrop.addEventListener('click', () => {
+    if (isMobileMenuOpen) setMenuOpen(false);
   });
+}
+
+document.querySelectorAll('.nav-menu .nav-link, .nav-menu .nav-link-login-mobile').forEach((link) => {
+  link.addEventListener('click', () => {
+    if (isMobileMenuOpen) setMenuOpen(false);
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (!isMobileNav() && isMobileMenuOpen) {
+    setMenuOpen(false);
+  }
 });
 
 // ===== SCROLL SUAVE PARA ÂNCORAS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const offsetTop = target.offsetTop - config.scrollOffset;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    const offsetTop = target.offsetTop - config.scrollOffset;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth'
+    });
   });
 });
 
@@ -85,6 +129,50 @@ function initNavbarScroll() {
 
   const onScroll = () => {
     navbar.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// ===== SCROLL SPY =====
+function initNavScrollSpy() {
+  if (!navMenu) return;
+
+  const links = Array.from(navMenu.querySelectorAll('.nav-link[href^="#"]'));
+  if (!links.length) return;
+
+  const sections = links
+    .map((link) => {
+      const id = link.getAttribute('href');
+      const section = id ? document.querySelector(id) : null;
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const setActive = (activeLink) => {
+    links.forEach((link) => {
+      if (link === activeLink) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const onScroll = () => {
+    const probe = window.scrollY + config.scrollOffset + 24;
+    let current = sections[0];
+
+    for (const entry of sections) {
+      if (entry.section.offsetTop <= probe) {
+        current = entry;
+      }
+    }
+
+    setActive(current.link);
   };
 
   onScroll();
@@ -479,6 +567,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCardHoverEffects();
   initLazyLoading();
   initNavbarScroll();
+  initNavScrollSpy();
   initHeroReveal();
   initProductReveal();
   initProductPerspectiveScroll();
@@ -490,13 +579,30 @@ document.addEventListener('DOMContentLoaded', function () {
   initTiltEffect();
   initRippleEffect();
 
-  // Event listeners
-  // handleNavbarScroll removido - navbar mantém transparência constante
-
-  // Fechar menu mobile com ESC
+  // Fechar menu mobile com ESC + trap de foco
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isMobileMenuOpen) {
-      toggleMobileMenu();
+    if (!isMobileMenuOpen) return;
+
+    if (e.key === 'Escape') {
+      setMenuOpen(false);
+      return;
+    }
+
+    if (e.key !== 'Tab' || !navMenu) return;
+
+    const focusables = getMenuFocusables();
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey && active === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 
