@@ -810,6 +810,47 @@
     </div>
   </footer>
 
+  <!-- Offer bar -->
+  <aside
+    class="floating-pre-sales-bar"
+    id="floatingPreSalesBar"
+    role="complementary"
+    aria-label="Oferta de cadastro"
+    hidden
+  >
+    <div class="floating-content">
+      <div class="floating-text">
+        <div class="floating-badge">
+          <i class="fas fa-tag" aria-hidden="true"></i>
+          <span>Oferta limitada</span>
+        </div>
+        <p class="floating-title">
+          Cancele <strong>sem custo</strong> no primeiro mês
+        </p>
+      </div>
+      <div class="floating-cta">
+        <a
+          href="https://app.tapinout.com/register"
+          class="floating-btn"
+          target="_blank"
+          rel="noopener"
+          title="Cadastrar no TapInOut"
+        >
+          <span>Cadastrar agora</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="floating-close"
+      id="floatingPreSalesClose"
+      aria-label="Fechar oferta"
+    >
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+  </aside>
+
   <!-- Scripts -->
   <a href="https://wa.me/5524999712243?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20TapInOut" class="support-whatsapp-float" target="_blank" rel="noopener" title="Agendar demonstração no WhatsApp" aria-label="Agendar demonstração no WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -817,6 +858,41 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const offerBar = document.getElementById('floatingPreSalesBar');
+      const offerClose = document.getElementById('floatingPreSalesClose');
+      if (!offerBar) return;
+
+      const STORAGE_KEY = 'tapinoutOfferBarClosed';
+
+      function hideOfferBar() {
+        offerBar.classList.remove('show');
+        offerBar.hidden = true;
+        document.body.classList.remove('offer-bar-visible');
+        try {
+          localStorage.setItem(STORAGE_KEY, '1');
+        } catch (e) { /* ignore */ }
+      }
+
+      function showOfferBar() {
+        try {
+          if (localStorage.getItem(STORAGE_KEY) === '1') return;
+        } catch (e) { /* ignore */ }
+        offerBar.hidden = false;
+        requestAnimationFrame(function () {
+          offerBar.classList.add('show');
+          document.body.classList.add('offer-bar-visible');
+        });
+      }
+
+      if (offerClose) {
+        offerClose.addEventListener('click', hideOfferBar);
+      }
+
+      setTimeout(showOfferBar, 2500);
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const contactForm = document.getElementById('contactLeadForm');
