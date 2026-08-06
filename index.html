@@ -122,38 +122,56 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSFHT89"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Navegação principal">
+  <nav class="navbar" aria-label="Navegação principal">
     <div class="container">
       <div class="nav-logo">
         <a href="/" aria-label="TapInOut - Página inicial">
-          <img src="logo.png" alt="TapInOut - Sistema de Ponto Digital" title="TapInOut - Sistema de Ponto Digital Inteligente" class="logo-img" width="150" height="50">
+          <img src="logo.png" alt="TapInOut - Sistema de Ponto Digital" class="logo-img" width="150" height="50">
         </a>
       </div>
 
       <div class="nav-menu" id="navMenu">
-        <a href="#produto" class="nav-link" title="Ver o painel de gestão">Produto</a>
-        <a href="#features" class="nav-link" title="Ver recursos do TapInOut">Recursos</a>
-        <a href="#testimonial" class="nav-link" title="Ver depoimentos de clientes">Depoimentos</a>
-        <a href="#integrations" class="nav-link" title="Ver integrações empresariais">Integrações</a>
-        <a href="#blog" class="nav-link" title="Ver artigos e insights">Blog</a>
-        <a href="#contact" class="nav-link" title="Agendar demonstração">Demonstração</a>
-        <a href="https://app.tapinout.com/login" class="nav-link nav-link-entrar-mobile" target="_blank" rel="noopener" title="Acessar o aplicativo TapInOut">Entrar</a>
+        <a href="#produto" class="nav-link">Produto</a>
+        <a href="#features" class="nav-link">Recursos</a>
+        <a href="#integrations" class="nav-link">Integrações</a>
+        <a href="#testimonial" class="nav-link">Depoimentos</a>
+        <a
+          href="https://app.tapinout.com/login"
+          class="nav-link nav-link-login-mobile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Entrar
+          <span class="visually-hidden">(abre em nova aba)</span>
+        </a>
       </div>
 
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Seleção de idioma">
-          <a href="/" class="lang-btn active" aria-pressed="true">PT</a>
-          <a href="/en" class="lang-btn" aria-pressed="false">EN</a>
-          <a href="/es" class="lang-btn" aria-pressed="false">ES</a>
+          <a href="/" class="lang-btn active" aria-current="page" lang="pt-BR" hreflang="pt-BR">PT</a>
+          <a href="/en" class="lang-btn" lang="en" hreflang="en">EN</a>
+          <a href="/es" class="lang-btn" lang="es" hreflang="es">ES</a>
         </div>
 
-        <a href="https://app.tapinout.com/login" class="nav-cta" target="_blank" rel="noopener" title="Acessar o aplicativo TapInOut">
-          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
-          <span>Entrar</span>
+        <a
+          href="https://app.tapinout.com/login"
+          class="nav-login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Entrar
+          <span class="visually-hidden">(abre em nova aba)</span>
         </a>
 
-        <button class="nav-toggle" type="button" aria-label="Menu mobile" aria-expanded="false" aria-controls="navMenu">
+        <a href="#contact" class="nav-cta">
+          <span class="nav-cta-label-full">Agendar demonstração</span>
+          <span class="nav-cta-label-short">Agendar</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu" data-label-open="Abrir menu" data-label-close="Fechar menu">
           <span></span>
           <span></span>
           <span></span>
@@ -162,10 +180,12 @@
     </div>
   </nav>
 
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
   <div class="navbar-spacer" aria-hidden="true"></div>
 
   <!-- Hero Section -->
-  <main>
+  <main id="main-content">
     <section class="hero" role="banner" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-content">
@@ -185,8 +205,8 @@
                   <i class="fas fa-arrow-right"></i>
                 </span>
               </a>
-              <a href="#produto" class="btn-secondary" title="Ver o painel de gestão TapInOut">
-                <span>Ver o produto</span>
+              <a href="#produto" class="hero-text-link">
+                Ver o produto
               </a>
             </div>
 
@@ -258,14 +278,6 @@
               <li>Alertas de banco de horas e DSR antes do fechamento</li>
               <li>Filiais, obras e home office no mesmo login</li>
             </ul>
-            <div class="product-cta">
-              <a href="#contact" class="btn-primary" title="Agendar demonstração do painel TapInOut">
-                <span>Agendar demonstração</span>
-                <span class="btn-icon-wrap" aria-hidden="true">
-                  <i class="fas fa-arrow-right"></i>
-                </span>
-              </a>
-            </div>
           </div>
 
           <div class="product-visual" data-aos="fade-left" data-aos-delay="150">
@@ -353,15 +365,6 @@
             <h3>Gestão multi-local</h3>
             <p>Uma operação só para filiais, obras e home office — sem planilha por unidade.</p>
           </article>
-        </div>
-
-        <div class="features-ctas">
-          <a href="#contact" class="btn-primary" title="Agendar demonstração do TapInOut">
-            <span>Agendar demonstração</span>
-            <span class="btn-icon-wrap" aria-hidden="true">
-              <i class="fas fa-arrow-right"></i>
-            </span>
-          </a>
         </div>
       </div>
     </section>
@@ -504,15 +507,6 @@
                 </article>
               </div>
             </div>
-          </div>
-
-          <div class="integration-cta">
-            <a href="#contact" class="btn-primary" title="Agendar demonstração e falar sobre integrações">
-              <span>Agendar demonstração</span>
-              <span class="btn-icon-wrap" aria-hidden="true">
-                <i class="fas fa-arrow-right"></i>
-              </span>
-            </a>
           </div>
         </div>
       </div>
@@ -864,21 +858,13 @@
       const offerClose = document.getElementById('floatingPreSalesClose');
       if (!offerBar) return;
 
-      const STORAGE_KEY = 'tapinoutOfferBarClosed';
-
       function hideOfferBar() {
         offerBar.classList.remove('show');
         offerBar.hidden = true;
         document.body.classList.remove('offer-bar-visible');
-        try {
-          localStorage.setItem(STORAGE_KEY, '1');
-        } catch (e) { /* ignore */ }
       }
 
       function showOfferBar() {
-        try {
-          if (localStorage.getItem(STORAGE_KEY) === '1') return;
-        } catch (e) { /* ignore */ }
         offerBar.hidden = false;
         requestAnimationFrame(function () {
           offerBar.classList.add('show');

@@ -122,36 +122,56 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSFHT89"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
-              <div class="nav-logo">
-          <a href="/en" aria-label="TapInOut - Home page">
-            <img src="../logo.png" alt="TapInOut - Digital Time Tracking System" title="TapInOut - Intelligent Digital Time Tracking System" class="logo-img" width="150" height="50">
-          </a>
-        </div>
-      
-              <div class="nav-menu">
-          <a href="#features" class="nav-link" title="View TapInOut features">Features</a>
-          <a href="#integrations" class="nav-link" title="View enterprise integrations">Integrations</a>
-          <a href="#demo" class="nav-link" title="View system demonstration">Demo</a>
-          <a href="#blog" class="nav-link" title="View articles and insights">Blog</a>
-          <a href="#contact" class="nav-link" title="Contact us">Contact</a>
-        </div>
-      
+      <div class="nav-logo">
+        <a href="/en" aria-label="TapInOut - Home page">
+          <img src="../logo.png" alt="TapInOut - Digital Time Tracking System" class="logo-img" width="150" height="50">
+        </a>
+      </div>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#integrations" class="nav-link">Integrations</a>
+        <a href="#demo" class="nav-link">Demo</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a
+          href="https://app.tapinout.com/login"
+          class="nav-link nav-link-login-mobile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sign in
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+      </div>
+
       <div class="nav-actions">
         <div class="lang-switcher" role="group" aria-label="Language selection">
-          <a href="/" class="lang-btn" aria-pressed="false">PT</a>
-          <a href="/en" class="lang-btn active" aria-pressed="true">EN</a>
-          <a href="/es" class="lang-btn" aria-pressed="false">ES</a>
+          <a href="/" class="lang-btn" lang="pt-BR" hreflang="pt-BR">PT</a>
+          <a href="/en" class="lang-btn active" aria-current="page" lang="en" hreflang="en">EN</a>
+          <a href="/es" class="lang-btn" lang="es" hreflang="es">ES</a>
         </div>
-        
-        <a href="https://app.tapinout.com/login" class="nav-cta" target="_blank" rel="noopener">
-          <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
-          <span>Sign In</span>
+
+        <a
+          href="https://app.tapinout.com/login"
+          class="nav-login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sign in
+          <span class="visually-hidden">(opens in a new tab)</span>
         </a>
-        
-        <button class="nav-toggle" aria-label="Mobile menu" aria-expanded="false">
+
+        <a href="#contact" class="nav-cta">
+          <span class="nav-cta-label-full">Book a demo</span>
+          <span class="nav-cta-label-short">Demo</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu" data-label-open="Open menu" data-label-close="Close menu">
           <span></span>
           <span></span>
           <span></span>
@@ -160,11 +180,13 @@
     </div>
   </nav>
 
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
   <!-- Navbar Spacer - Invisible spacer to avoid overlap -->
-  <div class="navbar-spacer"></div>
+  <div class="navbar-spacer" aria-hidden="true"></div>
 
   <!-- Hero Section -->
-  <main>
+  <main id="main-content">
     <section class="hero" role="banner" aria-labelledby="hero-title">
       <div class="hero-bg">
         <div class="gradient-orb orb-1" aria-hidden="true"></div>
@@ -1142,17 +1164,13 @@
       const offerClose = document.getElementById('floatingPreSalesClose');
       if (!offerBar) return;
 
-      const STORAGE_KEY = 'tapinoutOfferBarClosed';
-
       function hideOfferBar() {
         offerBar.classList.remove('show');
         offerBar.hidden = true;
         document.body.classList.remove('offer-bar-visible');
-        try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
       }
 
       function showOfferBar() {
-        try { if (localStorage.getItem(STORAGE_KEY) === '1') return; } catch (e) {}
         offerBar.hidden = false;
         requestAnimationFrame(function () {
           offerBar.classList.add('show');
