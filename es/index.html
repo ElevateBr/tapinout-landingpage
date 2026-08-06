@@ -1090,29 +1090,46 @@
   </footer>
 
   <!-- Scripts -->
-  <!-- Floating Pre-Sales Bar -->
-  <div class="floating-pre-sales-bar" id="floatingPreSalesBar">
+  <!-- Offer bar -->
+  <aside
+    class="floating-pre-sales-bar"
+    id="floatingPreSalesBar"
+    role="complementary"
+    aria-label="Oferta de registro"
+    hidden
+  >
     <div class="floating-content">
       <div class="floating-text">
         <div class="floating-badge">
-          <i class="fas fa-fire"></i>
-          <span>Oferta Limitada</span>
+          <i class="fas fa-tag" aria-hidden="true"></i>
+          <span>Oferta limitada</span>
         </div>
-        <div class="floating-title">
-          <strong>1 mes gratis</strong> para nuevos registros!
-        </div>
+        <p class="floating-title">
+          Cancela <strong>sin costo</strong> en el primer mes
+        </p>
       </div>
       <div class="floating-cta">
-        <a href="https://app.tapinout.com/register" class="floating-btn" target="_blank" rel="noopener">
-          <i class="fas fa-rocket"></i>
-          <span>Registrar Ahora</span>
+        <a
+          href="https://app.tapinout.com/register"
+          class="floating-btn"
+          target="_blank"
+          rel="noopener"
+          title="Registrarse en TapInOut"
+        >
+          <span>Registrarse ahora</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
     </div>
-    <div class="floating-close" onclick="closeFloatingBar()">
-      <i class="fas fa-times"></i>
-    </div>
-  </div>
+    <button
+      type="button"
+      class="floating-close"
+      id="floatingPreSalesClose"
+      aria-label="Cerrar oferta"
+    >
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+  </aside>
 
   <a href="https://wa.me/5524999712243" class="support-whatsapp-float" target="_blank" rel="noopener" title="Atención por WhatsApp" aria-label="Abrir atención por WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -1120,41 +1137,34 @@
 
   <script src="../main.js"></script>
   <script>
-    // Floating bar functionality
-    function closeFloatingBar() {
-      const bar = document.getElementById('floatingPreSalesBar');
-      if (bar) {
-        bar.style.display = 'none';
-        localStorage.setItem('floatingBarClosed', 'true');
-      }
-    }
-    
-    // Show floating bar after 3 seconds (always show on page load)
-    function showFloatingBar() {
-      const bar = document.getElementById('floatingPreSalesBar');
-      if (bar) {
-        // Always show the bar on page load (reset on refresh)
-        bar.classList.add('show');
-        console.log('Floating bar shown');
-      } else {
-        console.error('Floating bar element not found');
-      }
-    }
-    
-    // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(showFloatingBar, 3000);
-    });
-    
-    // Fallback if DOMContentLoaded already fired
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(showFloatingBar, 3000);
-      });
-    } else {
-      setTimeout(showFloatingBar, 3000);
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const offerBar = document.getElementById('floatingPreSalesBar');
+      const offerClose = document.getElementById('floatingPreSalesClose');
+      if (!offerBar) return;
 
+      const STORAGE_KEY = 'tapinoutOfferBarClosed';
+
+      function hideOfferBar() {
+        offerBar.classList.remove('show');
+        offerBar.hidden = true;
+        document.body.classList.remove('offer-bar-visible');
+        try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      }
+
+      function showOfferBar() {
+        try { if (localStorage.getItem(STORAGE_KEY) === '1') return; } catch (e) {}
+        offerBar.hidden = false;
+        requestAnimationFrame(function () {
+          offerBar.classList.add('show');
+          document.body.classList.add('offer-bar-visible');
+        });
+      }
+
+      if (offerClose) offerClose.addEventListener('click', hideOfferBar);
+      setTimeout(showOfferBar, 2500);
+    });
+  </script>
+  <script>
     // Contact Form Submission
     document.addEventListener('DOMContentLoaded', function() {
       const contactForm = document.getElementById('contactLeadForm');
